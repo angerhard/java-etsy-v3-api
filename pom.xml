@@ -22,6 +22,19 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub AnGerhard repo</name>
+            <url>https://maven.pkg.github.com/angerhard/${project.artifactId}</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub AnGerhard repo</name>
+            <url>https://maven.pkg.github.com/angerhard/${project.artifactId}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <developers>
         <developer>
             <name>OpenAPI-Generator Contributors</name>
