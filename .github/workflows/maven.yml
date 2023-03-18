@@ -13,18 +13,32 @@ on:
 
 jobs:
   build:
-    name: Build Etsy Open API v3
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [ '8' ]
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: ${{ matrix.java }}
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: mvn -B package deploy --file pom.xml
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v14
+        with:
+          servers: '[{ "id": "github", "username": "angerhard", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
+
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Build application by maven
+        run:  mvn clean package --update-snapshots
+
+      - name: Build docker image and push
+        run:  mvn -Pdocker-build-deploy k8s:build k8s:push
+
