@@ -37,6 +37,6 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Build application by maven
-        run:  mvn clean package --update-snapshots
+        run:  mvn clean package deploy --update-snapshots
 
 
