@@ -39,6 +39,4 @@ jobs:
       - name: Build application by maven
         run:  mvn clean package --update-snapshots
 
-      - name: Build docker image and push
-        run:  mvn -Pdocker-build-deploy k8s:build k8s:push
 
