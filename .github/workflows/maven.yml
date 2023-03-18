@@ -20,7 +20,7 @@ jobs:
       - name: maven-settings-xml-action
         uses: whelk-io/maven-settings-xml-action@v14
         with:
-          servers: '[{ "id": "github", "username": "angerhard", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
+          servers: '[{ "id": "github", "username": "angerhard", "password": "${{ secrets.DEPLOYMENT_TOKEN }}" }]'
 
       - uses: actions/checkout@v2
       - name: Set up JDK 11
