@@ -1,0 +1,17 @@
+
+
+# BuyerTaxonomyNodePropertySelectedValuesInner
+
+A list of property value strings automatically and always selected for the given property.
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**valueId** | **Long** | The numeric ID of this property value. |  [optional] |
+|**name** | **String** | The name string of this property value. |  [optional] |
+|**scaleId** | **Long** | The numeric scale ID of the scale to which this property value belongs. |  [optional] |
+|**equalTo** | **List&lt;Long&gt;** | A list of numeric property value IDs this property value is equal to (if any). |  [optional] |
+
+
+

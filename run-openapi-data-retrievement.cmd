@@ -1,0 +1,1 @@
+java -jar dependency\openapi-generator-cli-6.4.0.jar generate -i https://www.etsy.com/openapi/generated/oas/3.0.0.json -g java -o . --skip-validate-spec --group-id de.andreasgerhard.etsyapi --artifact-id etsy-v3-api-client --artifact-version 1.0-SNAPSHOT --type-mappings=integer=Long,int=Long
