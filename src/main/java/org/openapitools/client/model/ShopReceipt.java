@@ -84,15 +84,15 @@ public class ShopReceipt {
    */
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
-    PAID("paid"),
+    PAID("Paid"),
     
-    COMPLETED("completed"),
+    COMPLETED("Completed"),
     
-    OPEN("open"),
+    OPEN("Open"),
     
-    PAYMENT_PROCESSING("payment processing"),
+    PAYMENT_PROCESSING("Payment Processing"),
     
-    CANCELED("canceled");
+    CANCELED("Canceled");
 
     private String value;
 

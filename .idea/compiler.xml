@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java-etsy-v3-api" target="1.8" />
+      <module name="java-etsy-v3-api" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
