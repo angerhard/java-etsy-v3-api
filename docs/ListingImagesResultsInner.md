@@ -27,7 +27,7 @@ The list of requested resources.
 |**urlFullxfull** | **String** | The url string for the full-size image, up to 3000 pixels in each dimension. |  [optional] |
 |**fullHeight** | **Long** | The numeric height, measured in pixels, of the full-sized image referenced in url_fullxfull. |  [optional] |
 |**fullWidth** | **Long** | The numeric width, measured in pixels, of the full-sized image referenced in url_fullxfull. |  [optional] |
-|**altText** | **String** | Alt text for the listing image. |  [optional] |
+|**altText** | **String** | Alt text for the listing image. Max length 250 characters. |  [optional] |
 
 
 

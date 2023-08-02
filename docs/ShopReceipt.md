@@ -59,6 +59,8 @@ The record of a purchase from a shop. Shop receipts display monetary values usin
 | OPEN | &quot;open&quot; |
 | PAYMENT_PROCESSING | &quot;payment processing&quot; |
 | CANCELED | &quot;canceled&quot; |
+| FULLY_REFUNDED | &quot;fully refunded&quot; |
+| PARTIALLY_REFUNDED | &quot;partially refunded&quot; |
 
 
 

@@ -5,7 +5,7 @@
     <artifactId>etsy-v3-api-client</artifactId>
     <packaging>jar</packaging>
     <name>etsy-v3-api-client</name>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
@@ -21,17 +21,6 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub AnGerhard repo</name>
-            <url>https://maven.pkg.github.com/angerhard/java-etsy-v3-api</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </distributionManagement>
 
     <developers>
         <developer>
@@ -348,7 +337,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <java.version>17</java.version>
+        <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.5</gson-fire-version>

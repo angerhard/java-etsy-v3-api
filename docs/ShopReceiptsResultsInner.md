@@ -59,6 +59,8 @@ List of Shop Receipt resources found, with all Shop Receipt fields for each reso
 | OPEN | &quot;open&quot; |
 | PAYMENT_PROCESSING | &quot;payment processing&quot; |
 | CANCELED | &quot;canceled&quot; |
+| FULLY_REFUNDED | &quot;fully refunded&quot; |
+| PARTIALLY_REFUNDED | &quot;partially refunded&quot; |
 
 
 
