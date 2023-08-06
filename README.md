@@ -429,6 +429,7 @@ Authentication schemes defined for the API:
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
 
 ## Author
+The Developers of the base open api spec are the etsy developers.  They can be reached at
+  developers@etsy.com
 
-developers@etsy.com
-
+I provide the java code to access the api with some modifications to the base spec.  You can reach me over github.
