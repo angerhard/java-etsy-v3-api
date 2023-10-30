@@ -68,10 +68,6 @@ docs/PaymentPostedNet.md
 docs/Payments.md
 docs/PaymentsResultsInner.md
 docs/Pong.md
-docs/RegistriesApi.md
-docs/RegistryItem.md
-docs/RegistryItems.md
-docs/RegistryItemsResultsInner.md
 docs/ReviewApi.md
 docs/Self.md
 docs/SellerTaxonomyApi.md
@@ -219,7 +215,6 @@ src/main/java/org/openapitools/client/api/BuyerTaxonomyApi.java
 src/main/java/org/openapitools/client/api/LedgerEntryApi.java
 src/main/java/org/openapitools/client/api/OtherApi.java
 src/main/java/org/openapitools/client/api/PaymentApi.java
-src/main/java/org/openapitools/client/api/RegistriesApi.java
 src/main/java/org/openapitools/client/api/ReviewApi.java
 src/main/java/org/openapitools/client/api/SellerTaxonomyApi.java
 src/main/java/org/openapitools/client/api/ShopApi.java
@@ -308,9 +303,6 @@ src/main/java/org/openapitools/client/model/PaymentPostedNet.java
 src/main/java/org/openapitools/client/model/Payments.java
 src/main/java/org/openapitools/client/model/PaymentsResultsInner.java
 src/main/java/org/openapitools/client/model/Pong.java
-src/main/java/org/openapitools/client/model/RegistryItem.java
-src/main/java/org/openapitools/client/model/RegistryItems.java
-src/main/java/org/openapitools/client/model/RegistryItemsResultsInner.java
 src/main/java/org/openapitools/client/model/Self.java
 src/main/java/org/openapitools/client/model/SellerTaxonomyNode.java
 src/main/java/org/openapitools/client/model/SellerTaxonomyNodeChildrenInner.java
@@ -412,7 +404,3 @@ src/main/java/org/openapitools/client/model/User.java
 src/main/java/org/openapitools/client/model/UserAddress.java
 src/main/java/org/openapitools/client/model/UserAddresses.java
 src/main/java/org/openapitools/client/model/UserAddressesResultsInner.java
-src/test/java/org/openapitools/client/api/RegistriesApiTest.java
-src/test/java/org/openapitools/client/model/RegistryItemTest.java
-src/test/java/org/openapitools/client/model/RegistryItemsResultsInnerTest.java
-src/test/java/org/openapitools/client/model/RegistryItemsTest.java

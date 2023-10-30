@@ -1038,6 +1038,7 @@ public class Example {
 | **403** | The request attempted to perform an operation it is not allowed to. See the error message for details. |  -  |
 | **400** | There was a problem with the request data. See the error message for details. |  -  |
 | **401** | The request lacks valid authentication credentials. See the error message for details. |  -  |
+| **503** | This function is temporarily unavailable. Please try again later. |  -  |
 | **500** | The server encountered an internal error. See the error message for details. |  -  |
 
 <a name="updateShopShippingProfileDestination"></a>
@@ -1136,6 +1137,7 @@ public class Example {
 | **403** | The request attempted to perform an operation it is not allowed to. See the error message for details. |  -  |
 | **404** | A resource could not be found. See the error message for details. |  -  |
 | **401** | The request lacks valid authentication credentials. See the error message for details. |  -  |
+| **503** | This function is temporarily unavailable. Please try again later. |  -  |
 | **500** | The server encountered an internal error. See the error message for details. |  -  |
 
 <a name="updateShopShippingProfileUpgrade"></a>
@@ -1234,5 +1236,6 @@ public class Example {
 | **403** | The request attempted to perform an operation it is not allowed to. See the error message for details. |  -  |
 | **404** | A resource could not be found. See the error message for details. |  -  |
 | **401** | The request lacks valid authentication credentials. See the error message for details. |  -  |
+| **503** | This function is temporarily unavailable. Please try again later. |  -  |
 | **500** | The server encountered an internal error. See the error message for details. |  -  |
 

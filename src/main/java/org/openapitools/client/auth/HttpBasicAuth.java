@@ -13,13 +13,16 @@
 
 package org.openapitools.client.auth;
 
-import okhttp3.Credentials;
-import org.openapitools.client.ApiException;
 import org.openapitools.client.Pair;
+import org.openapitools.client.ApiException;
+
+import okhttp3.Credentials;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+
+import java.io.UnsupportedEncodingException;
 
 public class HttpBasicAuth implements Authentication {
     private String username;

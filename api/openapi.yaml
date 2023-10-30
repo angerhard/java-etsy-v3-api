@@ -26,7 +26,6 @@ security:
 - api_key: []
 tags:
 - name: User
-- name: Registries
 - name: UserAddress
 - name: Shop Receipt Transactions
 - name: Other
@@ -6326,6 +6325,13 @@ paths:
                 $ref: '#/components/schemas/ErrorSchema'
           description: The request lacks valid authentication credentials. See the
             error message for details.
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: This function is temporarily unavailable. Please try again
+            later.
         "500":
           content:
             application/json:
@@ -6689,6 +6695,13 @@ paths:
                 $ref: '#/components/schemas/ErrorSchema'
           description: The request lacks valid authentication credentials. See the
             error message for details.
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: This function is temporarily unavailable. Please try again
+            later.
         "500":
           content:
             application/json:
@@ -7025,6 +7038,13 @@ paths:
                 $ref: '#/components/schemas/ErrorSchema'
           description: The request lacks valid authentication credentials. See the
             error message for details.
+        "503":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: This function is temporarily unavailable. Please try again
+            later.
         "500":
           content:
             application/json:
@@ -7470,73 +7490,6 @@ paths:
         - email_r
       tags:
       - User
-      x-accepts: application/json
-  /v3/application/registries/{collection_key}/items:
-    get:
-      description: |-
-        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-denim-tint wt-mr-xs-2">Beta</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Give feedback</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready to use as defined below. Changes may occur before launch, but we received satisfactory feedback on the interface and don’t expect any breaking changes.</p></div>
-
-        Endpoint that lists Etsy Registry items for owned registries.
-      operationId: getRegistryItems
-      parameters:
-      - description: "Collection Key that matches registry url like: etsy.com/registry/{collection_key}"
-        explode: false
-        in: path
-        name: collection_key
-        required: true
-        schema:
-          description: "Collection Key that matches registry url like: etsy.com/registry/{collection_key}"
-          type: string
-        style: simple
-      - description: The maximum number of results to return.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          default: 20
-          description: The maximum number of results to return.
-          maximum: 20
-          minimum: 1
-          type: integer
-        style: form
-      - description: The number of records to skip before selecting the first result.
-        explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          default: 0
-          description: The number of records to skip before selecting the first result.
-          minimum: 0
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RegistryItems'
-          description: A list of registry items
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: Forbidden if registry is not owned
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The server encountered an internal error. See the error message
-            for details.
-      security:
-      - api_key: []
-        oauth2:
-        - registries_r
-      tags:
-      - Registries
       x-accepts: application/json
   /v3/application/users/me:
     get:
@@ -9924,7 +9877,7 @@ components:
         description: description
         created_timestamp: 0
         reference_type: reference_type
-        sequence_number: 0
+        sequence_number: 1
         balance: 5
         currency: currency
         create_date: 0
@@ -9942,7 +9895,6 @@ components:
         sequence_number:
           description: "The sequence allows ledger entries to be sorted chronologically.\
             \ The higher the sequence, the more recent the entry."
-          minimum: 0
           type: integer
         amount:
           description: The amount of money credited to the ledger.
@@ -11149,80 +11101,6 @@ components:
           items:
             $ref: '#/components/schemas/UserAddresses_results_inner'
           type: array
-      type: object
-    RegistryItems:
-      description: Items within an Etsy Registry
-      example:
-        count: 0
-        results:
-        - null
-        - null
-      properties:
-        count:
-          description: The number of RegistryItems resources found.
-          minimum: 0
-          type: integer
-        results:
-          description: The RegistryItems resources found.
-          items:
-            $ref: '#/components/schemas/RegistryItems_results_inner'
-          type: array
-      type: object
-    RegistryItem:
-      description: An item within an Etsy Registry
-      properties:
-        requested_count:
-          description: Quantity requested for the registry item
-          minimum: 0
-          type: integer
-        purchased_count:
-          description: Quantity purchased for the registry item
-          minimum: 0
-          type: integer
-        title:
-          description: Listing title
-          type: string
-        image_url:
-          description: URL of the main product listing
-          type: string
-        price:
-          description: Listing price in cents; 0 if sold out / unvailable
-          minimum: 0
-          type: integer
-        sales_price:
-          description: "Listing price if on sale, otherwise null"
-          minimum: 0
-          nullable: true
-          type: integer
-        listing_id:
-          description: Listing ID
-          type: string
-        listing_customization_id:
-          description: Listing customization id
-          type: string
-        shop_name:
-          description: Name of the listing's shop
-          type: string
-        shop_id:
-          description: ID of the listing's shop
-          minimum: 1
-          type: integer
-        category_id:
-          description: ID of listing category
-          minimum: 0
-          type: integer
-        category_title:
-          description: Title of listing category
-          type: string
-        is_unavailable:
-          description: Registry item is unavailable for purchasing
-          type: boolean
-        listing_url:
-          description: Listing URL
-          type: string
-        registry_item_url:
-          description: Link to the registry item within the registry
-          type: string
       type: object
     Self:
       description: Represents a single user of the site
@@ -12977,10 +12855,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/UserAddress'
       description: An array of UserAddress resources.
-    RegistryItems_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/RegistryItem'
-      description: The RegistryItems resources found.
   securitySchemes:
     api_key:
       description: "Every request to a v3 API endpoint must include this data, with\
@@ -13015,7 +12889,6 @@ components:
             shops_w: update shop
             transactions_r: see all checkout/payment data
             transactions_w: update receipts
-            registries_r: see all registry data
           tokenUrl: https://openapi.etsy.com/v3/public/oauth/token
       type: oauth2
 x-tagGroups:
@@ -13043,9 +12916,6 @@ x-tagGroups:
   tags:
   - Shop Receipt
   - Shop Receipt Transactions
-- name: Registry Management
-  tags:
-  - Registries
 - name: Review Management
   tags:
   - Review

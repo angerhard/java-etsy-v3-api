@@ -13,25 +13,41 @@
 
 package org.openapitools.client.model;
 
-import com.google.gson.*;
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import org.openapitools.client.JSON;
+import java.io.IOException;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import java.io.IOException;
-import java.util.Arrays;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Objects;
 import java.util.Set;
+
+import org.openapitools.client.JSON;
 
 /**
  * List of payment adjustment line items.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-02T22:46:35.595209100+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
 public class PaymentAdjustmentPaymentAdjustmentItemsInner {
   public static final String SERIALIZED_NAME_PAYMENT_ADJUSTMENT_ID = "payment_adjustment_id";
   @SerializedName(SERIALIZED_NAME_PAYMENT_ADJUSTMENT_ID)
@@ -47,11 +63,11 @@ public class PaymentAdjustmentPaymentAdjustmentItemsInner {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Long amount = 0L;
+  private Long amount = 0;
 
   public static final String SERIALIZED_NAME_SHOP_AMOUNT = "shop_amount";
   @SerializedName(SERIALIZED_NAME_SHOP_AMOUNT)
-  private Long shopAmount = 0L;
+  private Long shopAmount = 0;
 
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transaction_id";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)

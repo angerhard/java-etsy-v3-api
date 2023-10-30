@@ -13,12 +13,12 @@
 
 package org.openapitools.client.auth;
 
-import org.openapitools.client.ApiException;
 import org.openapitools.client.Pair;
+import org.openapitools.client.ApiException;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
 public interface Authentication {
     /**
