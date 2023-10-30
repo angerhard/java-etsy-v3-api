@@ -13,11 +13,9 @@
 
 package org.openapitools.client.model;
 
-import org.openapitools.client.ApiException;
-import java.util.Objects;
-import java.lang.reflect.Type;
-import java.util.Map;
 import javax.ws.rs.core.GenericType;
+import java.util.Map;
+import java.util.Objects;
 
 //import com.fasterxml.jackson.annotation.JsonValue;
 

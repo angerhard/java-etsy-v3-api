@@ -13,48 +13,17 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.*;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.openapitools.client.model.PaymentAccountLedgerEntryPaymentAdjustmentsInner;
-import org.openapitools.client.model.PaymentAdjustedFees;
-import org.openapitools.client.model.PaymentAdjustedGross;
-import org.openapitools.client.model.PaymentAdjustedNet;
-import org.openapitools.client.model.PaymentAmountFees;
-import org.openapitools.client.model.PaymentAmountGross;
-import org.openapitools.client.model.PaymentAmountNet;
-import org.openapitools.client.model.PaymentPostedFees;
-import org.openapitools.client.model.PaymentPostedGross;
-import org.openapitools.client.model.PaymentPostedNet;
+import org.openapitools.client.JSON;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
-
-import org.openapitools.client.JSON;
 
 /**
  * Represents a payment made with Etsy Payments. All monetary amounts are in USD pennies unless otherwise specified.
