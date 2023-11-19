@@ -1,3 +1,15 @@
+Welcome to my customised version of the etsy-v3-api-client, designed exclusively for accessing the Etsy API v3. My goal is to always include the latest updates to the Etsy API v3 to ensure that this library is always up to date. Please note that this product is completely independent and is neither an official representative of nor endorsed by Etsy.
+
+You can import this library with maven:
+```xml
+<dependency>
+  <groupId>de.andreasgerhard.etsyapi</groupId>
+  <artifactId>etsy-v3-api-client</artifactId>
+  <version>1.3.1</version>
+</dependency>
+```
+
+
 # etsy-v3-api-client
 
 Etsy Open API v3
