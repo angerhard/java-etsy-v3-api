@@ -9,160 +9,68 @@
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>git@github.com:angerhard/java-etsy-v3-api.git</connection>
+        <developerConnection>git@github.com:angerhard/java-etsy-v3-api.git</developerConnection>
+        <url>https://github.com/angerhard/java-etsy-v3-api</url>
     </scm>
 
     <licenses>
         <license>
-            <name>Unlicense</name>
-            <url>http://unlicense.org</url>
-            <distribution>repo</distribution>
+            <name>MIT License</name>
+            <url>https://spdx.org/licenses/MIT.html</url>
         </license>
     </licenses>
 
+    <issueManagement>
+        <url>https://github.com/angerhard/java-etsy-v3-api/issues</url>
+        <system>GitHub</system>
+    </issueManagement>
+
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
-            <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <email>me@andreas-gerhard.com</email>
+            <name>Andreas Gerhard</name>
+            <url>https://github.com/angerhard</url>
+            <id>angerhard</id>
         </developer>
     </developers>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>github</id>
-            <name>GitHub AnGerhard repo</name>
-            <url>https://maven.pkg.github.com/angerhard/java-etsy-v3-api</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
     <build>
         <plugins>
-           <plugin>
+
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M7</version>
+
                 <configuration>
-                    <fork>true</fork>
-                    <meminitial>128m</meminitial>
-                    <maxmem>512m</maxmem>
-                    <compilerArgs>
-                        <arg>-Xlint:all</arg>
-                        <arg>-J-Xss4m</arg><!-- Compiling the generated JSON.java file may require larger stack size. -->
-                    </compilerArgs>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <goals>deploy</goals>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>enforce-maven</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireMavenVersion>
-                                    <version>2.2.0</version>
-                                </requireMavenVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>loggerPath</name>
-                            <value>conf/log4j.properties</value>
-                        </property>
-                    </systemProperties>
-                    <argLine>-Xms512m -Xmx1500m</argLine>
-                    <parallel>methods</parallel>
-                    <threadCount>10</threadCount>
-                </configuration>
-                <dependencies>
-                    <!--Custom provider and engine for Junit 5 to surefire-->
-                    <dependency>
-                        <groupId>org.junit.jupiter</groupId>
-                        <artifactId>junit-jupiter-engine</artifactId>
-                        <version>${junit-version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <!-- attach test jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <id>add_sources</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>add-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/main/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>add_test_sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>src/test/java</source>
-                            </sources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -186,6 +94,7 @@
                     </tags>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -199,60 +108,40 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Use spotless plugin to automatically format code, remove unused import, etc
-                 To apply changes directly to the file, run `mvn spotless:apply`
-                 Ref: https://github.com/diffplug/spotless/tree/main/plugin-maven
-            -->
+
             <plugin>
-              <groupId>com.diffplug.spotless</groupId>
-              <artifactId>spotless-maven-plugin</artifactId>
-              <version>${spotless.version}</version>
-              <configuration>
-                <formats>
-                  <!-- you can define as many formats as you want, each is independent -->
-                  <format>
-                    <!-- define the files to apply to -->
-                    <includes>
-                      <include>.gitignore</include>
-                    </includes>
-                    <!-- define the steps to apply to those files -->
-                    <trimTrailingWhitespace/>
-                    <endWithNewline/>
-                    <indent>
-                      <spaces>true</spaces> <!-- or <tabs>true</tabs> -->
-                      <spacesPerTab>4</spacesPerTab> <!-- optional, default is 4 -->
-                    </indent>
-                  </format>
-                </formats>
-                <!-- define a language-specific format -->
-                <java>
-                  <!-- no need to specify files, inferred automatically, but you can if you want -->
-
-                  <!-- apply a specific flavor of google-java-format and reflow long strings -->
-                  <googleJavaFormat>
-                    <version>1.8</version>
-                    <style>AOSP</style>
-                    <reflowLongStrings>true</reflowLongStrings>
-                  </googleJavaFormat>
-
-                  <removeUnusedImports/>
-                  <importOrder/>
-
-                </java>
-              </configuration>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.13</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
 
     <profiles>
         <profile>
             <id>sign-artifacts</id>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.0.1</version>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -260,6 +149,9 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <keyname>Andreas Gerhard</keyname>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
@@ -309,6 +201,11 @@
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20231013</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.19.4</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
