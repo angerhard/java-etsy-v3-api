@@ -13,16 +13,10 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import org.openapitools.client.model.ErrorSchema;
-import org.openapitools.client.model.RegistryItems;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.model.RegistryItems;
 
 /**
  * API tests for RegistriesApi

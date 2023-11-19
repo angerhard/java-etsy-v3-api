@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * The numeric total discounted price for the receipt when using a discount (percent or fixed) coupon. Free shipping coupons are not included in this discount amount.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class ShopReceiptDiscountAmt {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)

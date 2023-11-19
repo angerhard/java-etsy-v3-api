@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 /**
  * A JSON array of products available in a listing, even if only one product. All field names in the JSON blobs are lowercase.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class ListingInventoryProductsInner {
   public static final String SERIALIZED_NAME_PRODUCT_ID = "product_id";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)

@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 /**
  * Represents a list of listing video resources, each of which contains the reference URLs for the videos.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class ListingVideos {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)

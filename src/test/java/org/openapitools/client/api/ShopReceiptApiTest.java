@@ -17,7 +17,6 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.ShopReceipt;
-import org.openapitools.client.model.ShopReceipts;
 
 /**
  * API tests for ShopReceiptApi

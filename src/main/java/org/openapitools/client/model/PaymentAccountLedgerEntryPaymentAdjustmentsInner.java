@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * List of refund objects on an Etsy Payments transaction. All monetary amounts are in USD pennies unless otherwise specified.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class PaymentAccountLedgerEntryPaymentAdjustmentsInner {
   public static final String SERIALIZED_NAME_PAYMENT_ADJUSTMENT_ID = "payment_adjustment_id";
   @SerializedName(SERIALIZED_NAME_PAYMENT_ADJUSTMENT_ID)

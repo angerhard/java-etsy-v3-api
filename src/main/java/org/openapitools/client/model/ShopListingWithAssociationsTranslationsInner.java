@@ -28,7 +28,7 @@ import java.util.Map.Entry;
 /**
  * An array of translations for the listing. Default value is an empty array.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class ShopListingWithAssociationsTranslationsInner {
   public static final String SERIALIZED_NAME_LISTING_ID = "listing_id";
   @SerializedName(SERIALIZED_NAME_LISTING_ID)

@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * The total value of the fees posted once the purchase ships. Etsy refunds a proportional amount of the fees when a seller refunds a buyer. When the seller issues a refund prior to shipping, the posted amount is less then the original.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class PaymentPostedFees {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)

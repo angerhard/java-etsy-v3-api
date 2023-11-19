@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * Represents a single user of the site
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class Self {
   public static final String SERIALIZED_NAME_USER_ID = "user_id";
   @SerializedName(SERIALIZED_NAME_USER_ID)

@@ -29,7 +29,7 @@ import java.util.Set;
 /**
  * A shipping carrier&#39;s mail class, which is used to calculate an Estimated Delivery Date.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-30T11:53:28.314915500+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
 public class ShippingCarrierMailClass {
   public static final String SERIALIZED_NAME_MAIL_CLASS_KEY = "mail_class_key";
   @SerializedName(SERIALIZED_NAME_MAIL_CLASS_KEY)
