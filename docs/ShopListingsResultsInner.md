@@ -97,11 +97,11 @@ The ShopListing resources found.
 | Name | Value |
 |---- | -----|
 | MADE_TO_ORDER | &quot;made_to_order&quot; |
-| _2020_2023 | &quot;2020_2023&quot; |
+| _2020_2024 | &quot;2020_2024&quot; |
 | _2010_2019 | &quot;2010_2019&quot; |
-| _2004_2009 | &quot;2004_2009&quot; |
-| BEFORE_2004 | &quot;before_2004&quot; |
-| _2000_2003 | &quot;2000_2003&quot; |
+| _2005_2009 | &quot;2005_2009&quot; |
+| BEFORE_2005 | &quot;before_2005&quot; |
+| _2000_2004 | &quot;2000_2004&quot; |
 | _1990S | &quot;1990s&quot; |
 | _1980S | &quot;1980s&quot; |
 | _1970S | &quot;1970s&quot; |

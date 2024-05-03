@@ -65,7 +65,7 @@ The ShopListing resources found.
 |**inventory** | [**ShopListingWithAssociationsInventory**](ShopListingWithAssociationsInventory.md) |  |  [optional] |
 |**productionPartners** | [**List&lt;ShopListingWithAssociationsProductionPartnersInner&gt;**](ShopListingWithAssociationsProductionPartnersInner.md) | Represents a list of production partners for a shop. |  [optional] |
 |**skus** | **List&lt;String&gt;** | A list of SKU strings for the listing. SKUs will only appear if the requesting user owns the shop and a valid matching OAuth 2 token is provided. When requested without the token it will be an empty array. |  [optional] |
-|**translations** | [**List&lt;ShopListingWithAssociationsTranslationsInner&gt;**](ShopListingWithAssociationsTranslationsInner.md) | An array of translations for the listing. Default value is an empty array. |  [optional] |
+|**translations** | [**ShopListingWithAssociationsTranslations**](ShopListingWithAssociationsTranslations.md) |  |  [optional] |
 |**views** | **Long** | The number of times the listing has been viewed. This value is tabulated once per day and **only for active listings**, so the value is not real-time. If &#x60;0&#x60;, the listing has either not been viewed, not yet tabulated, was not active during the last tabulation or there was an error fetching the value. If a value is expected, call &#x60;getListing&#x60; to confirm the value. |  [optional] |
 
 
@@ -107,11 +107,11 @@ The ShopListing resources found.
 | Name | Value |
 |---- | -----|
 | MADE_TO_ORDER | &quot;made_to_order&quot; |
-| _2020_2023 | &quot;2020_2023&quot; |
+| _2020_2024 | &quot;2020_2024&quot; |
 | _2010_2019 | &quot;2010_2019&quot; |
-| _2004_2009 | &quot;2004_2009&quot; |
-| BEFORE_2004 | &quot;before_2004&quot; |
-| _2000_2003 | &quot;2000_2003&quot; |
+| _2005_2009 | &quot;2005_2009&quot; |
+| BEFORE_2005 | &quot;before_2005&quot; |
+| _2000_2004 | &quot;2000_2004&quot; |
 | _1990S | &quot;1990s&quot; |
 | _1980S | &quot;1980s&quot; |
 | _1970S | &quot;1970s&quot; |

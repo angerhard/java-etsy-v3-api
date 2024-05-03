@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2023 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -13,15 +13,35 @@
 
 package org.openapitools.client.api;
 
+import org.openapitools.client.ApiCallback;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.Pair;
+import org.openapitools.client.ProgressRequestBody;
+import org.openapitools.client.ProgressResponseBody;
+
 import com.google.gson.reflect.TypeToken;
-import org.openapitools.client.*;
-import org.openapitools.client.model.*;
+
+import java.io.IOException;
+
+
+import org.openapitools.client.model.ErrorSchema;
+import org.openapitools.client.model.ShippingCarriers;
+import org.openapitools.client.model.ShopShippingProfile;
+import org.openapitools.client.model.ShopShippingProfileDestination;
+import org.openapitools.client.model.ShopShippingProfileDestinations;
+import org.openapitools.client.model.ShopShippingProfileUpgrade;
+import org.openapitools.client.model.ShopShippingProfileUpgrades;
+import org.openapitools.client.model.ShopShippingProfiles;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ShopShippingProfileApi {
     private ApiClient localVarApiClient;
@@ -72,7 +92,7 @@ public class ShopShippingProfileApi {
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
      * @param destinationCountryIso The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided. (optional)
      * @param destinationRegion The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If &#x60;none&#x60;, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided. (optional, default to none)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional, default to )
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional, default to )
      * @param shippingCarrierId The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with &#x60;mail_class&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional, default to 0)
      * @param mailClass The unique ID string of a shipping carrier&#39;s mail class, which is used to calculate an estimated delivery date. **Required with &#x60;shipping_carrier_id&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional)
      * @param minDeliveryDays The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with &#x60;max_delivery_days&#x60;** if &#x60;mail_class&#x60; is null. (optional)
@@ -246,7 +266,7 @@ public class ShopShippingProfileApi {
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
      * @param destinationCountryIso The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided. (optional)
      * @param destinationRegion The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If &#x60;none&#x60;, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided. (optional, default to none)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional, default to )
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional, default to )
      * @param shippingCarrierId The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with &#x60;mail_class&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional, default to 0)
      * @param mailClass The unique ID string of a shipping carrier&#39;s mail class, which is used to calculate an estimated delivery date. **Required with &#x60;shipping_carrier_id&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional)
      * @param minDeliveryDays The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with &#x60;max_delivery_days&#x60;** if &#x60;mail_class&#x60; is null. (optional)
@@ -281,7 +301,7 @@ public class ShopShippingProfileApi {
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
      * @param destinationCountryIso The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided. (optional)
      * @param destinationRegion The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If &#x60;none&#x60;, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided. (optional, default to none)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional, default to )
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional, default to )
      * @param shippingCarrierId The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with &#x60;mail_class&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional, default to 0)
      * @param mailClass The unique ID string of a shipping carrier&#39;s mail class, which is used to calculate an estimated delivery date. **Required with &#x60;shipping_carrier_id&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional)
      * @param minDeliveryDays The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with &#x60;max_delivery_days&#x60;** if &#x60;mail_class&#x60; is null. (optional)
@@ -317,7 +337,7 @@ public class ShopShippingProfileApi {
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
      * @param destinationCountryIso The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided. (optional)
      * @param destinationRegion The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If &#x60;none&#x60;, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided. (optional, default to none)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional, default to )
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional, default to )
      * @param shippingCarrierId The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with &#x60;mail_class&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional, default to 0)
      * @param mailClass The unique ID string of a shipping carrier&#39;s mail class, which is used to calculate an estimated delivery date. **Required with &#x60;shipping_carrier_id&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. (optional)
      * @param minDeliveryDays The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with &#x60;max_delivery_days&#x60;** if &#x60;mail_class&#x60; is null. (optional)
@@ -2024,7 +2044,7 @@ public class ShopShippingProfileApi {
      * @param minProcessingTime The minimum time required to process to ship listings with this shipping profile. (optional)
      * @param maxProcessingTime The maximum processing time the listing needs to ship. (optional)
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional)
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2137,7 +2157,7 @@ public class ShopShippingProfileApi {
      * @param minProcessingTime The minimum time required to process to ship listings with this shipping profile. (optional)
      * @param maxProcessingTime The maximum processing time the listing needs to ship. (optional)
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional)
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional)
      * @return ShopShippingProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2167,7 +2187,7 @@ public class ShopShippingProfileApi {
      * @param minProcessingTime The minimum time required to process to ship listings with this shipping profile. (optional)
      * @param maxProcessingTime The maximum processing time the listing needs to ship. (optional)
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional)
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional)
      * @return ApiResponse&lt;ShopShippingProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2198,7 +2218,7 @@ public class ShopShippingProfileApi {
      * @param minProcessingTime The minimum time required to process to ship listings with this shipping profile. (optional)
      * @param maxProcessingTime The maximum processing time the listing needs to ship. (optional)
      * @param processingTimeUnit The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. (optional, default to business_days)
-     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. (optional)
+     * @param originPostalCode The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

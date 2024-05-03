@@ -64,7 +64,7 @@ public class Example {
     String processingTimeUnit = "business_days"; // String | The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\"business_days\\\".
     String destinationCountryIso = "destinationCountryIso_example"; // String | The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided.
     String destinationRegion = "eu"; // String | The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If `none`, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided.
-    String originPostalCode = ""; // String | The postal code string (not necessarily a number) for the location from which the listing ships. Required if the `origin_country_iso` is `US` or `CA`.
+    String originPostalCode = ""; // String | The postal code string (not necessarily a number) for the location from which the listing ships. Required if the `origin_country_iso` supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info
     Long shippingCarrierId = 0L; // Long | The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with `mail_class`** if `min_delivery_days` and `max_delivery_days` are null.
     String mailClass = "mailClass_example"; // String | The unique ID string of a shipping carrier's mail class, which is used to calculate an estimated delivery date. **Required with `shipping_carrier_id`** if `min_delivery_days` and `max_delivery_days` are null.
     Long minDeliveryDays = 56L; // Long | The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with `max_delivery_days`** if `mail_class` is null.
@@ -97,7 +97,7 @@ public class Example {
 | **processingTimeUnit** | **String**| The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. | [optional] [default to business_days] [enum: business_days, weeks] |
 | **destinationCountryIso** | **String**| The ISO code of the country to which the listing ships. If null, request sets destination to destination_region. Required if destination_region is null or not provided. | [optional] |
 | **destinationRegion** | **String**| The code of the region to which the listing ships. A region represents a set of countries. Supported regions are Europe Union and Non-Europe Union (countries in Europe not in EU). If &#x60;none&#x60;, request sets destination to destination_country_iso. Required if destination_country_iso is null or not provided. | [optional] [default to none] [enum: eu, non_eu, none] |
-| **originPostalCode** | **String**| The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. | [optional] [default to ] |
+| **originPostalCode** | **String**| The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info | [optional] [default to ] |
 | **shippingCarrierId** | **Long**| The unique ID of a supported shipping carrier, which is used to calculate an Estimated Delivery Date. **Required with &#x60;mail_class&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. | [optional] [default to 0] |
 | **mailClass** | **String**| The unique ID string of a shipping carrier&#39;s mail class, which is used to calculate an estimated delivery date. **Required with &#x60;shipping_carrier_id&#x60;** if &#x60;min_delivery_days&#x60; and &#x60;max_delivery_days&#x60; are null. | [optional] |
 | **minDeliveryDays** | **Long**| The minimum number of business days a buyer can expect to wait to receive their purchased item once it has shipped. **Required with &#x60;max_delivery_days&#x60;** if &#x60;mail_class&#x60; is null. | [optional] |
@@ -989,7 +989,7 @@ public class Example {
     Long minProcessingTime = 56L; // Long | The minimum time required to process to ship listings with this shipping profile.
     Long maxProcessingTime = 56L; // Long | The maximum processing time the listing needs to ship.
     String processingTimeUnit = "business_days"; // String | The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\"business_days\\\".
-    String originPostalCode = "originPostalCode_example"; // String | The postal code string (not necessarily a number) for the location from which the listing ships. Required if the `origin_country_iso` is `US` or `CA`.
+    String originPostalCode = "originPostalCode_example"; // String | The postal code string (not necessarily a number) for the location from which the listing ships. Required if the `origin_country_iso` supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info
     try {
       ShopShippingProfile result = apiInstance.updateShopShippingProfile(shopId, shippingProfileId, title, originCountryIso, minProcessingTime, maxProcessingTime, processingTimeUnit, originPostalCode);
       System.out.println(result);
@@ -1015,7 +1015,7 @@ public class Example {
 | **minProcessingTime** | **Long**| The minimum time required to process to ship listings with this shipping profile. | [optional] |
 | **maxProcessingTime** | **Long**| The maximum processing time the listing needs to ship. | [optional] |
 | **processingTimeUnit** | **String**| The unit used to represent how long a processing time is. A week is equivalent to 5 business days. If none is provided, the unit is set to \\\&quot;business_days\\\&quot;. | [optional] [default to business_days] [enum: business_days, weeks] |
-| **originPostalCode** | **String**| The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; is &#x60;US&#x60; or &#x60;CA&#x60;. | [optional] |
+| **originPostalCode** | **String**| The postal code string (not necessarily a number) for the location from which the listing ships. Required if the &#x60;origin_country_iso&#x60; supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes) for more info | [optional] |
 
 ### Return type
 

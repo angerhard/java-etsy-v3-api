@@ -13,7 +13,7 @@ List of Shop Receipt resources found, with all Shop Receipt fields for each reso
 |**sellerUserId** | **Long** | The numeric ID for the [user](/documentation/reference#tag/User) (seller) fulfilling the purchase. |  [optional] |
 |**sellerEmail** | **String** | The email address string for the seller of the listing. |  [optional] |
 |**buyerUserId** | **Long** | The numeric ID for the [user](/documentation/reference#tag/User) making the purchase. |  [optional] |
-|**buyerEmail** | **String** | The email address string for the buyer of the listing. |  [optional] |
+|**buyerEmail** | **String** | The email address string for the buyer of the listing. It will be null if access hasn&#39;t been granted. Access is case-by-case and subject to approval. |  [optional] |
 |**name** | **String** | The name string for the recipient in the shipping address. |  [optional] |
 |**firstLine** | **String** | The first address line string for the recipient in the shipping address. |  [optional] |
 |**secondLine** | **String** | The optional second address line string for the recipient in the shipping address. |  [optional] |
@@ -36,6 +36,7 @@ List of Shop Receipt resources found, with all Shop Receipt fields for each reso
 |**updatedTimestamp** | **Long** | The time of the last update to the receipt, in epoch seconds. |  [optional] |
 |**isGift** | **Boolean** | When true, the buyer indicated this purchase is a gift. |  [optional] |
 |**giftMessage** | **String** | A gift message string the buyer requests delivered with the product. |  [optional] |
+|**giftSender** | **String** | The name of the person who sent the gift. |  [optional] |
 |**grandtotal** | [**ShopReceiptGrandtotal**](ShopReceiptGrandtotal.md) |  |  [optional] |
 |**subtotal** | [**ShopReceiptSubtotal**](ShopReceiptSubtotal.md) |  |  [optional] |
 |**totalPrice** | [**ShopReceiptTotalPrice**](ShopReceiptTotalPrice.md) |  |  [optional] |

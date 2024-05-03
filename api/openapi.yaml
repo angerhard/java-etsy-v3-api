@@ -12,7 +12,7 @@ info:
     ) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"\
     wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design,\
     \ <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\"\
-    >please add an issue in Github</a>.</p></div>&copy; 2021-2023 Etsy, Inc. All Rights\
+    >please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights\
     \ Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0'\
     \ target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of\
     \ Use</a>."
@@ -1659,6 +1659,13 @@ paths:
                 $ref: '#/components/schemas/ErrorSchema'
           description: There was a problem with the request data. See the error message
             for details.
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem processing your request. See the error
+            message for details.
         "500":
           content:
             application/json:
@@ -2695,7 +2702,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. Note that this is a PATCH method type.
+        Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. Note that this is a PATCH method type. When activating, or manually renewing a physical listing, the shipping profile referenced by the `shipping_profile_id`, and all of its fields, along with its entries and upgrades must be complete and valid. If the shipping profile is not complete and valid, we will throw an exception with an error message that guides the request sender to update whatever data is bad.
       operationId: updateListing
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -7438,7 +7445,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Returns user profile for the user identified by a user ID.
+        Retrieves a user profile based on a unique user ID.                  Access is limited to profiles of the authenticated user                  or linked buyers. For the primary_email field, specific                  app-based permissions are required and granted case-by-case.
       operationId: getUser
       parameters:
       - description: ""
@@ -7842,6 +7849,7 @@ components:
         state_timestamp:
           description: The date and time of the last state change of this listing.
           minimum: 946684800
+          nullable: true
           type: integer
         quantity:
           description: "The positive non-zero number of products available for purchase\
@@ -7963,11 +7971,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2023
+          - 2020_2024
           - 2010_2019
-          - 2004_2009
-          - before_2004
-          - 2000_2003
+          - 2005_2009
+          - before_2005
+          - 2000_2004
           - 1990s
           - 1980s
           - 1970s
@@ -8199,9 +8207,7 @@ components:
         production_partners:
         - null
         - null
-        translations:
-        - null
-        - null
+        translations: null
         state: active
         images:
         - null
@@ -8320,6 +8326,7 @@ components:
         state_timestamp:
           description: The date and time of the last state change of this listing.
           minimum: 946684800
+          nullable: true
           type: integer
         quantity:
           description: "The positive non-zero number of products available for purchase\
@@ -8441,11 +8448,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2023
+          - 2020_2024
           - 2010_2019
-          - 2004_2009
-          - before_2004
-          - 2000_2003
+          - 2005_2009
+          - before_2005
+          - 2000_2004
           - 1990s
           - 1980s
           - 1970s
@@ -8586,11 +8593,7 @@ components:
             type: string
           type: array
         translations:
-          description: An array of translations for the listing. Default value is
-            an empty array.
-          items:
-            $ref: '#/components/schemas/ShopListingWithAssociations_translations_inner'
-          type: array
+          $ref: '#/components/schemas/ShopListingWithAssociations_translations'
         views:
           description: "The number of times the listing has been viewed. This value\
             \ is tabulated once per day and **only for active listings**, so the value\
@@ -8671,9 +8674,10 @@ components:
             $ref: '#/components/schemas/ShopShippingProfile_shipping_profile_upgrades_inner'
           type: array
         origin_postal_code:
-          description: The postal code string (not necessarily a number) for the location
-            from which the listing ships. Required if the `origin_country_iso` is
-            `US` or `CA`.
+          description: "The postal code string (not necessarily a number) for the\
+            \ location from which the listing ships. Required if the `origin_country_iso`\
+            \ supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes)\
+            \ for more info"
           nullable: true
           type: string
         profile_type:
@@ -8868,6 +8872,8 @@ components:
           type: integer
         primary_email:
           description: An email address string for the user\'s primary email address.
+            Access to this field is granted on a case by case basis for third-party
+            integrations that require full access
           format: email
           nullable: true
           type: string
@@ -9460,6 +9466,60 @@ components:
         location:
           description: A string representing the production partner location.
           type: string
+      type: object
+    ListingTranslations:
+      description: "Container for all current supported translations of a listing.\
+        \ Note that Etsy periodically adds/removes languages, so this list may change\
+        \ in the future."
+      properties:
+        de:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        en-GB:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        en-IN:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        en-US:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        es:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        fr:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        it:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        ja:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        nl:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        pl:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        pt:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
+        ru:
+          allOf:
+          - $ref: '#/components/schemas/ListingTranslation'
+          nullable: true
       type: object
     ListingTranslation:
       description: Represents the translation data for a Listing.
@@ -10247,6 +10307,7 @@ components:
         total_tax_cost: null
         name: name
         grandtotal: null
+        gift_sender: gift_sender
         gift_message: gift_message
         status: paid
       properties:
@@ -10276,7 +10337,9 @@ components:
           minimum: 1
           type: integer
         buyer_email:
-          description: The email address string for the buyer of the listing.
+          description: The email address string for the buyer of the listing. It will
+            be null if access hasn't been granted. Access is case-by-case and subject
+            to approval.
           nullable: true
           type: string
         name:
@@ -10333,6 +10396,7 @@ components:
         payment_email:
           description: The email address string for the email address to which to
             send payment confirmation
+          nullable: true
           type: string
         message_from_seller:
           description: An optional message string from the seller.
@@ -10375,6 +10439,9 @@ components:
         gift_message:
           description: A gift message string the buyer requests delivered with the
             product.
+          type: string
+        gift_sender:
+          description: The name of the person who sent the gift.
           type: string
         grandtotal:
           $ref: '#/components/schemas/ShopReceipt_grandtotal'
@@ -11071,6 +11138,7 @@ components:
           type: string
         zip:
           description: The zip code field of the user's address.
+          nullable: true
           type: string
         iso_country_code:
           description: The ISO code of the country in this address.
@@ -11159,11 +11227,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2023
+          - 2020_2024
           - 2010_2019
-          - 2004_2009
-          - before_2004
-          - 2000_2003
+          - 2005_2009
+          - before_2005
+          - 2000_2004
           - 1990s
           - 1980s
           - 1970s
@@ -11705,11 +11773,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2023
+          - 2020_2024
           - 2010_2019
-          - 2004_2009
-          - before_2004
-          - 2000_2003
+          - 2005_2009
+          - before_2005
+          - 2000_2004
           - 1990s
           - 1980s
           - 1970s
@@ -11922,11 +11990,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2023
+          - 2020_2024
           - 2010_2019
-          - 2004_2009
-          - before_2004
-          - 2000_2003
+          - 2005_2009
+          - before_2005
+          - 2000_2004
           - 1990s
           - 1980s
           - 1970s
@@ -12187,9 +12255,10 @@ components:
           type: string
         origin_postal_code:
           default: ""
-          description: The postal code string (not necessarily a number) for the location
-            from which the listing ships. Required if the `origin_country_iso` is
-            `US` or `CA`.
+          description: "The postal code string (not necessarily a number) for the\
+            \ location from which the listing ships. Required if the `origin_country_iso`\
+            \ supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes)\
+            \ for more info"
           type: string
         shipping_carrier_id:
           default: 0
@@ -12255,9 +12324,10 @@ components:
           - weeks
           type: string
         origin_postal_code:
-          description: The postal code string (not necessarily a number) for the location
-            from which the listing ships. Required if the `origin_country_iso` is
-            `US` or `CA`.
+          description: "The postal code string (not necessarily a number) for the\
+            \ location from which the listing ships. Required if the `origin_country_iso`\
+            \ supports postal codes. See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#countries-requiring-postal-codes)\
+            \ for more info"
           type: string
       type: object
     createShopShippingProfileDestination_request:
@@ -12537,14 +12607,17 @@ components:
       allOf:
       - $ref: '#/components/schemas/ShopShippingProfile'
       description: An array of data representing the shipping profile resource.
+      nullable: true
     ShopListingWithAssociations_user:
       allOf:
       - $ref: '#/components/schemas/User'
       description: Represents a single user of the site
+      nullable: true
     ShopListingWithAssociations_shop:
       allOf:
       - $ref: '#/components/schemas/Shop'
       description: A shop created by an Etsy user.
+      nullable: true
     ShopListingWithAssociations_images_inner:
       allOf:
       - $ref: '#/components/schemas/ListingImage'
@@ -12559,15 +12632,17 @@ components:
       - $ref: '#/components/schemas/ListingInventory'
       description: An enumerated string that attaches a valid association. Default
         value is null.
+      nullable: true
     ShopListingWithAssociations_production_partners_inner:
       allOf:
       - $ref: '#/components/schemas/ShopProductionPartner'
       description: Represents a list of production partners for a shop.
-    ShopListingWithAssociations_translations_inner:
+    ShopListingWithAssociations_translations:
       allOf:
-      - $ref: '#/components/schemas/ListingTranslation'
-      description: An array of translations for the listing. Default value is an empty
-        array.
+      - $ref: '#/components/schemas/ListingTranslations'
+      description: A map of translations for the listing. Default value is a map of
+        all supported languages keyed to null.
+      nullable: true
     ShopShippingProfile_shipping_profile_destinations_inner:
       allOf:
       - $ref: '#/components/schemas/ShopShippingProfileDestination'
@@ -12695,6 +12770,7 @@ components:
         \ to the ledger. Therefore, if the seller refunds first, we reduce the `amount_gross`\
         \ first and post then that amount. The seller never sees the refunded amount\
         \ in their ledger. This is equal to the \"Credit\" amount in the ledger entry."
+      nullable: true
     Payment_posted_fees:
       allOf:
       - $ref: '#/components/schemas/Money'
@@ -12702,26 +12778,31 @@ components:
         \ refunds a proportional amount of the fees when a seller refunds a buyer.\
         \ When the seller issues a refund prior to shipping, the posted amount is\
         \ less then the original."
+      nullable: true
     Payment_posted_net:
       allOf:
       - $ref: '#/components/schemas/Money'
       description: "The total value of the payment at the time of posting, less fees.\
         \ (`posted_gross` - `posted_fees`)"
+      nullable: true
     Payment_adjusted_gross:
       allOf:
       - $ref: '#/components/schemas/Money'
       description: "The gross payment amount after the seller refunds a payment, partially\
         \ or fully."
+      nullable: true
     Payment_adjusted_fees:
       allOf:
       - $ref: '#/components/schemas/Money'
       description: "The new fee amount after a seller refunds a payment, partially\
         \ or fully."
+      nullable: true
     Payment_adjusted_net:
       allOf:
       - $ref: '#/components/schemas/Money'
       description: "The total value of the payment after refunds, less fees (`adjusted_gross`\
         \ - `adjusted_fees`)."
+      nullable: true
     ShopReceipt_grandtotal:
       allOf:
       - $ref: '#/components/schemas/Money'
@@ -12874,7 +12955,7 @@ components:
             billing_r: see all billing statement data
             cart_r: read shopping carts
             cart_w: add/remove from shopping carts
-            email_r: Read a member's email address
+            email_r: read a user profile
             favorites_r: see private favorites
             favorites_w: add/remove favorites
             feedback_r: see purchase info in feedback

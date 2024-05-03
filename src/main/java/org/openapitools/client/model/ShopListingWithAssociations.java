@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2023 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -13,23 +13,52 @@
 
 package org.openapitools.client.model;
 
-import com.google.gson.*;
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import org.openapitools.client.JSON;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ShopListingPrice;
+import org.openapitools.client.model.ShopListingWithAssociationsImagesInner;
+import org.openapitools.client.model.ShopListingWithAssociationsInventory;
+import org.openapitools.client.model.ShopListingWithAssociationsProductionPartnersInner;
+import org.openapitools.client.model.ShopListingWithAssociationsShippingProfile;
+import org.openapitools.client.model.ShopListingWithAssociationsShop;
+import org.openapitools.client.model.ShopListingWithAssociationsTranslations;
+import org.openapitools.client.model.ShopListingWithAssociationsUser;
+import org.openapitools.client.model.ShopListingWithAssociationsVideosInner;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import java.io.IOException;
-import java.util.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+
+import org.openapitools.client.JSON;
 
 /**
  * A listing from a shop, which contains a product quantity, title, description, price, etc. and additional fields which represent associations.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-03T07:15:13.096948200+02:00[Europe/Berlin]")
 public class ShopListingWithAssociations {
   public static final String SERIALIZED_NAME_LISTING_ID = "listing_id";
   @SerializedName(SERIALIZED_NAME_LISTING_ID)
@@ -321,15 +350,15 @@ public class ShopListingWithAssociations {
   public enum WhenMadeEnum {
     MADE_TO_ORDER("made_to_order"),
     
-    _2020_2023("2020_2023"),
+    _2020_2024("2020_2024"),
     
     _2010_2019("2010_2019"),
     
-    _2004_2009("2004_2009"),
+    _2005_2009("2005_2009"),
     
-    BEFORE_2004("before_2004"),
+    BEFORE_2005("before_2005"),
     
-    _2000_2003("2000_2003"),
+    _2000_2004("2000_2004"),
     
     _1990S("1990s"),
     
@@ -601,7 +630,7 @@ public class ShopListingWithAssociations {
 
   public static final String SERIALIZED_NAME_TRANSLATIONS = "translations";
   @SerializedName(SERIALIZED_NAME_TRANSLATIONS)
-  private List<ShopListingWithAssociationsTranslationsInner> translations = new ArrayList<>();
+  private ShopListingWithAssociationsTranslations translations;
 
   public static final String SERIALIZED_NAME_VIEWS = "views";
   @SerializedName(SERIALIZED_NAME_VIEWS)
@@ -1937,32 +1966,24 @@ public class ShopListingWithAssociations {
   }
 
 
-  public ShopListingWithAssociations translations(List<ShopListingWithAssociationsTranslationsInner> translations) {
+  public ShopListingWithAssociations translations(ShopListingWithAssociationsTranslations translations) {
     
     this.translations = translations;
     return this;
   }
 
-  public ShopListingWithAssociations addTranslationsItem(ShopListingWithAssociationsTranslationsInner translationsItem) {
-    if (this.translations == null) {
-      this.translations = new ArrayList<>();
-    }
-    this.translations.add(translationsItem);
-    return this;
-  }
-
    /**
-   * An array of translations for the listing. Default value is an empty array.
+   * Get translations
    * @return translations
   **/
   @javax.annotation.Nullable
 
-  public List<ShopListingWithAssociationsTranslationsInner> getTranslations() {
+  public ShopListingWithAssociationsTranslations getTranslations() {
     return translations;
   }
 
 
-  public void setTranslations(List<ShopListingWithAssociationsTranslationsInner> translations) {
+  public void setTranslations(ShopListingWithAssociationsTranslations translations) {
     this.translations = translations;
   }
 
@@ -2359,19 +2380,9 @@ public class ShopListingWithAssociations {
       if (jsonObj.get("skus") != null && !jsonObj.get("skus").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `skus` to be an array in the JSON string but got `%s`", jsonObj.get("skus").toString()));
       }
+      // validate the optional field `translations`
       if (jsonObj.get("translations") != null && !jsonObj.get("translations").isJsonNull()) {
-        JsonArray jsonArraytranslations = jsonObj.getAsJsonArray("translations");
-        if (jsonArraytranslations != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("translations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `translations` to be an array in the JSON string but got `%s`", jsonObj.get("translations").toString()));
-          }
-
-          // validate the optional field `translations` (array)
-          for (int i = 0; i < jsonArraytranslations.size(); i++) {
-            ShopListingWithAssociationsTranslationsInner.validateJsonObject(jsonArraytranslations.get(i).getAsJsonObject());
-          };
-        }
+        ShopListingWithAssociationsTranslations.validateJsonObject(jsonObj.getAsJsonObject("translations"));
       }
   }
 

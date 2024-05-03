@@ -87,6 +87,7 @@ public class Example {
 | **404** | A resource could not be found. See the error message for details. |  -  |
 | **401** | The request lacks valid authentication credentials. See the error message for details. |  -  |
 | **400** | There was a problem with the request data. See the error message for details. |  -  |
+| **422** | There was a problem processing your request. See the error message for details. |  -  |
 | **500** | The server encountered an internal error. See the error message for details. |  -  |
 
 <a name="updateListingInventory"></a>

@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2023 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -13,23 +13,54 @@
 
 package org.openapitools.client.model;
 
-import com.google.gson.*;
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import org.openapitools.client.JSON;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ShopReceiptDiscountAmt;
+import org.openapitools.client.model.ShopReceiptGiftWrapPrice;
+import org.openapitools.client.model.ShopReceiptGrandtotal;
+import org.openapitools.client.model.ShopReceiptRefundsInner;
+import org.openapitools.client.model.ShopReceiptShipmentsInner;
+import org.openapitools.client.model.ShopReceiptSubtotal;
+import org.openapitools.client.model.ShopReceiptTotalPrice;
+import org.openapitools.client.model.ShopReceiptTotalShippingCost;
+import org.openapitools.client.model.ShopReceiptTotalTaxCost;
+import org.openapitools.client.model.ShopReceiptTotalVatCost;
+import org.openapitools.client.model.ShopReceiptTransactionsInner;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-import java.io.IOException;
-import java.util.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+
+import org.openapitools.client.JSON;
 
 /**
  * List of Shop Receipt resources found, with all Shop Receipt fields for each resource.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-19T12:04:22.379753700+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-03T07:15:13.096948200+02:00[Europe/Berlin]")
 public class ShopReceiptsResultsInner {
   public static final String SERIALIZED_NAME_RECEIPT_ID = "receipt_id";
   @SerializedName(SERIALIZED_NAME_RECEIPT_ID)
@@ -85,17 +116,17 @@ public class ShopReceiptsResultsInner {
   @JsonAdapter(StatusEnum.Adapter.class)
   public enum StatusEnum {
     PAID("Paid"),
-    
+
     COMPLETED("Completed"),
-    
+
     OPEN("Open"),
-    
+
     PAYMENT_PROCESSING("Payment Processing"),
-    
+
     CANCELED("Canceled"),
-    
+
     FULLY_REFUNDED("Fully Refunded"),
-    
+
     PARTIALLY_REFUNDED("Partially Refunded");
 
     private String value;
@@ -199,6 +230,10 @@ public class ShopReceiptsResultsInner {
   public static final String SERIALIZED_NAME_GIFT_MESSAGE = "gift_message";
   @SerializedName(SERIALIZED_NAME_GIFT_MESSAGE)
   private String giftMessage;
+
+  public static final String SERIALIZED_NAME_GIFT_SENDER = "gift_sender";
+  @SerializedName(SERIALIZED_NAME_GIFT_SENDER)
+  private String giftSender;
 
   public static final String SERIALIZED_NAME_GRANDTOTAL = "grandtotal";
   @SerializedName(SERIALIZED_NAME_GRANDTOTAL)
@@ -368,7 +403,7 @@ public class ShopReceiptsResultsInner {
   }
 
    /**
-   * The email address string for the buyer of the listing.
+   * The email address string for the buyer of the listing. It will be null if access hasn&#39;t been granted. Access is case-by-case and subject to approval.
    * @return buyerEmail
   **/
   @javax.annotation.Nullable
@@ -871,6 +906,28 @@ public class ShopReceiptsResultsInner {
   }
 
 
+  public ShopReceiptsResultsInner giftSender(String giftSender) {
+    
+    this.giftSender = giftSender;
+    return this;
+  }
+
+   /**
+   * The name of the person who sent the gift.
+   * @return giftSender
+  **/
+  @javax.annotation.Nullable
+
+  public String getGiftSender() {
+    return giftSender;
+  }
+
+
+  public void setGiftSender(String giftSender) {
+    this.giftSender = giftSender;
+  }
+
+
   public ShopReceiptsResultsInner grandtotal(ShopReceiptGrandtotal grandtotal) {
     
     this.grandtotal = grandtotal;
@@ -1175,6 +1232,7 @@ public class ShopReceiptsResultsInner {
         Objects.equals(this.updatedTimestamp, shopReceiptsResultsInner.updatedTimestamp) &&
         Objects.equals(this.isGift, shopReceiptsResultsInner.isGift) &&
         Objects.equals(this.giftMessage, shopReceiptsResultsInner.giftMessage) &&
+        Objects.equals(this.giftSender, shopReceiptsResultsInner.giftSender) &&
         Objects.equals(this.grandtotal, shopReceiptsResultsInner.grandtotal) &&
         Objects.equals(this.subtotal, shopReceiptsResultsInner.subtotal) &&
         Objects.equals(this.totalPrice, shopReceiptsResultsInner.totalPrice) &&
@@ -1194,7 +1252,7 @@ public class ShopReceiptsResultsInner {
 
   @Override
   public int hashCode() {
-    return Objects.hash(receiptId, receiptType, sellerUserId, sellerEmail, buyerUserId, buyerEmail, name, firstLine, secondLine, city, state, zip, status, formattedAddress, countryIso, paymentMethod, paymentEmail, messageFromSeller, messageFromBuyer, messageFromPayment, isPaid, isShipped, createTimestamp, createdTimestamp, updateTimestamp, updatedTimestamp, isGift, giftMessage, grandtotal, subtotal, totalPrice, totalShippingCost, totalTaxCost, totalVatCost, discountAmt, giftWrapPrice, shipments, transactions, refunds);
+    return Objects.hash(receiptId, receiptType, sellerUserId, sellerEmail, buyerUserId, buyerEmail, name, firstLine, secondLine, city, state, zip, status, formattedAddress, countryIso, paymentMethod, paymentEmail, messageFromSeller, messageFromBuyer, messageFromPayment, isPaid, isShipped, createTimestamp, createdTimestamp, updateTimestamp, updatedTimestamp, isGift, giftMessage, giftSender, grandtotal, subtotal, totalPrice, totalShippingCost, totalTaxCost, totalVatCost, discountAmt, giftWrapPrice, shipments, transactions, refunds);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1236,6 +1294,7 @@ public class ShopReceiptsResultsInner {
     sb.append("    updatedTimestamp: ").append(toIndentedString(updatedTimestamp)).append("\n");
     sb.append("    isGift: ").append(toIndentedString(isGift)).append("\n");
     sb.append("    giftMessage: ").append(toIndentedString(giftMessage)).append("\n");
+    sb.append("    giftSender: ").append(toIndentedString(giftSender)).append("\n");
     sb.append("    grandtotal: ").append(toIndentedString(grandtotal)).append("\n");
     sb.append("    subtotal: ").append(toIndentedString(subtotal)).append("\n");
     sb.append("    totalPrice: ").append(toIndentedString(totalPrice)).append("\n");
@@ -1297,6 +1356,7 @@ public class ShopReceiptsResultsInner {
     openapiFields.add("updated_timestamp");
     openapiFields.add("is_gift");
     openapiFields.add("gift_message");
+    openapiFields.add("gift_sender");
     openapiFields.add("grandtotal");
     openapiFields.add("subtotal");
     openapiFields.add("total_price");
@@ -1383,6 +1443,9 @@ public class ShopReceiptsResultsInner {
       }
       if ((jsonObj.get("gift_message") != null && !jsonObj.get("gift_message").isJsonNull()) && !jsonObj.get("gift_message").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `gift_message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gift_message").toString()));
+      }
+      if ((jsonObj.get("gift_sender") != null && !jsonObj.get("gift_sender").isJsonNull()) && !jsonObj.get("gift_sender").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gift_sender` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gift_sender").toString()));
       }
       // validate the optional field `grandtotal`
       if (jsonObj.get("grandtotal") != null && !jsonObj.get("grandtotal").isJsonNull()) {

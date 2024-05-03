@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2023 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -13,8 +13,21 @@
 
 package org.openapitools.client.api;
 
+import org.openapitools.client.ApiCallback;
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.ApiResponse;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.Pair;
+import org.openapitools.client.ProgressRequestBody;
+import org.openapitools.client.ProgressResponseBody;
+
 import com.google.gson.reflect.TypeToken;
-import org.openapitools.client.*;
+
+import java.io.IOException;
+
+
+import org.openapitools.client.model.ErrorSchema;
 import org.openapitools.client.model.ListingInventory;
 import org.openapitools.client.model.ListingInventoryWithAssociations;
 import org.openapitools.client.model.UpdateListingInventoryRequest;
@@ -24,6 +37,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ShopListingInventoryApi {
     private ApiClient localVarApiClient;
@@ -77,6 +91,7 @@ public class ShopListingInventoryApi {
         <tr><td> 404 </td><td> A resource could not be found. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> The request lacks valid authentication credentials. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> There was a problem with the request data. See the error message for details. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> There was a problem processing your request. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
@@ -159,6 +174,7 @@ public class ShopListingInventoryApi {
         <tr><td> 404 </td><td> A resource could not be found. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> The request lacks valid authentication credentials. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> There was a problem with the request data. See the error message for details. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> There was a problem processing your request. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
@@ -182,6 +198,7 @@ public class ShopListingInventoryApi {
         <tr><td> 404 </td><td> A resource could not be found. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> The request lacks valid authentication credentials. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> There was a problem with the request data. See the error message for details. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> There was a problem processing your request. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
@@ -207,6 +224,7 @@ public class ShopListingInventoryApi {
         <tr><td> 404 </td><td> A resource could not be found. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> The request lacks valid authentication credentials. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> There was a problem with the request data. See the error message for details. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> There was a problem processing your request. See the error message for details. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */

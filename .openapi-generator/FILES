@@ -39,6 +39,7 @@ docs/ListingReview.md
 docs/ListingReviews.md
 docs/ListingReviewsResultsInner.md
 docs/ListingTranslation.md
+docs/ListingTranslations.md
 docs/ListingVariationImage.md
 docs/ListingVariationImages.md
 docs/ListingVariationImagesResultsInner.md
@@ -103,7 +104,7 @@ docs/ShopListingWithAssociationsInventory.md
 docs/ShopListingWithAssociationsProductionPartnersInner.md
 docs/ShopListingWithAssociationsShippingProfile.md
 docs/ShopListingWithAssociationsShop.md
-docs/ShopListingWithAssociationsTranslationsInner.md
+docs/ShopListingWithAssociationsTranslations.md
 docs/ShopListingWithAssociationsUser.md
 docs/ShopListingWithAssociationsVideosInner.md
 docs/ShopListings.md
@@ -276,6 +277,7 @@ src/main/java/org/openapitools/client/model/ListingReview.java
 src/main/java/org/openapitools/client/model/ListingReviews.java
 src/main/java/org/openapitools/client/model/ListingReviewsResultsInner.java
 src/main/java/org/openapitools/client/model/ListingTranslation.java
+src/main/java/org/openapitools/client/model/ListingTranslations.java
 src/main/java/org/openapitools/client/model/ListingVariationImage.java
 src/main/java/org/openapitools/client/model/ListingVariationImages.java
 src/main/java/org/openapitools/client/model/ListingVariationImagesResultsInner.java
@@ -326,7 +328,7 @@ src/main/java/org/openapitools/client/model/ShopListingWithAssociationsInventory
 src/main/java/org/openapitools/client/model/ShopListingWithAssociationsProductionPartnersInner.java
 src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShippingProfile.java
 src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShop.java
-src/main/java/org/openapitools/client/model/ShopListingWithAssociationsTranslationsInner.java
+src/main/java/org/openapitools/client/model/ShopListingWithAssociationsTranslations.java
 src/main/java/org/openapitools/client/model/ShopListingWithAssociationsUser.java
 src/main/java/org/openapitools/client/model/ShopListingWithAssociationsVideosInner.java
 src/main/java/org/openapitools/client/model/ShopListings.java
@@ -404,3 +406,5 @@ src/main/java/org/openapitools/client/model/User.java
 src/main/java/org/openapitools/client/model/UserAddress.java
 src/main/java/org/openapitools/client/model/UserAddresses.java
 src/main/java/org/openapitools/client/model/UserAddressesResultsInner.java
+src/test/java/org/openapitools/client/model/ListingTranslationsTest.java
+src/test/java/org/openapitools/client/model/ShopListingWithAssociationsTranslationsTest.java
