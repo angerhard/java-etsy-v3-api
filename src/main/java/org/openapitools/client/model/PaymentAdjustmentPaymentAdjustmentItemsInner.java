@@ -63,11 +63,11 @@ public class PaymentAdjustmentPaymentAdjustmentItemsInner {
 
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Long amount = 0;
+  private Long amount = 0L;
 
   public static final String SERIALIZED_NAME_SHOP_AMOUNT = "shop_amount";
   @SerializedName(SERIALIZED_NAME_SHOP_AMOUNT)
-  private Long shopAmount = 0;
+  private Long shopAmount = 0L;
 
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transaction_id";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
