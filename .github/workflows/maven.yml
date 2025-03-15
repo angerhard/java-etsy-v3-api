@@ -15,16 +15,32 @@ jobs:
   build:
     name: Build Etsy Open API v3
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [ '8' ]
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: ${{ matrix.java }}
+        java-version: '17'
         distribution: 'temurin'
-        cache: maven
+        cache: 'maven'
+
+    - name: Verify Java Version
+      run: java -version
+
+    - name: Cache SonarQube packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    - name: Cache Maven packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2        
     - name: Build with Maven
-      run: mvn -B package --no-transfer-progress --file pom.xml
+      env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      run: mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angerhard_java-etsy-v3-api_19acdc69-4c3c-4e28-aee2-1cfb912be782 -Dsonar.projectName='java-etsy-v3-api' package --no-transfer-progress --file pom.xml
