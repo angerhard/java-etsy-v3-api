@@ -39,4 +39,4 @@ jobs:
       env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      run: mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angerhard_java-etsy-v3-api_9d97c603-6b58-4ddd-8ebf-14f14b96bdd4 -Dsonar.projectName='java-etsy-v3-api' package --no-transfer-progress --file pom.xml
+      run: mvn -B  verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=angerhard_java-etsy-v3-api_19acdc69-4c3c-4e28-aee2-1cfb912be782 -Dsonar.projectName='java-etsy-v3-api' package --no-transfer-progress --file pom.xml
