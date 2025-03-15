@@ -107,11 +107,11 @@ A listing from a shop, which contains a product quantity, title, description, pr
 | Name | Value |
 |---- | -----|
 | MADE_TO_ORDER | &quot;made_to_order&quot; |
-| _2020_2024 | &quot;2020_2024&quot; |
+| _2020_2025 | &quot;2020_2025&quot; |
 | _2010_2019 | &quot;2010_2019&quot; |
-| _2005_2009 | &quot;2005_2009&quot; |
-| BEFORE_2005 | &quot;before_2005&quot; |
-| _2000_2004 | &quot;2000_2004&quot; |
+| _2006_2009 | &quot;2006_2009&quot; |
+| BEFORE_2006 | &quot;before_2006&quot; |
+| _2000_2005 | &quot;2000_2005&quot; |
 | _1990S | &quot;1990s&quot; |
 | _1980S | &quot;1980s&quot; |
 | _1970S | &quot;1970s&quot; |

@@ -9,7 +9,7 @@ Represents several ShopShippingProfiles.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**count** | **Long** |  |  [optional] |
-|**results** | [**List&lt;ShopShippingProfilesResultsInner&gt;**](ShopShippingProfilesResultsInner.md) |  |  [optional] |
+|**results** | [**List&lt;ShopShippingProfile&gt;**](ShopShippingProfile.md) |  |  [optional] |
 
 
 
