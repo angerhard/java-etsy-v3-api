@@ -9,7 +9,7 @@ Represents a shop's listing-level return policies list.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**count** | **Long** |  |  [optional] |
-|**results** | [**List&lt;ShopReturnPoliciesResultsInner&gt;**](ShopReturnPoliciesResultsInner.md) |  |  [optional] |
+|**results** | [**List&lt;ShopReturnPolicy&gt;**](ShopReturnPolicy.md) |  |  [optional] |
 
 
 

@@ -9,7 +9,7 @@ Represents several ListingVariationImages.
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**count** | **Long** |  |  [optional] |
-|**results** | [**List&lt;ListingVariationImagesResultsInner&gt;**](ListingVariationImagesResultsInner.md) |  |  [optional] |
+|**results** | [**List&lt;ListingVariationImage&gt;**](ListingVariationImage.md) |  |  [optional] |
 
 
 

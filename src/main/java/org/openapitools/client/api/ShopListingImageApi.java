@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -840,7 +840,7 @@ public class ShopListingImageApi {
      * @param rank The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. (optional, default to 1)
      * @param overwrite When true, this request replaces the existing image at a given rank. (optional, default to false)
      * @param isWatermarked When true, indicates that the uploaded image has a watermark. (optional, default to false)
-     * @param altText Alt text for the listing image. Max length 250 characters. (optional, default to )
+     * @param altText Alt text for the listing image. Max length 500 characters. (optional, default to )
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -953,7 +953,7 @@ public class ShopListingImageApi {
      * @param rank The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. (optional, default to 1)
      * @param overwrite When true, this request replaces the existing image at a given rank. (optional, default to false)
      * @param isWatermarked When true, indicates that the uploaded image has a watermark. (optional, default to false)
-     * @param altText Alt text for the listing image. Max length 250 characters. (optional, default to )
+     * @param altText Alt text for the listing image. Max length 500 characters. (optional, default to )
      * @return ListingImage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -983,7 +983,7 @@ public class ShopListingImageApi {
      * @param rank The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. (optional, default to 1)
      * @param overwrite When true, this request replaces the existing image at a given rank. (optional, default to false)
      * @param isWatermarked When true, indicates that the uploaded image has a watermark. (optional, default to false)
-     * @param altText Alt text for the listing image. Max length 250 characters. (optional, default to )
+     * @param altText Alt text for the listing image. Max length 500 characters. (optional, default to )
      * @return ApiResponse&lt;ListingImage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1014,7 +1014,7 @@ public class ShopListingImageApi {
      * @param rank The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. (optional, default to 1)
      * @param overwrite When true, this request replaces the existing image at a given rank. (optional, default to false)
      * @param isWatermarked When true, indicates that the uploaded image has a watermark. (optional, default to false)
-     * @param altText Alt text for the listing image. Max length 250 characters. (optional, default to )
+     * @param altText Alt text for the listing image. Max length 500 characters. (optional, default to )
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

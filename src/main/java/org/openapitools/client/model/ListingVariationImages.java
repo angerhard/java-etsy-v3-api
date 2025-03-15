@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListingVariationImagesResultsInner;
+import org.openapitools.client.model.ListingVariationImage;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents several ListingVariationImages.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-05-03T07:15:13.096948200+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-15T11:53:41.521727200+01:00[Europe/Berlin]")
 public class ListingVariationImages {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -57,7 +57,7 @@ public class ListingVariationImages {
 
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)
-  private List<ListingVariationImagesResultsInner> results = new ArrayList<>();
+  private List<ListingVariationImage> results = new ArrayList<>();
 
   public ListingVariationImages() {
   }
@@ -85,13 +85,13 @@ public class ListingVariationImages {
   }
 
 
-  public ListingVariationImages results(List<ListingVariationImagesResultsInner> results) {
+  public ListingVariationImages results(List<ListingVariationImage> results) {
     
     this.results = results;
     return this;
   }
 
-  public ListingVariationImages addResultsItem(ListingVariationImagesResultsInner resultsItem) {
+  public ListingVariationImages addResultsItem(ListingVariationImage resultsItem) {
     if (this.results == null) {
       this.results = new ArrayList<>();
     }
@@ -105,12 +105,12 @@ public class ListingVariationImages {
   **/
   @javax.annotation.Nullable
 
-  public List<ListingVariationImagesResultsInner> getResults() {
+  public List<ListingVariationImage> getResults() {
     return results;
   }
 
 
-  public void setResults(List<ListingVariationImagesResultsInner> results) {
+  public void setResults(List<ListingVariationImage> results) {
     this.results = results;
   }
 
@@ -199,7 +199,7 @@ public class ListingVariationImages {
 
           // validate the optional field `results` (array)
           for (int i = 0; i < jsonArrayresults.size(); i++) {
-            ListingVariationImagesResultsInner.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
+            ListingVariationImage.validateJsonObject(jsonArrayresults.get(i).getAsJsonObject());
           };
         }
       }

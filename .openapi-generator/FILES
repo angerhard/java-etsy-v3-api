@@ -34,7 +34,6 @@ docs/ListingInventoryWithAssociations.md
 docs/ListingInventoryWithAssociationsListing.md
 docs/ListingPropertyValue.md
 docs/ListingPropertyValues.md
-docs/ListingPropertyValuesResultsInner.md
 docs/ListingReview.md
 docs/ListingReviews.md
 docs/ListingReviewsResultsInner.md
@@ -42,7 +41,6 @@ docs/ListingTranslation.md
 docs/ListingTranslations.md
 docs/ListingVariationImage.md
 docs/ListingVariationImages.md
-docs/ListingVariationImagesResultsInner.md
 docs/ListingVideo.md
 docs/ListingVideos.md
 docs/ListingVideosResultsInner.md
@@ -81,9 +79,10 @@ docs/ShippingCarrierDomesticClassesInner.md
 docs/ShippingCarrierInternationalClassesInner.md
 docs/ShippingCarrierMailClass.md
 docs/ShippingCarriers.md
-docs/ShippingCarriersResultsInner.md
 docs/Shop.md
 docs/ShopApi.md
+docs/ShopHolidayPreference.md
+docs/ShopHolidayPreferencesApi.md
 docs/ShopListing.md
 docs/ShopListingApi.md
 docs/ShopListingFile.md
@@ -141,7 +140,6 @@ docs/ShopReceiptsResultsInner.md
 docs/ShopRefund.md
 docs/ShopRefundAmount.md
 docs/ShopReturnPolicies.md
-docs/ShopReturnPoliciesResultsInner.md
 docs/ShopReturnPolicy.md
 docs/ShopReturnPolicyApi.md
 docs/ShopSection.md
@@ -163,7 +161,6 @@ docs/ShopShippingProfileUpgradeSecondaryPrice.md
 docs/ShopShippingProfileUpgrades.md
 docs/ShopShippingProfileUpgradesResultsInner.md
 docs/ShopShippingProfiles.md
-docs/ShopShippingProfilesResultsInner.md
 docs/Shops.md
 docs/ShopsResultsInner.md
 docs/TaxonomyNodeProperties.md
@@ -178,6 +175,7 @@ docs/TransactionReview.md
 docs/TransactionReviews.md
 docs/TransactionReviewsResultsInner.md
 docs/TransactionVariations.md
+docs/TypeDiscriminator.md
 docs/UpdateListingInventoryRequest.md
 docs/UpdateListingInventoryRequestProductsInner.md
 docs/UpdateListingInventoryRequestProductsInnerOfferingsInner.md
@@ -219,6 +217,7 @@ src/main/java/org/openapitools/client/api/PaymentApi.java
 src/main/java/org/openapitools/client/api/ReviewApi.java
 src/main/java/org/openapitools/client/api/SellerTaxonomyApi.java
 src/main/java/org/openapitools/client/api/ShopApi.java
+src/main/java/org/openapitools/client/api/ShopHolidayPreferencesApi.java
 src/main/java/org/openapitools/client/api/ShopListingApi.java
 src/main/java/org/openapitools/client/api/ShopListingFileApi.java
 src/main/java/org/openapitools/client/api/ShopListingImageApi.java
@@ -272,7 +271,6 @@ src/main/java/org/openapitools/client/model/ListingInventoryWithAssociations.jav
 src/main/java/org/openapitools/client/model/ListingInventoryWithAssociationsListing.java
 src/main/java/org/openapitools/client/model/ListingPropertyValue.java
 src/main/java/org/openapitools/client/model/ListingPropertyValues.java
-src/main/java/org/openapitools/client/model/ListingPropertyValuesResultsInner.java
 src/main/java/org/openapitools/client/model/ListingReview.java
 src/main/java/org/openapitools/client/model/ListingReviews.java
 src/main/java/org/openapitools/client/model/ListingReviewsResultsInner.java
@@ -280,7 +278,6 @@ src/main/java/org/openapitools/client/model/ListingTranslation.java
 src/main/java/org/openapitools/client/model/ListingTranslations.java
 src/main/java/org/openapitools/client/model/ListingVariationImage.java
 src/main/java/org/openapitools/client/model/ListingVariationImages.java
-src/main/java/org/openapitools/client/model/ListingVariationImagesResultsInner.java
 src/main/java/org/openapitools/client/model/ListingVideo.java
 src/main/java/org/openapitools/client/model/ListingVideos.java
 src/main/java/org/openapitools/client/model/ListingVideosResultsInner.java
@@ -315,8 +312,8 @@ src/main/java/org/openapitools/client/model/ShippingCarrierDomesticClassesInner.
 src/main/java/org/openapitools/client/model/ShippingCarrierInternationalClassesInner.java
 src/main/java/org/openapitools/client/model/ShippingCarrierMailClass.java
 src/main/java/org/openapitools/client/model/ShippingCarriers.java
-src/main/java/org/openapitools/client/model/ShippingCarriersResultsInner.java
 src/main/java/org/openapitools/client/model/Shop.java
+src/main/java/org/openapitools/client/model/ShopHolidayPreference.java
 src/main/java/org/openapitools/client/model/ShopListing.java
 src/main/java/org/openapitools/client/model/ShopListingFile.java
 src/main/java/org/openapitools/client/model/ShopListingFiles.java
@@ -362,7 +359,6 @@ src/main/java/org/openapitools/client/model/ShopReceiptsResultsInner.java
 src/main/java/org/openapitools/client/model/ShopRefund.java
 src/main/java/org/openapitools/client/model/ShopRefundAmount.java
 src/main/java/org/openapitools/client/model/ShopReturnPolicies.java
-src/main/java/org/openapitools/client/model/ShopReturnPoliciesResultsInner.java
 src/main/java/org/openapitools/client/model/ShopReturnPolicy.java
 src/main/java/org/openapitools/client/model/ShopSection.java
 src/main/java/org/openapitools/client/model/ShopSections.java
@@ -381,7 +377,6 @@ src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradeSecondaryP
 src/main/java/org/openapitools/client/model/ShopShippingProfileUpgrades.java
 src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradesResultsInner.java
 src/main/java/org/openapitools/client/model/ShopShippingProfiles.java
-src/main/java/org/openapitools/client/model/ShopShippingProfilesResultsInner.java
 src/main/java/org/openapitools/client/model/Shops.java
 src/main/java/org/openapitools/client/model/ShopsResultsInner.java
 src/main/java/org/openapitools/client/model/TaxonomyNodeProperties.java
@@ -396,6 +391,7 @@ src/main/java/org/openapitools/client/model/TransactionReview.java
 src/main/java/org/openapitools/client/model/TransactionReviews.java
 src/main/java/org/openapitools/client/model/TransactionReviewsResultsInner.java
 src/main/java/org/openapitools/client/model/TransactionVariations.java
+src/main/java/org/openapitools/client/model/TypeDiscriminator.java
 src/main/java/org/openapitools/client/model/UpdateListingInventoryRequest.java
 src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInner.java
 src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerOfferingsInner.java
@@ -406,5 +402,6 @@ src/main/java/org/openapitools/client/model/User.java
 src/main/java/org/openapitools/client/model/UserAddress.java
 src/main/java/org/openapitools/client/model/UserAddresses.java
 src/main/java/org/openapitools/client/model/UserAddressesResultsInner.java
-src/test/java/org/openapitools/client/model/ListingTranslationsTest.java
-src/test/java/org/openapitools/client/model/ShopListingWithAssociationsTranslationsTest.java
+src/test/java/org/openapitools/client/api/ShopHolidayPreferencesApiTest.java
+src/test/java/org/openapitools/client/model/ShopHolidayPreferenceTest.java
+src/test/java/org/openapitools/client/model/TypeDiscriminatorTest.java

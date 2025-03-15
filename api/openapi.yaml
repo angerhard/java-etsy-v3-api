@@ -12,7 +12,7 @@ info:
     ) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"\
     wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design,\
     \ <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\"\
-    >please add an issue in Github</a>.</p></div>&copy; 2021-2024 Etsy, Inc. All Rights\
+    >please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights\
     \ Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0'\
     \ target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of\
     \ Use</a>."
@@ -35,6 +35,7 @@ tags:
 - name: ShopListing
 - name: Shop ProductionPartner
 - name: Shop Return Policy
+- name: Shop HolidayPreferences
 - name: SellerTaxonomy
 - name: Review
 - name: Shop Receipt
@@ -57,6 +58,7 @@ paths:
 
         Retrieves the full hierarchy tree of buyer taxonomy nodes.
       operationId: getBuyerTaxonomyNodes
+      parameters: []
       responses:
         "200":
           content:
@@ -2702,7 +2704,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. Note that this is a PATCH method type. When activating, or manually renewing a physical listing, the shipping profile referenced by the `shipping_profile_id`, and all of its fields, along with its entries and upgrades must be complete and valid. If the shipping profile is not complete and valid, we will throw an exception with an error message that guides the request sender to update whatever data is bad.
+        Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. Note that this is a PATCH method type. When activating, or manually renewing a physical listing, the shipping profile referenced by the `shipping_profile_id`, and all of its fields, along with its entries and upgrades must be complete and valid. If the shipping profile is not complete and valid, we will throw an exception with an error message that guides the request sender to update whatever data is bad.  Draft digital listings that are not made to order must have a file upload associated with it to be activated. If the listing is made to order, the file upload is not required.
       operationId: updateListing
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -3753,6 +3755,7 @@ paths:
 
         Check to confirm connectivity to the Etsy API with an application
       operationId: ping
+      parameters: []
       responses:
         "200":
           content:
@@ -3788,7 +3791,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Retrieves a receipt, identified by a receipt id, from an Etsy shop
+        Retrieves a receipt, identified by a receipt id, from an Etsy shop. **NOTE** Access to ShopReceipt's first_line, second_line, city, state, zip, country_iso and formatted_address is contingent in some regions to a preferred partnership status with Etsy
       operationId: getShopReceipt
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -3865,7 +3868,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Updates the status of a receipt, identified by a receipt id, from an Etsy shop
+        Updates the status of a receipt, identified by a receipt id, from an Etsy shop. **NOTE** Access to ShopReceipt's first_line, second_line, city, state, zip, country_iso and formatted_address is contingent in some regions to a preferred partnership status with Etsy
       operationId: updateShopReceipt
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -3949,7 +3952,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-        Requests the Shop Receipts from a specific Shop, unfiltered or filtered by receipt id range or offset, date, paid, and/or shipped purchases.
+        Requests the Shop Receipts from a specific Shop, unfiltered or filtered by receipt id range or offset, date, paid, and/or shipped purchases. **NOTE** Access to ShopReceipt's first_line, second_line, city, state, zip, country_iso and formatted_address is contingent in some regions to a preferred partnership status with Etsy
       operationId: getShopReceipts
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -4262,21 +4265,10 @@ paths:
       x-accepts: application/json
   /v3/application/shops/{shop_id}/receipts/{receipt_id}/tracking:
     post:
-      description: "<div class=\"wt-display-flex-xs wt-align-items-center wt-mt-xs-2\
-        \ wt-mb-xs-3\"><span class=\"wt-badge wt-badge--notificationPrimary wt-bg-slime-tint\
-        \ wt-mr-xs-2\">General Release</span><a class=\"wt-text-link\" href=\"https://github.com/etsy/open-api/discussions\"\
-        \ target=\"_blank\" rel=\"noopener noreferrer\">Report bug</a></div><div class=\"\
-        wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3\"><p class=\"\
-        wt-text-body-01 banner-text\">This endpoint is ready for production use.</p></div>\n\
-        \nSubmits tracking information for a Shop Receipt, which creates a Shop Receipt\
-        \ Shipment entry for the given receipt_id. Each time you successfully submit\
-        \ tracking info, Etsy sends a notification email to the buyer User. When send_bcc\
-        \ is true, Etsy sends shipping notifications to the seller as well. When tracking_code\
-        \ and carrier_name aren't sent, the receipt is marked as shipped only. If\
-        \ the carrier is not supported, you may use `other` as the carrier name so\
-        \ you can provide the tracking code. **NOTE** When shipping within the United\
-        \ States AND the order is over $10 _or_ when shipping to India, tracking code\
-        \ and carrier name ARE required. "
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Submits tracking information for a Shop Receipt, which creates a Shop Receipt Shipment entry for the given receipt_id. Each time you successfully submit tracking info, Etsy sends a notification email to the buyer User. When send_bcc is true, Etsy sends shipping notifications to the seller as well. When tracking_code and carrier_name aren't sent, the receipt is marked as shipped only. If the carrier is not supported, you may use `other` as the carrier name so you can provide the tracking code. **NOTES** When shipping within the United States AND the order is over $10 _or_ when shipping to India, tracking code and carrier name ARE required. Access to ShopReceipt's first_line, second_line, city, state, zip, country_iso and formatted_address is contingent in some regions to a preferred partnership status with Etsy
       operationId: createReceiptShipment
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -4633,6 +4625,7 @@ paths:
 
         Retrieves the full hierarchy tree of seller taxonomy nodes.
       operationId: getSellerTaxonomyNodes
+      parameters: []
       responses:
         "200":
           content:
@@ -4939,6 +4932,239 @@ paths:
             for details.
       tags:
       - Shop
+      x-accepts: application/json
+  /v3/application/shops/{shop_id}/holiday-preferences:
+    get:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Retrieves a list of holidays that are available to a shop to set a preference for. Currently only supported in the US and CA
+      operationId: getHolidayPreferences
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          minimum: 1
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ShopHolidayPreference'
+                type: array
+          description: A list of holiday preferences
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request attempted to perform an operation it is not allowed
+            to. See the error message for details.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_r
+      tags:
+      - Shop HolidayPreferences
+      x-accepts: application/json
+  /v3/application/shops/{shop_id}/holiday-preferences/{holiday_id}:
+    put:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+            Updates the preference for whether the seller will process orders or not on the holiday.     "Currently only supported in the US and CA"
+      operationId: updateHolidayPreferences
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          minimum: 1
+          type: integer
+        style: simple
+      - description: "The unique id that maps to the holiday a country observes. See\
+          \ the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#country-holidays)\
+          \ for more info"
+        explode: false
+        in: path
+        name: holiday_id
+        required: true
+        schema:
+          description: "The unique id that maps to the holiday a country observes.\
+            \ See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#country-holidays)\
+            \ for more info"
+          enum:
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+          - "5"
+          - "6"
+          - "7"
+          - "8"
+          - "9"
+          - "10"
+          - "11"
+          - "12"
+          - "13"
+          - "14"
+          - "15"
+          - "16"
+          - "17"
+          - "18"
+          - "19"
+          - "20"
+          - "21"
+          - "22"
+          - "23"
+          - "24"
+          - "25"
+          - "26"
+          - "27"
+          - "28"
+          - "29"
+          - "30"
+          - "31"
+          - "32"
+          - "33"
+          - "34"
+          - "35"
+          - "36"
+          - "37"
+          - "38"
+          - "39"
+          - "40"
+          - "41"
+          - "42"
+          - "43"
+          - "44"
+          - "45"
+          - "46"
+          - "47"
+          - "48"
+          - "49"
+          - "50"
+          - "51"
+          - "52"
+          - "53"
+          - "54"
+          - "55"
+          - "56"
+          - "57"
+          - "58"
+          - "59"
+          - "60"
+          - "61"
+          - "62"
+          - "63"
+          - "64"
+          - "65"
+          - "66"
+          - "67"
+          - "68"
+          - "69"
+          - "70"
+          - "71"
+          - "72"
+          - "73"
+          - "74"
+          - "75"
+          - "76"
+          - "77"
+          - "78"
+          - "79"
+          - "80"
+          - "81"
+          - "82"
+          - "83"
+          - "84"
+          - "85"
+          - "86"
+          - "87"
+          - "88"
+          - "89"
+          - "90"
+          - "91"
+          - "92"
+          - "93"
+          - "94"
+          - "95"
+          - "96"
+          - "97"
+          - "98"
+          - "99"
+          - "100"
+          - "101"
+          - "102"
+          - "103"
+          - "104"
+          - "105"
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/updateHolidayPreferences_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopHolidayPreference'
+          description: The updated holiday preferences
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request attempted to perform an operation it is not allowed
+            to. See the error message for details.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_w
+      tags:
+      - Shop HolidayPreferences
+      x-content-type: application/x-www-form-urlencoded
       x-accepts: application/json
   /v3/application/shops:
     get:
@@ -7074,6 +7300,7 @@ paths:
 
         Check the scopes of the provided token
       operationId: tokenScopes
+      parameters: []
       requestBody:
         content:
           application/x-www-form-urlencoded:
@@ -7505,6 +7732,7 @@ paths:
 
         Returns basic info for the user making the request.
       operationId: getMe
+      parameters: []
       responses:
         "200":
           content:
@@ -7548,6 +7776,15 @@ paths:
       x-accepts: application/json
 components:
   schemas:
+    TypeDiscriminator:
+      properties:
+        __type:
+          description: field used to determine the type of the object when deserializing
+            union type responses
+          type: string
+      required:
+      - __type
+      type: object
     BuyerTaxonomyNodes:
       description: A list of taxonomy nodes from the buyer taxonomy tree.
       example:
@@ -7971,11 +8208,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2024
+          - 2020_2025
           - 2010_2019
-          - 2005_2009
-          - before_2005
-          - 2000_2004
+          - 2006_2009
+          - before_2006
+          - 2000_2005
           - 1990s
           - 1980s
           - 1970s
@@ -8448,11 +8685,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2024
+          - 2020_2025
           - 2010_2019
-          - 2005_2009
-          - before_2005
-          - 2000_2004
+          - 2006_2009
+          - before_2006
+          - 2000_2005
           - 1990s
           - 1980s
           - 1970s
@@ -8614,11 +8851,11 @@ components:
         - null
         profile_type: manual
         min_processing_days: 0
-        domestic_handling_fee: 0.5637377
+        domestic_handling_fee: 0.23021358
         title: title
         max_processing_days: 0
         shipping_profile_id: 1
-        international_handling_fee: 0.23021358
+        international_handling_fee: 0.7061401
         is_deleted: true
         user_id: 1
         origin_country_iso: origin_country_iso
@@ -8681,6 +8918,7 @@ components:
           nullable: true
           type: string
         profile_type:
+          default: manual
           enum:
           - manual
           - calculated
@@ -9259,7 +9497,7 @@ components:
           nullable: true
           type: integer
         alt_text:
-          description: Alt text for the listing image. Max length 250 characters.
+          description: Alt text for the listing image. Max length 500 characters.
           nullable: true
           type: string
       type: object
@@ -9647,15 +9885,33 @@ components:
       example:
         count: 0
         results:
-        - null
-        - null
+        - scale_id: 1
+          values:
+          - values
+          - values
+          value_ids:
+          - 1
+          - 1
+          property_id: 1
+          property_name: property_name
+          scale_name: scale_name
+        - scale_id: 1
+          values:
+          - values
+          - values
+          value_ids:
+          - 1
+          - 1
+          property_id: 1
+          property_name: property_name
+          scale_name: scale_name
       properties:
         count:
           minimum: 0
           type: integer
         results:
           items:
-            $ref: '#/components/schemas/ListingPropertyValues_results_inner'
+            $ref: '#/components/schemas/ListingPropertyValue'
           type: array
       type: object
     ShopReceiptTransactions:
@@ -9874,20 +10130,31 @@ components:
       example:
         count: 0
         results:
-        - null
-        - null
+        - value_id: 1
+          image_id: 1
+          value: value
+          property_id: 1
+        - value_id: 1
+          image_id: 1
+          value: value
+          property_id: 1
       properties:
         count:
           minimum: 0
           type: integer
         results:
           items:
-            $ref: '#/components/schemas/ListingVariationImages_results_inner'
+            $ref: '#/components/schemas/ListingVariationImage'
           type: array
       type: object
     ListingVariationImage:
       description: A representation of the associations of variations and images on
         a listing.
+      example:
+        value_id: 1
+        image_id: 1
+        value: value
+        property_id: 1
       properties:
         property_id:
           description: The numeric ID of the Property.
@@ -10348,6 +10615,7 @@ components:
         first_line:
           description: The first address line string for the recipient in the shipping
             address.
+          nullable: true
           type: string
         second_line:
           description: The optional second address line string for the recipient in
@@ -10356,6 +10624,7 @@ components:
           type: string
         city:
           description: The city string for the recipient in the shipping address.
+          nullable: true
           type: string
         state:
           description: The state string for the recipient in the shipping address.
@@ -10364,6 +10633,7 @@ components:
         zip:
           description: The zip code string (not necessarily a number) for the recipient
             in the shipping address.
+          nullable: true
           type: string
         status:
           description: "The current order status string. One of: `paid`, `completed`,\
@@ -10380,10 +10650,12 @@ components:
         formatted_address:
           description: The formatted shipping address string for the recipient in
             the shipping address.
+          nullable: true
           type: string
         country_iso:
           description: The ISO-3166 alpha-2 country code string for the recipient
             in the shipping address.
+          nullable: true
           type: string
         payment_method:
           description: "The payment method string identifying purchaser's payment\
@@ -10864,20 +11136,43 @@ components:
       example:
         count: 0
         results:
-        - null
-        - null
+        - domestic_classes:
+          - null
+          - null
+          name: name
+          shipping_carrier_id: 1
+          international_classes:
+          - null
+          - null
+        - domestic_classes:
+          - null
+          - null
+          name: name
+          shipping_carrier_id: 1
+          international_classes:
+          - null
+          - null
       properties:
         count:
           minimum: 0
           type: integer
         results:
           items:
-            $ref: '#/components/schemas/ShippingCarriers_results_inner'
+            $ref: '#/components/schemas/ShippingCarrier'
           type: array
       type: object
     ShippingCarrier:
       description: "A supported shipping carrier, which is used to calculate an Estimated\
         \ Delivery Date."
+      example:
+        domestic_classes:
+        - null
+        - null
+        name: name
+        shipping_carrier_id: 1
+        international_classes:
+        - null
+        - null
       properties:
         shipping_carrier_id:
           description: The numeric ID of this shipping carrier.
@@ -10906,6 +11201,142 @@ components:
           type: string
         name:
           description: The name of this mail class.
+          type: string
+      type: object
+    ShopHolidayPreference:
+      description: Represents a shop's holiday preference
+      example:
+        shop_id: 1
+        holiday_id: "1"
+        is_working: true
+        country_iso: country_iso
+        holiday_name: holiday_name
+      properties:
+        shop_id:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          minimum: 1
+          type: integer
+        holiday_id:
+          description: "The unique id that maps to the holiday a country observes.\
+            \ See the [Fulfillment Tutorial docs](https://developer.etsy.com/documentation/tutorials/fulfillment/#country-holidays)\
+            \ for more info"
+          enum:
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+          - "5"
+          - "6"
+          - "7"
+          - "8"
+          - "9"
+          - "10"
+          - "11"
+          - "12"
+          - "13"
+          - "14"
+          - "15"
+          - "16"
+          - "17"
+          - "18"
+          - "19"
+          - "20"
+          - "21"
+          - "22"
+          - "23"
+          - "24"
+          - "25"
+          - "26"
+          - "27"
+          - "28"
+          - "29"
+          - "30"
+          - "31"
+          - "32"
+          - "33"
+          - "34"
+          - "35"
+          - "36"
+          - "37"
+          - "38"
+          - "39"
+          - "40"
+          - "41"
+          - "42"
+          - "43"
+          - "44"
+          - "45"
+          - "46"
+          - "47"
+          - "48"
+          - "49"
+          - "50"
+          - "51"
+          - "52"
+          - "53"
+          - "54"
+          - "55"
+          - "56"
+          - "57"
+          - "58"
+          - "59"
+          - "60"
+          - "61"
+          - "62"
+          - "63"
+          - "64"
+          - "65"
+          - "66"
+          - "67"
+          - "68"
+          - "69"
+          - "70"
+          - "71"
+          - "72"
+          - "73"
+          - "74"
+          - "75"
+          - "76"
+          - "77"
+          - "78"
+          - "79"
+          - "80"
+          - "81"
+          - "82"
+          - "83"
+          - "84"
+          - "85"
+          - "86"
+          - "87"
+          - "88"
+          - "89"
+          - "90"
+          - "91"
+          - "92"
+          - "93"
+          - "94"
+          - "95"
+          - "96"
+          - "97"
+          - "98"
+          - "99"
+          - "100"
+          - "101"
+          - "102"
+          - "103"
+          - "104"
+          - "105"
+          type: string
+        country_iso:
+          description: The country iso where the shop is located.
+          format: ISO 3166-1 alpha-2
+          type: string
+        is_working:
+          description: A boolean value for whether the shop will process orders on
+            a particular holiday.
+          type: boolean
+        holiday_name:
+          description: The name of the holiday that a country observes.
           type: string
       type: object
     Shops:
@@ -10960,15 +11391,23 @@ components:
       example:
         count: 0
         results:
-        - null
-        - null
+        - shop_id: 1
+          return_deadline: 1
+          accepts_returns: true
+          accepts_exchanges: true
+          return_policy_id: 1
+        - shop_id: 1
+          return_deadline: 1
+          accepts_returns: true
+          accepts_exchanges: true
+          return_policy_id: 1
       properties:
         count:
           minimum: 0
           type: integer
         results:
           items:
-            $ref: '#/components/schemas/ShopReturnPolicies_results_inner'
+            $ref: '#/components/schemas/ShopReturnPolicy'
           type: array
       type: object
     ShopProductionPartners:
@@ -11063,15 +11502,49 @@ components:
       example:
         count: 0
         results:
-        - null
-        - null
+        - shipping_profile_destinations:
+          - null
+          - null
+          profile_type: manual
+          min_processing_days: 0
+          domestic_handling_fee: 0.23021358
+          title: title
+          max_processing_days: 0
+          shipping_profile_id: 1
+          international_handling_fee: 0.7061401
+          is_deleted: true
+          user_id: 1
+          origin_country_iso: origin_country_iso
+          origin_postal_code: origin_postal_code
+          processing_days_display_label: processing_days_display_label
+          shipping_profile_upgrades:
+          - null
+          - null
+        - shipping_profile_destinations:
+          - null
+          - null
+          profile_type: manual
+          min_processing_days: 0
+          domestic_handling_fee: 0.23021358
+          title: title
+          max_processing_days: 0
+          shipping_profile_id: 1
+          international_handling_fee: 0.7061401
+          is_deleted: true
+          user_id: 1
+          origin_country_iso: origin_country_iso
+          origin_postal_code: origin_postal_code
+          processing_days_display_label: processing_days_display_label
+          shipping_profile_upgrades:
+          - null
+          - null
       properties:
         count:
           minimum: 0
           type: integer
         results:
           items:
-            $ref: '#/components/schemas/ShopShippingProfiles_results_inner'
+            $ref: '#/components/schemas/ShopShippingProfile'
           type: array
       type: object
     ShopShippingProfileUpgrades:
@@ -11227,11 +11700,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2024
+          - 2020_2025
           - 2010_2019
-          - 2005_2009
-          - before_2005
-          - 2000_2004
+          - 2006_2009
+          - before_2006
+          - 2000_2005
           - 1990s
           - 1980s
           - 1970s
@@ -11483,7 +11956,7 @@ components:
           type: boolean
         alt_text:
           default: ""
-          description: Alt text for the listing image. Max length 250 characters.
+          description: Alt text for the listing image. Max length 500 characters.
           type: string
       type: object
     updateListingInventory_request_products_inner_property_values_inner:
@@ -11773,11 +12246,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2024
+          - 2020_2025
           - 2010_2019
-          - 2005_2009
-          - before_2005
-          - 2000_2004
+          - 2006_2009
+          - before_2006
+          - 2000_2005
           - 1990s
           - 1980s
           - 1970s
@@ -11990,11 +12463,11 @@ components:
             heading. Requires 'is_supply' and 'who_made'.
           enum:
           - made_to_order
-          - 2020_2024
+          - 2020_2025
           - 2010_2019
-          - 2005_2009
-          - before_2005
-          - 2000_2004
+          - 2006_2009
+          - before_2006
+          - 2000_2005
           - 1990s
           - 1980s
           - 1970s
@@ -12157,6 +12630,15 @@ components:
           description: The shop's additional policies string (may be blank).
           type: string
       type: object
+    updateHolidayPreferences_request:
+      properties:
+        is_working:
+          description: A boolean value for whether the shop will process orders on
+            a particular holiday.
+          type: boolean
+      required:
+      - is_working
+      type: object
     consolidateShopReturnPolicies_request:
       properties:
         source_return_policy_id:
@@ -12229,8 +12711,8 @@ components:
         processing_time_unit:
           default: business_days
           description: "The unit used to represent how long a processing time is.\
-            \ A week is equivalent to 5 business days. If none is provided, the unit\
-            \ is set to \"business_days\"."
+            \ A week is equivalent to the set processing schedule (default to 5 business\
+            \ days). If none is provided, the unit is set to \"business_days\"."
           enum:
           - business_days
           - weeks
@@ -12317,8 +12799,8 @@ components:
         processing_time_unit:
           default: business_days
           description: "The unit used to represent how long a processing time is.\
-            \ A week is equivalent to 5 business days. If none is provided, the unit\
-            \ is set to \"business_days\"."
+            \ A week is equivalent to the set processing schedule (default to 5 business\
+            \ days). If none is provided, the unit is set to \"business_days\"."
           enum:
           - business_days
           - weeks
@@ -12703,9 +13185,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/ShopListingWithAssociations'
       description: The ShopListing resources found.
-    ListingPropertyValues_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/ListingPropertyValue'
     ShopReceiptTransactions_results_inner:
       allOf:
       - $ref: '#/components/schemas/ShopReceiptTransaction'
@@ -12722,9 +13201,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/TransactionVariations'
       description: Array of variations and personalizations the buyer chose.
-    ListingVariationImages_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/ListingVariationImage'
     ListingVideos_results_inner:
       allOf:
       - $ref: '#/components/schemas/ListingVideo'
@@ -12895,9 +13371,6 @@ components:
       - $ref: '#/components/schemas/TaxonomyPropertyValue'
       description: A list of property value strings automatically and always selected
         for the given property.
-    ShippingCarriers_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/ShippingCarrier'
     ShippingCarrier_domestic_classes_inner:
       allOf:
       - $ref: '#/components/schemas/ShippingCarrierMailClass'
@@ -12910,9 +13383,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/Shop'
       description: The Shop resources.
-    ShopReturnPolicies_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/ShopReturnPolicy'
     ShopProductionPartners_results_inner:
       allOf:
       - $ref: '#/components/schemas/ShopProductionPartner'
@@ -12925,9 +13395,6 @@ components:
       allOf:
       - $ref: '#/components/schemas/ShopShippingProfileDestination'
       description: The list of requested resources.
-    ShopShippingProfiles_results_inner:
-      allOf:
-      - $ref: '#/components/schemas/ShopShippingProfile'
     ShopShippingProfileUpgrades_results_inner:
       allOf:
       - $ref: '#/components/schemas/ShopShippingProfileUpgrade'
@@ -13002,6 +13469,7 @@ x-tagGroups:
   - Review
 - name: Shipping Management
   tags:
+  - Shop HolidayPreferences
   - Shop ShippingProfile
 - name: Shop Management
   tags:

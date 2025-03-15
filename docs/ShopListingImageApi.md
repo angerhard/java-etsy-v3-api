@@ -434,7 +434,7 @@ public class Example {
     Long rank = 1L; // Long | The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing.
     Boolean overwrite = false; // Boolean | When true, this request replaces the existing image at a given rank.
     Boolean isWatermarked = false; // Boolean | When true, indicates that the uploaded image has a watermark.
-    String altText = ""; // String | Alt text for the listing image. Max length 250 characters.
+    String altText = ""; // String | Alt text for the listing image. Max length 500 characters.
     try {
       ListingImage result = apiInstance.uploadListingImage(shopId, listingId, image, listingImageId, rank, overwrite, isWatermarked, altText);
       System.out.println(result);
@@ -460,7 +460,7 @@ public class Example {
 | **rank** | **Long**| The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. | [optional] [default to 1] |
 | **overwrite** | **Boolean**| When true, this request replaces the existing image at a given rank. | [optional] [default to false] |
 | **isWatermarked** | **Boolean**| When true, indicates that the uploaded image has a watermark. | [optional] [default to false] |
-| **altText** | **String**| Alt text for the listing image. Max length 250 characters. | [optional] [default to ] |
+| **altText** | **String**| Alt text for the listing image. Max length 500 characters. | [optional] [default to ] |
 
 ### Return type
 
