@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9bce1670-aa1c-4359-b25a-9b635e34c2df" name="Changes" comment="get new version of etsy api">
+      <change afterPath="$PROJECT_DIR$/run-openapi-data-retrievement.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.openapi-generator/FILES" beforeDir="false" afterPath="$PROJECT_DIR$/.openapi-generator/FILES" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/openapi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/openapi.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BuyerTaxonomyNode.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/BuyerTaxonomyNode.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BuyerTaxonomyNodeChildrenInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/BuyerTaxonomyNodeChildrenInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/BuyerTaxonomyNodesResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/BuyerTaxonomyNodesResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingImage.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingImage.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingImagesResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingImagesResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingInventory.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingInventory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingInventoryProductOffering.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingInventoryProductOffering.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingInventoryProductOfferingsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingInventoryProductOfferingsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingInventoryWithAssociations.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingInventoryWithAssociations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ListingInventoryWithAssociationsListing.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ListingInventoryWithAssociationsListing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Payment.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Payment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PaymentAccountLedgerEntryPaymentAdjustmentsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PaymentAccountLedgerEntryPaymentAdjustmentsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PaymentAdjustment.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PaymentAdjustment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PaymentAdjustmentItem.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PaymentAdjustmentItem.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PaymentAdjustmentPaymentAdjustmentItemsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PaymentAdjustmentPaymentAdjustmentItemsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/PaymentsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/PaymentsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Self.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Self.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/SellerTaxonomyNode.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SellerTaxonomyNode.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/SellerTaxonomyNodeChildrenInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SellerTaxonomyNodeChildrenInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/SellerTaxonomyNodesResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/SellerTaxonomyNodesResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Shop.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Shop.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopHolidayPreferencesApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopHolidayPreferencesApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListing.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingImageApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingImageApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingInventoryApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingInventoryApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingOfferingApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingOfferingApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingProductApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingProductApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingWithAssociations.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingWithAssociations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingWithAssociationsImagesInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingWithAssociationsImagesInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingWithAssociationsInventory.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingWithAssociationsInventory.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingWithAssociationsShop.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingWithAssociationsShop.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingWithAssociationsUser.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingWithAssociationsUser.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopListingsWithAssociationsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopListingsWithAssociationsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceipt.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceipt.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptTotalPrice.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptTotalPrice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptTransaction.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptTransaction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptTransactionsApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptTransactionsApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptTransactionsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptTransactionsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptTransactionsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptTransactionsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopReceiptsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopReceiptsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopShippingProfileDestination.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopShippingProfileDestination.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopShippingProfileDestinationsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopShippingProfileDestinationsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopShippingProfileShippingProfileDestinationsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopShippingProfileShippingProfileDestinationsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ShopsResultsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ShopsResultsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/UpdateListingInventoryRequest.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/UpdateListingInventoryRequest.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/UpdateListingInventoryRequestProductsInnerOfferingsInner.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/UpdateListingInventoryRequestProductsInnerOfferingsInner.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/User.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/User.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/UserAddressApi.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/UserAddressApi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/GzipRequestInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/GzipRequestInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/JSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/JSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ProgressRequestBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ProgressRequestBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ProgressResponseBody.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/ProgressResponseBody.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/BuyerTaxonomyApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/BuyerTaxonomyApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/LedgerEntryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/LedgerEntryApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/OtherApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/OtherApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/PaymentApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/PaymentApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ReviewApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ReviewApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/SellerTaxonomyApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/SellerTaxonomyApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopHolidayPreferencesApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopHolidayPreferencesApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingFileApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingFileApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingImageApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingImageApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingInventoryApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingInventoryApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingOfferingApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingOfferingApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingProductApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingProductApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingTranslationApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingTranslationApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingVariationImageApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingVariationImageApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingVideoApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopListingVideoApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopProductionPartnerApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopProductionPartnerApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReceiptApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReceiptApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReceiptTransactionsApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReceiptTransactionsApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReturnPolicyApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopReturnPolicyApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopSectionApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopSectionApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopShippingProfileApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/ShopShippingProfileApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/UserAddressApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/UserAddressApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/api/UserApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/ApiKeyAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/ApiKeyAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/HttpBasicAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/HttpBasicAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/HttpBearerAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/HttpBearerAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/OAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/OAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/OAuthFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/auth/OAuthFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeChildrenInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeChildrenInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertiesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertiesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodeProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyPossibleValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyPossibleValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyScalesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyScalesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertySelectedValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodePropertySelectedValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyNodesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyPropertyScale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyPropertyScale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyPropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/BuyerTaxonomyPropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ErrorSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ErrorSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImagesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingImagesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOffering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOffering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOfferingPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOfferingPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOfferingsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductOfferingsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductPropertyValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductPropertyValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryProductsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryWithAssociations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryWithAssociations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryWithAssociationsListing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingInventoryWithAssociationsListing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingPropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingPropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingPropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingPropertyValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReviewsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingReviewsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingTranslation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingTranslation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingTranslations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingTranslations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVariationImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVariationImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVariationImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVariationImages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideosResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ListingVideosResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Money.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntriesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntriesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntryPaymentAdjustmentsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAccountLedgerEntryPaymentAdjustmentsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedGross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedGross.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustedNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustmentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustmentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustmentPaymentAdjustmentItemsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAdjustmentPaymentAdjustmentItemsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountGross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountGross.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentAmountNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedFees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedFees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedGross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedGross.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentPostedNet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Payments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Payments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/PaymentsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Pong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Pong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Self.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Self.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodeChildrenInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodeChildrenInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/SellerTaxonomyNodesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierDomesticClassesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierDomesticClassesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierInternationalClassesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierInternationalClassesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierMailClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarrierMailClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarriers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShippingCarriers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopHolidayPreference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopHolidayPreference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFilesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingFilesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsImagesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsImagesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsProductionPartnersInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsProductionPartnersInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShippingProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShippingProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsTranslations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsTranslations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsVideosInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingWithAssociationsVideosInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsWithAssociations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsWithAssociations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsWithAssociationsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopListingsWithAssociationsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartnersResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopProductionPartnersResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptDiscountAmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptDiscountAmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptGiftWrapPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptGiftWrapPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptGrandtotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptGrandtotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptRefundsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptRefundsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptShipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptShipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptShipmentsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptShipmentsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptSubtotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptSubtotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalShippingCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalShippingCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalTaxCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalTaxCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalVatCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTotalVatCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionShippingCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionShippingCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionVariationsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionVariationsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptTransactionsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceipts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceipts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReceiptsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopRefund.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopRefund.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopRefundAmount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopRefundAmount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReturnPolicies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReturnPolicies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReturnPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopReturnPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSectionsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopSectionsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationPrimaryCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationPrimaryCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationSecondaryCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationSecondaryCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileDestinationsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileShippingProfileDestinationsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileShippingProfileDestinationsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileShippingProfileUpgradesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileShippingProfileUpgradesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradePrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradePrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradeSecondaryPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradeSecondaryPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgrades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgrades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfileUpgradesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopShippingProfiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Shops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/Shops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/ShopsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodeProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodeProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertiesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertiesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodeProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodeProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertyPossibleValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertyPossibleValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertyScalesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertyScalesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertySelectedValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyNodePropertySelectedValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyPropertyScale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyPropertyScale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyPropertyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TaxonomyPropertyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReviewsResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionReviewsResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionVariations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TransactionVariations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TypeDiscriminator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/TypeDiscriminator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerOfferingsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerOfferingsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerPropertyValuesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerPropertyValuesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateVariationImagesRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateVariationImagesRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateVariationImagesRequestVariationImagesInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UpdateVariationImagesRequestVariationImagesInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddresses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddresses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddressesResultsInner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/openapitools/client/model/UserAddressesResultsInner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/BuyerTaxonomyApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/LedgerEntryApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/OtherApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/PaymentApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/RegistriesApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ReviewApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/SellerTaxonomyApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopHolidayPreferencesApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingFileApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingImageApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingInventoryApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingOfferingApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingProductApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingTranslationApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingVariationImageApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopListingVideoApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopProductionPartnerApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopReceiptApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopReceiptTransactionsApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopReturnPolicyApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopSectionApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/ShopShippingProfileApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/UserAddressApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/api/UserApiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodeChildrenInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertiesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertiesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyPossibleValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyScalesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertySelectedValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodePropertyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyNodesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyPropertyScaleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/BuyerTaxonomyPropertyValueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ErrorSchemaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingImageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingImagesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingImagesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductOfferingPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductOfferingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductOfferingsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductPropertyValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryProductsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryWithAssociationsListingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingInventoryWithAssociationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingPropertyValueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingPropertyValuesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingPropertyValuesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingReviewTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingReviewsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingReviewsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingTranslationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingTranslationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVariationImageTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVariationImagesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVariationImagesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVideoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVideosResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ListingVideosTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/MoneyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAccountLedgerEntriesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAccountLedgerEntriesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAccountLedgerEntryPaymentAdjustmentsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAccountLedgerEntryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustedFeesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustedGrossTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustedNetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustmentItemTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustmentPaymentAdjustmentItemsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAdjustmentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAmountFeesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAmountGrossTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentAmountNetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentPostedFeesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentPostedGrossTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentPostedNetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PaymentsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/PongTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/RegistryItemTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/RegistryItemsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/RegistryItemsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/SelfTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/SellerTaxonomyNodeChildrenInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/SellerTaxonomyNodeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/SellerTaxonomyNodesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/SellerTaxonomyNodesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarrierDomesticClassesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarrierInternationalClassesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarrierMailClassTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarrierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarriersResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShippingCarriersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopHolidayPreferenceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingFileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingFilesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingFilesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsImagesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsInventoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsProductionPartnersInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsShippingProfileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsShopTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsTranslationsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsTranslationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsUserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingWithAssociationsVideosInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingsWithAssociationsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopListingsWithAssociationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopProductionPartnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopProductionPartnersResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopProductionPartnersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptDiscountAmtTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptGiftWrapPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptGrandtotalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptRefundsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptShipmentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptShipmentsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptSubtotalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTotalPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTotalShippingCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTotalTaxCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTotalVatCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionShippingCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionVariationsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptTransactionsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReceiptsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopRefundAmountTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopRefundTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReturnPoliciesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReturnPoliciesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopReturnPolicyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopSectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopSectionsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopSectionsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileDestinationPrimaryCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileDestinationSecondaryCostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileDestinationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileDestinationsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileDestinationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileShippingProfileDestinationsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileShippingProfileUpgradesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileUpgradePriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileUpgradeSecondaryPriceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileUpgradeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileUpgradesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfileUpgradesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfilesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopShippingProfilesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/ShopsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertiesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertiesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertyPossibleValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertyScalesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertySelectedValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyNodePropertyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyPropertyScaleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TaxonomyPropertyValueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TransactionReviewTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TransactionReviewsResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TransactionReviewsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TransactionVariationsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/TypeDiscriminatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerOfferingsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerPropertyValuesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateListingInventoryRequestProductsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateListingInventoryRequestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateVariationImagesRequestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UpdateVariationImagesRequestVariationImagesInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UserAddressTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UserAddressesResultsInnerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UserAddressesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/openapitools/client/model/UserTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "angerhard"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/angerhard/java-etsy-v3-api.git",
+    "accountId": "1e175b94-c401-45bb-b531-059eb962276c"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="31PgWixFlFJacIPXD2z2C7oIz82" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.All in etsy-v3-api-client (1).executor": "Run",
+    "JUnit.All in etsy-v3-api-client (2).executor": "Run",
+    "JUnit.All in etsy-v3-api-client (3).executor": "Run",
+    "JUnit.All in etsy-v3-api-client (4).executor": "Run",
+    "JUnit.All in etsy-v3-api-client (5).executor": "Run",
+    "JUnit.All in etsy-v3-api-client.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "etsy-regenerate-2025-08-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/agerhard/IdeaProjects/java-etsy-v3-api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in etsy-v3-api-client">
+    <configuration name="All in etsy-v3-api-client (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="etsy-v3-api-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in etsy-v3-api-client (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="etsy-v3-api-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in etsy-v3-api-client (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="etsy-v3-api-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in etsy-v3-api-client (5)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="etsy-v3-api-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in etsy-v3-api-client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="etsy-v3-api-client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in etsy-v3-api-client" />
+        <item itemvalue="JUnit.All in etsy-v3-api-client (5)" />
+        <item itemvalue="JUnit.All in etsy-v3-api-client (4)" />
+        <item itemvalue="JUnit.All in etsy-v3-api-client (3)" />
+        <item itemvalue="JUnit.All in etsy-v3-api-client (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bce1670-aa1c-4359-b25a-9b635e34c2df" name="Changes" comment="" />
+      <created>1755431154944</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1755431154944</updated>
+      <workItem from="1755431156816" duration="2339000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="f1b4d743-e72f-4839-a134-ab72d7aea4b3" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="f1b4d743-e72f-4839-a134-ab72d7aea4b3">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="get new version of etsy api" />
+    <option name="LAST_COMMIT_MESSAGE" value="get new version of etsy api" />
+  </component>
+</project>
