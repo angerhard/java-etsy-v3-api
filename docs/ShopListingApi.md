@@ -19,13 +19,12 @@ All URIs are relative to *https://openapi.etsy.com*
 | [**getListingsByShopReturnPolicy**](ShopListingApi.md#getListingsByShopReturnPolicy) | **GET** /v3/application/shops/{shop_id}/policies/return/{return_policy_id}/listings |  |
 | [**getListingsByShopSectionId**](ShopListingApi.md#getListingsByShopSectionId) | **GET** /v3/application/shops/{shop_id}/shop-sections/listings |  |
 | [**updateListing**](ShopListingApi.md#updateListing) | **PATCH** /v3/application/shops/{shop_id}/listings/{listing_id} |  |
-| [**updateListingDeprecated**](ShopListingApi.md#updateListingDeprecated) | **PUT** /v3/application/shops/{shop_id}/listings/{listing_id} |  |
 | [**updateListingProperty**](ShopListingApi.md#updateListingProperty) | **PUT** /v3/application/shops/{shop_id}/listings/{listing_id}/properties/{property_id} |  |
 
 
 <a name="createDraftListing"></a>
 # **createDraftListing**
-> ShopListing createDraftListing(shopId, quantity, title, description, price, whoMade, whenMade, taxonomyId, shippingProfileId, returnPolicyId, materials, shopSectionId, processingMin, processingMax, tags, styles, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, productionPartnerIds, imageIds, isSupply, isCustomizable, shouldAutoRenew, isTaxable, type)
+> ShopListing createDraftListing(shopId, quantity, title, description, price, whoMade, whenMade, taxonomyId, shippingProfileId, returnPolicyId, materials, shopSectionId, processingMin, processingMax, readinessStateId, tags, styles, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, productionPartnerIds, imageIds, isSupply, isCustomizable, shouldAutoRenew, isTaxable, type, legacy)
 
 
 
@@ -71,6 +70,7 @@ public class Example {
     Long shopSectionId = 56L; // Long | The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section) for this listing. Default value is null.
     Long processingMin = 56L; // Long | The minimum number of days required to process this listing. Default value is null.
     Long processingMax = 56L; // Long | The maximum number of days required to process this listing. Default value is null.
+    Long readinessStateId = 56L; // Long | The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition) associated with the listing. Required when listing type is `physical`.
     List<String> tags = Arrays.asList(); // List<String> | A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-'™©®]/u) Default value is null.
     List<String> styles = Arrays.asList(); // List<String> | An array of style strings for this listing, each of which is free-form text string such as \\\"Formal\\\", or \\\"Steampunk\\\". When creating or updating a listing, the listing may have up to two styles. Valid style strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null.
     Float itemWeight = 3.4F; // Float | The numeric weight of the product measured in units set in 'item_weight_unit'. Default value is null. If set, the value must be greater than 0.
@@ -90,8 +90,9 @@ public class Example {
     Boolean shouldAutoRenew = true; // Boolean | When true, renews a listing for four months upon expiration.
     Boolean isTaxable = true; // Boolean | When true, applicable [shop](/documentation/reference#tag/Shop) tax rates apply to this listing at checkout.
     String type = "physical"; // String | An enumerated type string that indicates whether the listing is physical or a digital download.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListing result = apiInstance.createDraftListing(shopId, quantity, title, description, price, whoMade, whenMade, taxonomyId, shippingProfileId, returnPolicyId, materials, shopSectionId, processingMin, processingMax, tags, styles, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, productionPartnerIds, imageIds, isSupply, isCustomizable, shouldAutoRenew, isTaxable, type);
+      ShopListing result = apiInstance.createDraftListing(shopId, quantity, title, description, price, whoMade, whenMade, taxonomyId, shippingProfileId, returnPolicyId, materials, shopSectionId, processingMin, processingMax, readinessStateId, tags, styles, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, productionPartnerIds, imageIds, isSupply, isCustomizable, shouldAutoRenew, isTaxable, type, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#createDraftListing");
@@ -122,6 +123,7 @@ public class Example {
 | **shopSectionId** | **Long**| The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section) for this listing. Default value is null. | [optional] |
 | **processingMin** | **Long**| The minimum number of days required to process this listing. Default value is null. | [optional] |
 | **processingMax** | **Long**| The maximum number of days required to process this listing. Default value is null. | [optional] |
+| **readinessStateId** | **Long**| The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition) associated with the listing. Required when listing type is &#x60;physical&#x60;. | [optional] |
 | **tags** | [**List&lt;String&gt;**](String.md)| A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, &#39;, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-&#39;™©®]/u) Default value is null. | [optional] |
 | **styles** | [**List&lt;String&gt;**](String.md)| An array of style strings for this listing, each of which is free-form text string such as \\\&quot;Formal\\\&quot;, or \\\&quot;Steampunk\\\&quot;. When creating or updating a listing, the listing may have up to two styles. Valid style strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null. | [optional] |
 | **itemWeight** | **Float**| The numeric weight of the product measured in units set in &#39;item_weight_unit&#39;. Default value is null. If set, the value must be greater than 0. | [optional] |
@@ -141,6 +143,7 @@ public class Example {
 | **shouldAutoRenew** | **Boolean**| When true, renews a listing for four months upon expiration. | [optional] |
 | **isTaxable** | **Boolean**| When true, applicable [shop](/documentation/reference#tag/Shop) tax rates apply to this listing at checkout. | [optional] |
 | **type** | **String**| An enumerated type string that indicates whether the listing is physical or a digital download. | [optional] [enum: physical, download, both] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -326,7 +329,7 @@ null (empty response body)
 
 <a name="findAllActiveListingsByShop"></a>
 # **findAllActiveListingsByShop**
-> ShopListings findAllActiveListingsByShop(shopId, limit, sortOn, sortOrder, offset, keywords)
+> ShopListings findAllActiveListingsByShop(shopId, limit, sortOn, sortOrder, offset, keywords, legacy)
 
 
 
@@ -360,8 +363,9 @@ public class Example {
     String sortOrder = "asc"; // String | The ascending(up) or descending(down) order to sort listings by. NOTE: sort_order only works when combined with one of the search options (keywords, region, etc.).
     Long offset = 0L; // Long | The number of records to skip before selecting the first result.
     String keywords = "keywords_example"; // String | Search term or phrase that must appear in all results.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListings result = apiInstance.findAllActiveListingsByShop(shopId, limit, sortOn, sortOrder, offset, keywords);
+      ShopListings result = apiInstance.findAllActiveListingsByShop(shopId, limit, sortOn, sortOrder, offset, keywords, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#findAllActiveListingsByShop");
@@ -384,6 +388,7 @@ public class Example {
 | **sortOrder** | **String**| The ascending(up) or descending(down) order to sort listings by. NOTE: sort_order only works when combined with one of the search options (keywords, region, etc.). | [optional] [default to desc] [enum: asc, ascending, desc, descending, up, down] |
 | **offset** | **Long**| The number of records to skip before selecting the first result. | [optional] [default to 0] |
 | **keywords** | **String**| Search term or phrase that must appear in all results. | [optional] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -408,7 +413,7 @@ public class Example {
 
 <a name="findAllListingsActive"></a>
 # **findAllListingsActive**
-> ShopListings findAllListingsActive(limit, offset, keywords, sortOn, sortOrder, minPrice, maxPrice, taxonomyId, shopLocation)
+> ShopListings findAllListingsActive(limit, offset, keywords, sortOn, sortOrder, minPrice, maxPrice, taxonomyId, shopLocation, legacy)
 
 
 
@@ -445,8 +450,9 @@ public class Example {
     Float maxPrice = 3.4F; // Float | The maximum price of listings to be returned by a search result.
     Long taxonomyId = 56L; // Long | The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy) and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for more information.
     String shopLocation = "shopLocation_example"; // String | Filters by shop location. If location cannot be parsed, Etsy responds with an error.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListings result = apiInstance.findAllListingsActive(limit, offset, keywords, sortOn, sortOrder, minPrice, maxPrice, taxonomyId, shopLocation);
+      ShopListings result = apiInstance.findAllListingsActive(limit, offset, keywords, sortOn, sortOrder, minPrice, maxPrice, taxonomyId, shopLocation, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#findAllListingsActive");
@@ -472,6 +478,7 @@ public class Example {
 | **maxPrice** | **Float**| The maximum price of listings to be returned by a search result. | [optional] |
 | **taxonomyId** | **Long**| The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy) and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for more information. | [optional] |
 | **shopLocation** | **String**| Filters by shop location. If location cannot be parsed, Etsy responds with an error. | [optional] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -571,7 +578,7 @@ public class Example {
 
 <a name="getListing"></a>
 # **getListing**
-> ShopListingWithAssociations getListing(listingId, includes, language)
+> ShopListingWithAssociations getListing(listingId, includes, language, legacy)
 
 
 
@@ -602,8 +609,9 @@ public class Example {
     Long listingId = 56L; // Long | The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction.
     List<String> includes = Arrays.asList(); // List<String> | An enumerated string that attaches a valid association. Acceptable inputs are 'Shipping', 'Shop', 'Images', 'User', 'Translations' and 'Inventory'.
     String language = "language_example"; // String | The IETF language tag for the language of this translation. Ex: `de`, `en`, `es`, `fr`, `it`, `ja`, `nl`, `pl`, `pt`.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListingWithAssociations result = apiInstance.getListing(listingId, includes, language);
+      ShopListingWithAssociations result = apiInstance.getListing(listingId, includes, language, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#getListing");
@@ -623,6 +631,7 @@ public class Example {
 | **listingId** | **Long**| The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. | |
 | **includes** | [**List&lt;String&gt;**](String.md)| An enumerated string that attaches a valid association. Acceptable inputs are &#39;Shipping&#39;, &#39;Shop&#39;, &#39;Images&#39;, &#39;User&#39;, &#39;Translations&#39; and &#39;Inventory&#39;. | [optional] [enum: Shipping, Images, Shop, User, Translations, Inventory, Videos] |
 | **language** | **String**| The IETF language tag for the language of this translation. Ex: &#x60;de&#x60;, &#x60;en&#x60;, &#x60;es&#x60;, &#x60;fr&#x60;, &#x60;it&#x60;, &#x60;ja&#x60;, &#x60;nl&#x60;, &#x60;pl&#x60;, &#x60;pt&#x60;. | [optional] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -870,7 +879,7 @@ public class Example {
 
 <a name="getListingsByShop"></a>
 # **getListingsByShop**
-> ShopListingsWithAssociations getListingsByShop(shopId, state, limit, offset, sortOn, sortOrder, includes)
+> ShopListingsWithAssociations getListingsByShop(shopId, state, limit, offset, sortOn, sortOrder, includes, legacy)
 
 
 
@@ -909,8 +918,9 @@ public class Example {
     String sortOn = "created"; // String | The value to sort a search result of listings on. NOTES: a) `sort_on` only works when combined with one of the search options (keywords, region, etc.). b) when using `score` the returned results will always be in _descending_ order, regardless of the `sort_order` parameter.
     String sortOrder = "asc"; // String | The ascending(up) or descending(down) order to sort listings by. NOTE: sort_order only works when combined with one of the search options (keywords, region, etc.).
     List<String> includes = Arrays.asList(); // List<String> | An enumerated string that attaches a valid association. Acceptable inputs are 'Shipping', 'Shop', 'Images', 'User', 'Translations' and 'Inventory'.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListingsWithAssociations result = apiInstance.getListingsByShop(shopId, state, limit, offset, sortOn, sortOrder, includes);
+      ShopListingsWithAssociations result = apiInstance.getListingsByShop(shopId, state, limit, offset, sortOn, sortOrder, includes, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#getListingsByShop");
@@ -934,6 +944,7 @@ public class Example {
 | **sortOn** | **String**| The value to sort a search result of listings on. NOTES: a) &#x60;sort_on&#x60; only works when combined with one of the search options (keywords, region, etc.). b) when using &#x60;score&#x60; the returned results will always be in _descending_ order, regardless of the &#x60;sort_order&#x60; parameter. | [optional] [default to created] [enum: created, price, updated, score] |
 | **sortOrder** | **String**| The ascending(up) or descending(down) order to sort listings by. NOTE: sort_order only works when combined with one of the search options (keywords, region, etc.). | [optional] [default to desc] [enum: asc, ascending, desc, descending, up, down] |
 | **includes** | [**List&lt;String&gt;**](String.md)| An enumerated string that attaches a valid association. Acceptable inputs are &#39;Shipping&#39;, &#39;Shop&#39;, &#39;Images&#39;, &#39;User&#39;, &#39;Translations&#39; and &#39;Inventory&#39;. | [optional] [enum: Shipping, Images, Shop, User, Translations, Inventory, Videos] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -1204,7 +1215,7 @@ public class Example {
 
 <a name="updateListing"></a>
 # **updateListing**
-> ShopListing updateListing(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, returnPolicyId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type)
+> ShopListing updateListing(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, returnPolicyId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type, legacy)
 
 
 
@@ -1257,7 +1268,7 @@ public class Example {
     List<String> tags = Arrays.asList(); // List<String> | A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-'™©®]/u) Default value is null.
     String whoMade = "i_did"; // String | An enumerated string indicating who made the product. Helps buyers locate the listing under the Handmade heading. Requires 'is_supply' and 'when_made'.
     String whenMade = "made_to_order"; // String | An enumerated string for the era in which the maker made the product in this listing. Helps buyers locate the listing under the Vintage heading. Requires 'is_supply' and 'who_made'.
-    Long featuredRank = 56L; // Long | The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop’s home page.
+    Long featuredRank = 56L; // Long | The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop's home page.
     Boolean isPersonalizable = true; // Boolean | When true, this listing is personalizable. The default value is null.
     Boolean personalizationIsRequired = true; // Boolean | When true, this listing requires personalization. The default value is null. Will only change if is_personalizable is 'true'.
     Long personalizationCharCountMax = 56L; // Long | This is an integer value representing the maximum length for the personalization message entered by the buyer. Will only change if is_personalizable is 'true'.
@@ -1266,8 +1277,9 @@ public class Example {
     Boolean isSupply = true; // Boolean | When true, tags the listing as a supply product, else indicates that it's a finished product. Helps buyers locate the listing under the Supplies heading. Requires 'who_made' and 'when_made'.
     List<Long> productionPartnerIds = Arrays.asList(); // List<Long> | An array of unique IDs of production partner ids.
     String type = "physical"; // String | An enumerated type string that indicates whether the listing is physical or a digital download.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopListing result = apiInstance.updateListing(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, returnPolicyId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type);
+      ShopListing result = apiInstance.updateListing(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, returnPolicyId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingApi#updateListing");
@@ -1305,7 +1317,7 @@ public class Example {
 | **tags** | [**List&lt;String&gt;**](String.md)| A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, &#39;, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-&#39;™©®]/u) Default value is null. | [optional] |
 | **whoMade** | **String**| An enumerated string indicating who made the product. Helps buyers locate the listing under the Handmade heading. Requires &#39;is_supply&#39; and &#39;when_made&#39;. | [optional] [enum: i_did, someone_else, collective] |
 | **whenMade** | **String**| An enumerated string for the era in which the maker made the product in this listing. Helps buyers locate the listing under the Vintage heading. Requires &#39;is_supply&#39; and &#39;who_made&#39;. | [optional] [enum: made_to_order, 2020_2025, 2010_2019, 2006_2009, before_2006, 2000_2005, 1990s, 1980s, 1970s, 1960s, 1950s, 1940s, 1930s, 1920s, 1910s, 1900s, 1800s, 1700s, before_1700] |
-| **featuredRank** | **Long**| The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop’s home page. | [optional] |
+| **featuredRank** | **Long**| The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop&#39;s home page. | [optional] |
 | **isPersonalizable** | **Boolean**| When true, this listing is personalizable. The default value is null. | [optional] |
 | **personalizationIsRequired** | **Boolean**| When true, this listing requires personalization. The default value is null. Will only change if is_personalizable is &#39;true&#39;. | [optional] |
 | **personalizationCharCountMax** | **Long**| This is an integer value representing the maximum length for the personalization message entered by the buyer. Will only change if is_personalizable is &#39;true&#39;. | [optional] |
@@ -1314,141 +1326,7 @@ public class Example {
 | **isSupply** | **Boolean**| When true, tags the listing as a supply product, else indicates that it&#39;s a finished product. Helps buyers locate the listing under the Supplies heading. Requires &#39;who_made&#39; and &#39;when_made&#39;. | [optional] |
 | **productionPartnerIds** | [**List&lt;Long&gt;**](Long.md)| An array of unique IDs of production partner ids. | [optional] |
 | **type** | **String**| An enumerated type string that indicates whether the listing is physical or a digital download. | [optional] [enum: physical, download, both] |
-
-### Return type
-
-[**ShopListing**](ShopListing.md)
-
-### Authorization
-
-[api_key](../README.md#api_key), [oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/x-www-form-urlencoded
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | A single ShopListing |  -  |
-| **400** | There was a problem with the request data. See the error message for details. |  -  |
-| **401** | The request lacks valid authentication credentials. See the error message for details. |  -  |
-| **403** | The request attempted to perform an operation it is not allowed to. See the error message for details. |  -  |
-| **409** | There was a request conflict with the current state of the target resource. See the error message for details. |  -  |
-| **404** | A resource could not be found. See the error message for details. |  -  |
-| **500** | The server encountered an internal error. See the error message for details. |  -  |
-
-<a name="updateListingDeprecated"></a>
-# **updateListingDeprecated**
-> ShopListing updateListingDeprecated(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type)
-
-
-
-&lt;div class&#x3D;\&quot;wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3\&quot;&gt;&lt;span class&#x3D;\&quot;wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2\&quot;&gt;General Release&lt;/span&gt;&lt;a class&#x3D;\&quot;wt-text-link\&quot; href&#x3D;\&quot;https://github.com/etsy/open-api/discussions\&quot; target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot;&gt;Report bug&lt;/a&gt;&lt;/div&gt;&lt;div class&#x3D;\&quot;wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3\&quot;&gt;&lt;p class&#x3D;\&quot;wt-text-body-01 banner-text\&quot;&gt;This endpoint is ready for production use.&lt;/p&gt;&lt;/div&gt;  Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. This endpoint will be removed in the near future in favor of &#x60;updateListing&#x60; PATCH version.
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.ShopListingApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://openapi.etsy.com");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
-
-    // Configure OAuth2 access token for authorization: oauth2
-    OAuth oauth2 = (OAuth) defaultClient.getAuthentication("oauth2");
-    oauth2.setAccessToken("YOUR ACCESS TOKEN");
-
-    ShopListingApi apiInstance = new ShopListingApi(defaultClient);
-    Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
-    Long listingId = 56L; // Long | The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction.
-    List<Long> imageIds = Arrays.asList(); // List<Long> | An array of numeric image IDs of the images in a listing, which can include up to 10 images.
-    String title = "title_example"; // String | The listing's title string. When creating or updating a listing, valid title strings contain only letters, numbers, punctuation marks, mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{P}\\\\p{Sm}\\\\p{Zs}™©®]/u) You can only use the %, :, & and + characters once each.
-    String description = "description_example"; // String | A description string of the product for sale in the listing.
-    List<String> materials = Arrays.asList(); // List<String> | A list of material strings for materials used in the product. Valid materials strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null.
-    Boolean shouldAutoRenew = true; // Boolean | When true, renews a listing for four months upon expiration.
-    Long shippingProfileId = 56L; // Long | The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile) associated with the listing. Required when listing type is `physical`.
-    Long shopSectionId = 56L; // Long | The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section) for this listing. Default value is null.
-    Float itemWeight = 3.4F; // Float | The numeric weight of the product measured in units set in 'item_weight_unit'. Default value is null. If set, the value must be greater than 0.
-    Float itemLength = 3.4F; // Float | The numeric length of the product measured in units set in 'item_dimensions_unit'. Default value is null. If set, the value must be greater than 0.
-    Float itemWidth = 3.4F; // Float | The numeric width of the product measured in units set in 'item_dimensions_unit'. Default value is null. If set, the value must be greater than 0.
-    Float itemHeight = 3.4F; // Float | The numeric height of the product measured in units set in 'item_dimensions_unit'. Default value is null. If set, the value must be greater than 0.
-    String itemWeightUnit = "oz"; // String | A string defining the units used to measure the weight of the product. Default value is null.
-    String itemDimensionsUnit = "in"; // String | A string defining the units used to measure the dimensions of the product. Default value is null.
-    Boolean isTaxable = true; // Boolean | When true, applicable [shop](/documentation/reference#tag/Shop) tax rates apply to this listing at checkout.
-    Long taxonomyId = 56L; // Long | The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy) and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for more information.
-    List<String> tags = Arrays.asList(); // List<String> | A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-'™©®]/u) Default value is null.
-    String whoMade = "i_did"; // String | An enumerated string indicating who made the product. Helps buyers locate the listing under the Handmade heading. Requires 'is_supply' and 'when_made'.
-    String whenMade = "made_to_order"; // String | An enumerated string for the era in which the maker made the product in this listing. Helps buyers locate the listing under the Vintage heading. Requires 'is_supply' and 'who_made'.
-    Long featuredRank = 56L; // Long | The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop’s home page.
-    Boolean isPersonalizable = true; // Boolean | When true, this listing is personalizable. The default value is null.
-    Boolean personalizationIsRequired = true; // Boolean | When true, this listing requires personalization. The default value is null. Will only change if is_personalizable is 'true'.
-    Long personalizationCharCountMax = 56L; // Long | This is an integer value representing the maximum length for the personalization message entered by the buyer. Will only change if is_personalizable is 'true'.
-    String personalizationInstructions = "personalizationInstructions_example"; // String | A string representing instructions for the buyer to enter the personalization. Will only change if is_personalizable is 'true'.
-    String state = "active"; // String | When _updating_ a listing, this value can be either `active` or `inactive`. Note: Setting a `draft` listing to `active` will also publish the listing on etsy.com and requires that the listing have an image set. Setting a `sold_out` listing to active will update the quantity to 1 and renew the listing on etsy.com.
-    Boolean isSupply = true; // Boolean | When true, tags the listing as a supply product, else indicates that it's a finished product. Helps buyers locate the listing under the Supplies heading. Requires 'who_made' and 'when_made'.
-    List<Long> productionPartnerIds = Arrays.asList(); // List<Long> | An array of unique IDs of production partner ids.
-    String type = "physical"; // String | An enumerated type string that indicates whether the listing is physical or a digital download.
-    try {
-      ShopListing result = apiInstance.updateListingDeprecated(shopId, listingId, imageIds, title, description, materials, shouldAutoRenew, shippingProfileId, shopSectionId, itemWeight, itemLength, itemWidth, itemHeight, itemWeightUnit, itemDimensionsUnit, isTaxable, taxonomyId, tags, whoMade, whenMade, featuredRank, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, state, isSupply, productionPartnerIds, type);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ShopListingApi#updateListingDeprecated");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
-| **listingId** | **Long**| The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. | |
-| **imageIds** | [**List&lt;Long&gt;**](Long.md)| An array of numeric image IDs of the images in a listing, which can include up to 10 images. | [optional] |
-| **title** | **String**| The listing&#39;s title string. When creating or updating a listing, valid title strings contain only letters, numbers, punctuation marks, mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{P}\\\\p{Sm}\\\\p{Zs}™©®]/u) You can only use the %, :, &amp; and + characters once each. | [optional] |
-| **description** | **String**| A description string of the product for sale in the listing. | [optional] |
-| **materials** | [**List&lt;String&gt;**](String.md)| A list of material strings for materials used in the product. Valid materials strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null. | [optional] |
-| **shouldAutoRenew** | **Boolean**| When true, renews a listing for four months upon expiration. | [optional] |
-| **shippingProfileId** | **Long**| The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile) associated with the listing. Required when listing type is &#x60;physical&#x60;. | [optional] |
-| **shopSectionId** | **Long**| The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section) for this listing. Default value is null. | [optional] |
-| **itemWeight** | **Float**| The numeric weight of the product measured in units set in &#39;item_weight_unit&#39;. Default value is null. If set, the value must be greater than 0. | [optional] |
-| **itemLength** | **Float**| The numeric length of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0. | [optional] |
-| **itemWidth** | **Float**| The numeric width of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0. | [optional] |
-| **itemHeight** | **Float**| The numeric height of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0. | [optional] |
-| **itemWeightUnit** | **String**| A string defining the units used to measure the weight of the product. Default value is null. | [optional] [enum: oz, lb, g, kg] |
-| **itemDimensionsUnit** | **String**| A string defining the units used to measure the dimensions of the product. Default value is null. | [optional] [enum: in, ft, mm, cm, m, yd, inches] |
-| **isTaxable** | **Boolean**| When true, applicable [shop](/documentation/reference#tag/Shop) tax rates apply to this listing at checkout. | [optional] |
-| **taxonomyId** | **Long**| The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy) and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for more information. | [optional] |
-| **tags** | [**List&lt;String&gt;**](String.md)| A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, &#39;, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-&#39;™©®]/u) Default value is null. | [optional] |
-| **whoMade** | **String**| An enumerated string indicating who made the product. Helps buyers locate the listing under the Handmade heading. Requires &#39;is_supply&#39; and &#39;when_made&#39;. | [optional] [enum: i_did, someone_else, collective] |
-| **whenMade** | **String**| An enumerated string for the era in which the maker made the product in this listing. Helps buyers locate the listing under the Vintage heading. Requires &#39;is_supply&#39; and &#39;who_made&#39;. | [optional] [enum: made_to_order, 2020_2025, 2010_2019, 2006_2009, before_2006, 2000_2005, 1990s, 1980s, 1970s, 1960s, 1950s, 1940s, 1930s, 1920s, 1910s, 1900s, 1800s, 1700s, before_1700] |
-| **featuredRank** | **Long**| The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop’s home page. | [optional] |
-| **isPersonalizable** | **Boolean**| When true, this listing is personalizable. The default value is null. | [optional] |
-| **personalizationIsRequired** | **Boolean**| When true, this listing requires personalization. The default value is null. Will only change if is_personalizable is &#39;true&#39;. | [optional] |
-| **personalizationCharCountMax** | **Long**| This is an integer value representing the maximum length for the personalization message entered by the buyer. Will only change if is_personalizable is &#39;true&#39;. | [optional] |
-| **personalizationInstructions** | **String**| A string representing instructions for the buyer to enter the personalization. Will only change if is_personalizable is &#39;true&#39;. | [optional] |
-| **state** | **String**| When _updating_ a listing, this value can be either &#x60;active&#x60; or &#x60;inactive&#x60;. Note: Setting a &#x60;draft&#x60; listing to &#x60;active&#x60; will also publish the listing on etsy.com and requires that the listing have an image set. Setting a &#x60;sold_out&#x60; listing to active will update the quantity to 1 and renew the listing on etsy.com. | [optional] [enum: active, inactive] |
-| **isSupply** | **Boolean**| When true, tags the listing as a supply product, else indicates that it&#39;s a finished product. Helps buyers locate the listing under the Supplies heading. Requires &#39;who_made&#39; and &#39;when_made&#39;. | [optional] |
-| **productionPartnerIds** | [**List&lt;Long&gt;**](Long.md)| An array of unique IDs of production partner ids. | [optional] |
-| **type** | **String**| An enumerated type string that indicates whether the listing is physical or a digital download. | [optional] [enum: physical, download, both] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 

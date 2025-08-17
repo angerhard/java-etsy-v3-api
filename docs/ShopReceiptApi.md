@@ -12,7 +12,7 @@ All URIs are relative to *https://openapi.etsy.com*
 
 <a name="createReceiptShipment"></a>
 # **createReceiptShipment**
-> ShopReceipt createReceiptShipment(shopId, receiptId, trackingCode, carrierName, sendBcc, noteToBuyer)
+> ShopReceipt createReceiptShipment(shopId, receiptId, legacy, trackingCode, carrierName, sendBcc, noteToBuyer)
 
 
 
@@ -46,12 +46,13 @@ public class Example {
     ShopReceiptApi apiInstance = new ShopReceiptApi(defaultClient);
     Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
     Long receiptId = 56L; // Long | The receipt to submit tracking for.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     String trackingCode = "trackingCode_example"; // String | The tracking code for this receipt.
     String carrierName = "carrierName_example"; // String | The carrier name for this receipt.
     Boolean sendBcc = true; // Boolean | If true, the shipping notification will be sent to the seller as well
     String noteToBuyer = "noteToBuyer_example"; // String | Message to include in notification to the buyer.
     try {
-      ShopReceipt result = apiInstance.createReceiptShipment(shopId, receiptId, trackingCode, carrierName, sendBcc, noteToBuyer);
+      ShopReceipt result = apiInstance.createReceiptShipment(shopId, receiptId, legacy, trackingCode, carrierName, sendBcc, noteToBuyer);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptApi#createReceiptShipment");
@@ -70,6 +71,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
 | **receiptId** | **Long**| The receipt to submit tracking for. | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 | **trackingCode** | **String**| The tracking code for this receipt. | [optional] |
 | **carrierName** | **String**| The carrier name for this receipt. | [optional] |
 | **sendBcc** | **Boolean**| If true, the shipping notification will be sent to the seller as well | [optional] |
@@ -101,7 +103,7 @@ public class Example {
 
 <a name="getShopReceipt"></a>
 # **getShopReceipt**
-> ShopReceipt getShopReceipt(shopId, receiptId)
+> ShopReceipt getShopReceipt(shopId, receiptId, legacy)
 
 
 
@@ -135,8 +137,9 @@ public class Example {
     ShopReceiptApi apiInstance = new ShopReceiptApi(defaultClient);
     Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
     Long receiptId = 56L; // Long | The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopReceipt result = apiInstance.getShopReceipt(shopId, receiptId);
+      ShopReceipt result = apiInstance.getShopReceipt(shopId, receiptId, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptApi#getShopReceipt");
@@ -155,6 +158,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
 | **receiptId** | **Long**| The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction. | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -181,7 +185,7 @@ public class Example {
 
 <a name="getShopReceipts"></a>
 # **getShopReceipts**
-> ShopReceipts getShopReceipts(shopId, minCreated, maxCreated, minLastModified, maxLastModified, limit, offset, sortOn, sortOrder, wasPaid, wasShipped, wasDelivered, wasCanceled)
+> ShopReceipts getShopReceipts(shopId, minCreated, maxCreated, minLastModified, maxLastModified, limit, offset, sortOn, sortOrder, wasPaid, wasShipped, wasDelivered, wasCanceled, legacy)
 
 
 
@@ -226,8 +230,9 @@ public class Example {
     Boolean wasShipped = true; // Boolean | When `true`, returns receipts where the seller shipped the product(s) in this receipt. When `false`, returns receipts where shipment has not been set.
     Boolean wasDelivered = true; // Boolean | When `true`, returns receipts that have been marked as delivered. When `false`, returns receipts where shipment has not been marked as delivered.
     Boolean wasCanceled = true; // Boolean | When `true`, the endpoint will only return the canceled receipts. When `false`, the endpoint will only return non-canceled receipts.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopReceipts result = apiInstance.getShopReceipts(shopId, minCreated, maxCreated, minLastModified, maxLastModified, limit, offset, sortOn, sortOrder, wasPaid, wasShipped, wasDelivered, wasCanceled);
+      ShopReceipts result = apiInstance.getShopReceipts(shopId, minCreated, maxCreated, minLastModified, maxLastModified, limit, offset, sortOn, sortOrder, wasPaid, wasShipped, wasDelivered, wasCanceled, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptApi#getShopReceipts");
@@ -257,6 +262,7 @@ public class Example {
 | **wasShipped** | **Boolean**| When &#x60;true&#x60;, returns receipts where the seller shipped the product(s) in this receipt. When &#x60;false&#x60;, returns receipts where shipment has not been set. | [optional] |
 | **wasDelivered** | **Boolean**| When &#x60;true&#x60;, returns receipts that have been marked as delivered. When &#x60;false&#x60;, returns receipts where shipment has not been marked as delivered. | [optional] |
 | **wasCanceled** | **Boolean**| When &#x60;true&#x60;, the endpoint will only return the canceled receipts. When &#x60;false&#x60;, the endpoint will only return non-canceled receipts. | [optional] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -283,7 +289,7 @@ public class Example {
 
 <a name="updateShopReceipt"></a>
 # **updateShopReceipt**
-> ShopReceipt updateShopReceipt(shopId, receiptId, wasShipped, wasPaid)
+> ShopReceipt updateShopReceipt(shopId, receiptId, legacy, wasShipped, wasPaid)
 
 
 
@@ -317,10 +323,11 @@ public class Example {
     ShopReceiptApi apiInstance = new ShopReceiptApi(defaultClient);
     Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
     Long receiptId = 56L; // Long | The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     Boolean wasShipped = true; // Boolean | When `true`, returns receipts where the seller shipped the product(s) in this receipt. When `false`, returns receipts where shipment has not been set.
     Boolean wasPaid = true; // Boolean | When `true`, returns receipts where the seller has recieved payment for the receipt. When `false`, returns receipts where payment has not been received.
     try {
-      ShopReceipt result = apiInstance.updateShopReceipt(shopId, receiptId, wasShipped, wasPaid);
+      ShopReceipt result = apiInstance.updateShopReceipt(shopId, receiptId, legacy, wasShipped, wasPaid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptApi#updateShopReceipt");
@@ -339,6 +346,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
 | **receiptId** | **Long**| The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction. | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 | **wasShipped** | **Boolean**| When &#x60;true&#x60;, returns receipts where the seller shipped the product(s) in this receipt. When &#x60;false&#x60;, returns receipts where shipment has not been set. | [optional] |
 | **wasPaid** | **Boolean**| When &#x60;true&#x60;, returns receipts where the seller has recieved payment for the receipt. When &#x60;false&#x60;, returns receipts where payment has not been received. | [optional] |
 

@@ -13,6 +13,7 @@ A list of product offering entries for this product.
 |**isEnabled** | **Boolean** | Whether or not the offering can be shown to buyers. |  [optional] |
 |**isDeleted** | **Boolean** | Whether or not the offering has been deleted. |  [optional] |
 |**price** | [**ListingInventoryProductOfferingPrice**](ListingInventoryProductOfferingPrice.md) |  |  [optional] |
+|**readinessStateId** | **Long** | Processing Profile for this ProductOffering |  [optional] |
 
 
 

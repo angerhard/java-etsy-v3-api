@@ -92,7 +92,7 @@ public class Example {
 
 <a name="getShopReceiptTransactionsByListing"></a>
 # **getShopReceiptTransactionsByListing**
-> ShopReceiptTransactions getShopReceiptTransactionsByListing(shopId, listingId, limit, offset)
+> ShopReceiptTransactions getShopReceiptTransactionsByListing(shopId, listingId, limit, offset, legacy)
 
 
 
@@ -128,8 +128,9 @@ public class Example {
     Long listingId = 56L; // Long | The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction.
     Long limit = 25L; // Long | The maximum number of results to return.
     Long offset = 0L; // Long | The number of records to skip before selecting the first result.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByListing(shopId, listingId, limit, offset);
+      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByListing(shopId, listingId, limit, offset, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptTransactionsApi#getShopReceiptTransactionsByListing");
@@ -150,6 +151,7 @@ public class Example {
 | **listingId** | **Long**| The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. | |
 | **limit** | **Long**| The maximum number of results to return. | [optional] [default to 25] |
 | **offset** | **Long**| The number of records to skip before selecting the first result. | [optional] [default to 0] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -176,7 +178,7 @@ public class Example {
 
 <a name="getShopReceiptTransactionsByReceipt"></a>
 # **getShopReceiptTransactionsByReceipt**
-> ShopReceiptTransactions getShopReceiptTransactionsByReceipt(shopId, receiptId)
+> ShopReceiptTransactions getShopReceiptTransactionsByReceipt(shopId, receiptId, legacy)
 
 
 
@@ -210,8 +212,9 @@ public class Example {
     ShopReceiptTransactionsApi apiInstance = new ShopReceiptTransactionsApi(defaultClient);
     Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
     Long receiptId = 56L; // Long | The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByReceipt(shopId, receiptId);
+      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByReceipt(shopId, receiptId, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptTransactionsApi#getShopReceiptTransactionsByReceipt");
@@ -230,6 +233,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
 | **receiptId** | **Long**| The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction. | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 
@@ -256,7 +260,7 @@ public class Example {
 
 <a name="getShopReceiptTransactionsByShop"></a>
 # **getShopReceiptTransactionsByShop**
-> ShopReceiptTransactions getShopReceiptTransactionsByShop(shopId, limit, offset)
+> ShopReceiptTransactions getShopReceiptTransactionsByShop(shopId, limit, offset, legacy)
 
 
 
@@ -291,8 +295,9 @@ public class Example {
     Long shopId = 56L; // Long | The unique positive non-zero numeric ID for an Etsy Shop.
     Long limit = 25L; // Long | The maximum number of results to return.
     Long offset = 0L; // Long | The number of records to skip before selecting the first result.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByShop(shopId, limit, offset);
+      ShopReceiptTransactions result = apiInstance.getShopReceiptTransactionsByShop(shopId, limit, offset, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopReceiptTransactionsApi#getShopReceiptTransactionsByShop");
@@ -312,6 +317,7 @@ public class Example {
 | **shopId** | **Long**| The unique positive non-zero numeric ID for an Etsy Shop. | |
 | **limit** | **Long**| The maximum number of results to return. | [optional] [default to 25] |
 | **offset** | **Long**| The number of records to skip before selecting the first result. | [optional] [default to 0] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 

@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * An enumerated string that attaches a valid association. Default value is null.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-15T11:53:41.521727200+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-17T14:01:44.125538310+02:00[Europe/Berlin]")
 public class ListingInventoryWithAssociationsListing {
   public static final String SERIALIZED_NAME_LISTING_ID = "listing_id";
   @SerializedName(SERIALIZED_NAME_LISTING_ID)
@@ -588,6 +588,10 @@ public class ListingInventoryWithAssociationsListing {
   @SerializedName(SERIALIZED_NAME_TAXONOMY_ID)
   private Long taxonomyId;
 
+  public static final String SERIALIZED_NAME_READINESS_STATE_ID = "readiness_state_id";
+  @SerializedName(SERIALIZED_NAME_READINESS_STATE_ID)
+  private Long readinessStateId;
+
   public ListingInventoryWithAssociationsListing() {
   }
 
@@ -667,7 +671,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The listing&#39;s title string. When creating or updating a listing, valid title strings contain only letters, numbers, punctuation marks, mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{P}\\\\p{Sm}\\\\p{Zs}™©®]/u) You can only use the %, :, &amp; and + characters once each.
+   * The listing&#39;s title string. When creating or updating a listing, valid title strings contain only letters, numbers, punctuation marks, mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\p{L}\\p{Nd}\\p{P}\\p{Sm}\\p{Zs}™©®]/u) You can only use the %, :, &amp; and + characters once each.
    * @return title
   **/
   @javax.annotation.Nullable
@@ -733,7 +737,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The listing\\&#39;s creation time, in epoch seconds.
+   * The listing&#39;s creation time, in epoch seconds.
    * minimum: 946684800
    * @return creationTimestamp
   **/
@@ -756,7 +760,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The listing\\&#39;s creation time, in epoch seconds.
+   * The listing&#39;s creation time, in epoch seconds.
    * minimum: 946684800
    * @return createdTimestamp
   **/
@@ -779,7 +783,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The listing\\&#39;s expiration time, in epoch seconds.
+   * The listing&#39;s expiration time, in epoch seconds.
    * minimum: 946684800
    * @return endingTimestamp
   **/
@@ -802,7 +806,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The listing\\&#39;s creation time, in epoch seconds.
+   * The listing&#39;s creation time, in epoch seconds.
    * minimum: 946684800
    * @return originalCreationTimestamp
   **/
@@ -940,7 +944,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop’s home page.
+   * The positive non-zero numeric position in the featured listings of the shop, with rank 1 listings appearing in the left-most position in featured listing on a shop&#39;s home page.
    * @return featuredRank
   **/
   @javax.annotation.Nullable
@@ -1191,7 +1195,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, &#39;, ™, ©, and ®. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}\\\\-&#39;™©®]/u) Default value is null.
+   * A comma-separated list of tag strings for the listing. When creating or updating a listing, valid tag strings contain only letters, numbers, whitespace characters, -, &#39;, ™, ©, and ®. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}\\-&#39;™©®]/u) Default value is null.
    * @return tags
   **/
   @javax.annotation.Nullable
@@ -1221,7 +1225,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * A list of material strings for materials used in the product. Valid materials strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null.
+   * A list of material strings for materials used in the product. Valid materials strings contain only letters, numbers, and whitespace characters. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null.
    * @return materials
   **/
   @javax.annotation.Nullable
@@ -1401,7 +1405,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The numeric weight of the product measured in units set in \\&#39;item_weight_unit\\&#39;. Default value is null. If set, the value must be greater than 0.
+   * The numeric weight of the product measured in units set in &#39;item_weight_unit&#39;. Default value is null. If set, the value must be greater than 0.
    * @return itemWeight
   **/
   @javax.annotation.Nullable
@@ -1445,7 +1449,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The numeric length of the product measured in units set in \\&#39;item_dimensions_unit\\&#39;. Default value is null. If set, the value must be greater than 0.
+   * The numeric length of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0.
    * @return itemLength
   **/
   @javax.annotation.Nullable
@@ -1467,7 +1471,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The numeric width of the product measured in units set in \\&#39;item_dimensions_unit\\&#39;. Default value is null. If set, the value must be greater than 0.
+   * The numeric width of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0.
    * @return itemWidth
   **/
   @javax.annotation.Nullable
@@ -1489,7 +1493,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * The numeric length of the product measured in units set in \\&#39;item_dimensions_unit\\&#39;. Default value is null. If set, the value must be greater than 0.
+   * The numeric length of the product measured in units set in &#39;item_dimensions_unit&#39;. Default value is null. If set, the value must be greater than 0.
    * @return itemHeight
   **/
   @javax.annotation.Nullable
@@ -1563,7 +1567,7 @@ public class ListingInventoryWithAssociationsListing {
   }
 
    /**
-   * An array of style strings for this listing, each of which is free-form text string such as \\\&quot;Formal\\\&quot;, or \\\&quot;Steampunk\\\&quot;. When creating or updating a listing, the listing may have up to two styles. Valid style strings contain only letters, numbers, and whitespace characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value is null.
+   * An array of style strings for this listing, each of which is free-form text string such as \&quot;Formal\&quot;, or \&quot;Steampunk\&quot;. When creating or updating a listing, the listing may have up to two styles. Valid style strings contain only letters, numbers, and whitespace characters. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null.
    * @return style
   **/
   @javax.annotation.Nullable
@@ -1710,6 +1714,29 @@ public class ListingInventoryWithAssociationsListing {
   }
 
 
+  public ListingInventoryWithAssociationsListing readinessStateId(Long readinessStateId) {
+    
+    this.readinessStateId = readinessStateId;
+    return this;
+  }
+
+   /**
+   * The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition) associated with the listing. Required when listing type is &#x60;physical&#x60;.
+   * minimum: 1
+   * @return readinessStateId
+  **/
+  @javax.annotation.Nullable
+
+  public Long getReadinessStateId() {
+    return readinessStateId;
+  }
+
+
+  public void setReadinessStateId(Long readinessStateId) {
+    this.readinessStateId = readinessStateId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -1768,7 +1795,8 @@ public class ListingInventoryWithAssociationsListing {
         Objects.equals(this.shouldAutoRenew, listingInventoryWithAssociationsListing.shouldAutoRenew) &&
         Objects.equals(this.language, listingInventoryWithAssociationsListing.language) &&
         Objects.equals(this.price, listingInventoryWithAssociationsListing.price) &&
-        Objects.equals(this.taxonomyId, listingInventoryWithAssociationsListing.taxonomyId);
+        Objects.equals(this.taxonomyId, listingInventoryWithAssociationsListing.taxonomyId) &&
+        Objects.equals(this.readinessStateId, listingInventoryWithAssociationsListing.readinessStateId);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1777,7 +1805,7 @@ public class ListingInventoryWithAssociationsListing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(listingId, userId, shopId, title, description, state, creationTimestamp, createdTimestamp, endingTimestamp, originalCreationTimestamp, lastModifiedTimestamp, updatedTimestamp, stateTimestamp, quantity, shopSectionId, featuredRank, url, numFavorers, nonTaxable, isTaxable, isCustomizable, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, listingType, tags, materials, shippingProfileId, returnPolicyId, processingMin, processingMax, whoMade, whenMade, isSupply, itemWeight, itemWeightUnit, itemLength, itemWidth, itemHeight, itemDimensionsUnit, isPrivate, style, fileData, hasVariations, shouldAutoRenew, language, price, taxonomyId);
+    return Objects.hash(listingId, userId, shopId, title, description, state, creationTimestamp, createdTimestamp, endingTimestamp, originalCreationTimestamp, lastModifiedTimestamp, updatedTimestamp, stateTimestamp, quantity, shopSectionId, featuredRank, url, numFavorers, nonTaxable, isTaxable, isCustomizable, isPersonalizable, personalizationIsRequired, personalizationCharCountMax, personalizationInstructions, listingType, tags, materials, shippingProfileId, returnPolicyId, processingMin, processingMax, whoMade, whenMade, isSupply, itemWeight, itemWeightUnit, itemLength, itemWidth, itemHeight, itemDimensionsUnit, isPrivate, style, fileData, hasVariations, shouldAutoRenew, language, price, taxonomyId, readinessStateId);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1840,6 +1868,7 @@ public class ListingInventoryWithAssociationsListing {
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    taxonomyId: ").append(toIndentedString(taxonomyId)).append("\n");
+    sb.append("    readinessStateId: ").append(toIndentedString(readinessStateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1911,6 +1940,7 @@ public class ListingInventoryWithAssociationsListing {
     openapiFields.add("language");
     openapiFields.add("price");
     openapiFields.add("taxonomy_id");
+    openapiFields.add("readiness_state_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

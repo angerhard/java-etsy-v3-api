@@ -9,7 +9,7 @@ All URIs are relative to *https://openapi.etsy.com*
 
 <a name="getListingOffering"></a>
 # **getListingOffering**
-> ListingInventoryProductOffering getListingOffering(listingId, productId, productOfferingId)
+> ListingInventoryProductOffering getListingOffering(listingId, productId, productOfferingId, legacy)
 
 
 
@@ -40,8 +40,9 @@ public class Example {
     Long listingId = 56L; // Long | 
     Long productId = 56L; // Long | 
     Long productOfferingId = 56L; // Long | 
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ListingInventoryProductOffering result = apiInstance.getListingOffering(listingId, productId, productOfferingId);
+      ListingInventoryProductOffering result = apiInstance.getListingOffering(listingId, productId, productOfferingId, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingOfferingApi#getListingOffering");
@@ -61,6 +62,7 @@ public class Example {
 | **listingId** | **Long**|  | |
 | **productId** | **Long**|  | |
 | **productOfferingId** | **Long**|  | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 

@@ -13,10 +13,10 @@ A transaction object associated with a shop receipt. Etsy generates one transact
 |**description** | **String** | The description string of the [listing](/documentation/reference#tag/ShopListing) purchased in this transaction. |  [optional] |
 |**sellerUserId** | **Long** | The numeric user ID for the seller in this transaction. |  [optional] |
 |**buyerUserId** | **Long** | The numeric user ID for the buyer in this transaction. |  [optional] |
-|**createTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
-|**createdTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
-|**paidTimestamp** | **Long** | The transaction\\&#39;s paid date and time, in epoch seconds. |  [optional] |
-|**shippedTimestamp** | **Long** | The transaction\\&#39;s shipping date and time, in epoch seconds. |  [optional] |
+|**createTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**createdTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**paidTimestamp** | **Long** | The transaction&#39;s paid date and time, in epoch seconds. |  [optional] |
+|**shippedTimestamp** | **Long** | The transaction&#39;s shipping date and time, in epoch seconds. |  [optional] |
 |**quantity** | **Long** | The numeric quantity of products purchased in this transaction. |  [optional] |
 |**listingImageId** | **Long** | The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image) for this transaction. |  [optional] |
 |**receiptId** | **Long** | The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt) associated to this transaction. |  [optional] |

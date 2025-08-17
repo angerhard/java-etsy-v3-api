@@ -2,7 +2,7 @@
 
 # ShopReceiptTotalPrice
 
-A number equal to the sum of the individual listings\\' (price * quantity). Does not included tax or shipping costs.
+A number equal to the sum of the individual listings' (price * quantity). Does not included tax or shipping costs.
 
 ## Properties
 

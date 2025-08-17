@@ -10,7 +10,7 @@ All URIs are relative to *https://openapi.etsy.com*
 
 <a name="getListingInventory"></a>
 # **getListingInventory**
-> ListingInventoryWithAssociations getListingInventory(listingId, showDeleted, includes)
+> ListingInventoryWithAssociations getListingInventory(listingId, showDeleted, includes, legacy)
 
 
 
@@ -45,8 +45,9 @@ public class Example {
     Long listingId = 56L; // Long | The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction.
     Boolean showDeleted = true; // Boolean | A boolean value for inventory whether to include deleted products and their offerings. Default value is false.
     String includes = "Listing"; // String | An enumerated string that attaches a valid association. Default value is null.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ListingInventoryWithAssociations result = apiInstance.getListingInventory(listingId, showDeleted, includes);
+      ListingInventoryWithAssociations result = apiInstance.getListingInventory(listingId, showDeleted, includes, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingInventoryApi#getListingInventory");
@@ -66,6 +67,7 @@ public class Example {
 | **listingId** | **Long**| The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. | |
 | **showDeleted** | **Boolean**| A boolean value for inventory whether to include deleted products and their offerings. Default value is false. | [optional] |
 | **includes** | **String**| An enumerated string that attaches a valid association. Default value is null. | [optional] [enum: Listing] |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 

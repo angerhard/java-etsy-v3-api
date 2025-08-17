@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -60,7 +60,7 @@ import org.openapitools.client.JSON;
 /**
  * The record of a purchase from a shop. Shop receipts display monetary values using the shop&#39;s currency.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-15T11:53:41.521727200+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-17T14:01:44.125538310+02:00[Europe/Berlin]")
 public class ShopReceipt {
   public static final String SERIALIZED_NAME_RECEIPT_ID = "receipt_id";
   @SerializedName(SERIALIZED_NAME_RECEIPT_ID)
@@ -623,7 +623,7 @@ public class ShopReceipt {
   }
 
    /**
-   * The payment method string identifying purchaser&#39;s payment method, which must be one of: \\&#39;cc\\&#39; (credit card), \\&#39;paypal\\&#39;, \\&#39;check\\&#39;, \\&#39;mo\\&#39; (money order), \\&#39;bt\\&#39; (bank transfer), \\&#39;other\\&#39;, \\&#39;ideal\\&#39;, \\&#39;sofort\\&#39;, \\&#39;apple_pay\\&#39;, \\&#39;google\\&#39;, \\&#39;android_pay\\&#39;, \\&#39;google_pay\\&#39;, \\&#39;klarna\\&#39;, \\&#39;k_pay_in_4\\&#39; (klarna), \\&#39;k_pay_in_3\\&#39; (klarna), or \\&#39;k_financing\\&#39; (klarna).
+   * The payment method string identifying purchaser&#39;s payment method, which must be one of: &#39;cc&#39; (credit card), &#39;paypal&#39;, &#39;check&#39;, &#39;mo&#39; (money order), &#39;bt&#39; (bank transfer), &#39;other&#39;, &#39;ideal&#39;, &#39;sofort&#39;, &#39;apple_pay&#39;, &#39;google&#39;, &#39;android_pay&#39;, &#39;google_pay&#39;, &#39;klarna&#39;, &#39;k_pay_in_4&#39; (klarna), &#39;k_pay_in_3&#39; (klarna), or &#39;k_financing&#39; (klarna).
    * @return paymentMethod
   **/
   @javax.annotation.Nullable
@@ -777,7 +777,7 @@ public class ShopReceipt {
   }
 
    /**
-   * The receipt\\&#39;s creation time, in epoch seconds.
+   * The receipt&#39;s creation time, in epoch seconds.
    * minimum: 946684800
    * @return createTimestamp
   **/
@@ -800,7 +800,7 @@ public class ShopReceipt {
   }
 
    /**
-   * The receipt\\&#39;s creation time, in epoch seconds.
+   * The receipt&#39;s creation time, in epoch seconds.
    * minimum: 946684800
    * @return createdTimestamp
   **/

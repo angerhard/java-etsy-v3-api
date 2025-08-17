@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -81,6 +81,7 @@ public class ShopListingInventoryApi {
      * @param listingId The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. (required)
      * @param showDeleted A boolean value for inventory whether to include deleted products and their offerings. Default value is false. (optional)
      * @param includes An enumerated string that attaches a valid association. Default value is null. (optional)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -95,7 +96,7 @@ public class ShopListingInventoryApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getListingInventoryCall(Long listingId, Boolean showDeleted, String includes, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getListingInventoryCall(Long listingId, Boolean showDeleted, String includes, Boolean legacy, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -129,6 +130,10 @@ public class ShopListingInventoryApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("includes", includes));
         }
 
+        if (legacy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("legacy", legacy));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -149,13 +154,13 @@ public class ShopListingInventoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getListingInventoryValidateBeforeCall(Long listingId, Boolean showDeleted, String includes, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getListingInventoryValidateBeforeCall(Long listingId, Boolean showDeleted, String includes, Boolean legacy, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'listingId' is set
         if (listingId == null) {
             throw new ApiException("Missing the required parameter 'listingId' when calling getListingInventory(Async)");
         }
 
-        return getListingInventoryCall(listingId, showDeleted, includes, _callback);
+        return getListingInventoryCall(listingId, showDeleted, includes, legacy, _callback);
 
     }
 
@@ -165,6 +170,7 @@ public class ShopListingInventoryApi {
      * @param listingId The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. (required)
      * @param showDeleted A boolean value for inventory whether to include deleted products and their offerings. Default value is false. (optional)
      * @param includes An enumerated string that attaches a valid association. Default value is null. (optional)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @return ListingInventoryWithAssociations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -178,8 +184,8 @@ public class ShopListingInventoryApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public ListingInventoryWithAssociations getListingInventory(Long listingId, Boolean showDeleted, String includes) throws ApiException {
-        ApiResponse<ListingInventoryWithAssociations> localVarResp = getListingInventoryWithHttpInfo(listingId, showDeleted, includes);
+    public ListingInventoryWithAssociations getListingInventory(Long listingId, Boolean showDeleted, String includes, Boolean legacy) throws ApiException {
+        ApiResponse<ListingInventoryWithAssociations> localVarResp = getListingInventoryWithHttpInfo(listingId, showDeleted, includes, legacy);
         return localVarResp.getData();
     }
 
@@ -189,6 +195,7 @@ public class ShopListingInventoryApi {
      * @param listingId The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. (required)
      * @param showDeleted A boolean value for inventory whether to include deleted products and their offerings. Default value is false. (optional)
      * @param includes An enumerated string that attaches a valid association. Default value is null. (optional)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @return ApiResponse&lt;ListingInventoryWithAssociations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -202,8 +209,8 @@ public class ShopListingInventoryApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListingInventoryWithAssociations> getListingInventoryWithHttpInfo(Long listingId, Boolean showDeleted, String includes) throws ApiException {
-        okhttp3.Call localVarCall = getListingInventoryValidateBeforeCall(listingId, showDeleted, includes, null);
+    public ApiResponse<ListingInventoryWithAssociations> getListingInventoryWithHttpInfo(Long listingId, Boolean showDeleted, String includes, Boolean legacy) throws ApiException {
+        okhttp3.Call localVarCall = getListingInventoryValidateBeforeCall(listingId, showDeleted, includes, legacy, null);
         Type localVarReturnType = new TypeToken<ListingInventoryWithAssociations>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -214,6 +221,7 @@ public class ShopListingInventoryApi {
      * @param listingId The numeric ID for the [listing](/documentation/reference#tag/ShopListing) associated to this transaction. (required)
      * @param showDeleted A boolean value for inventory whether to include deleted products and their offerings. Default value is false. (optional)
      * @param includes An enumerated string that attaches a valid association. Default value is null. (optional)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -228,9 +236,9 @@ public class ShopListingInventoryApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getListingInventoryAsync(Long listingId, Boolean showDeleted, String includes, final ApiCallback<ListingInventoryWithAssociations> _callback) throws ApiException {
+    public okhttp3.Call getListingInventoryAsync(Long listingId, Boolean showDeleted, String includes, Boolean legacy, final ApiCallback<ListingInventoryWithAssociations> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getListingInventoryValidateBeforeCall(listingId, showDeleted, includes, _callback);
+        okhttp3.Call localVarCall = getListingInventoryValidateBeforeCall(listingId, showDeleted, includes, legacy, _callback);
         Type localVarReturnType = new TypeToken<ListingInventoryWithAssociations>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

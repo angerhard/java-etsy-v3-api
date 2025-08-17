@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import org.openapitools.client.model.ListingInventoryProductOfferingPrice;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * A representation of an offering for a listing.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-15T11:53:41.521727200+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-17T14:01:44.125538310+02:00[Europe/Berlin]")
 public class ListingInventoryProductOffering {
   public static final String SERIALIZED_NAME_OFFERING_ID = "offering_id";
   @SerializedName(SERIALIZED_NAME_OFFERING_ID)
@@ -68,6 +69,10 @@ public class ListingInventoryProductOffering {
   public static final String SERIALIZED_NAME_PRICE = "price";
   @SerializedName(SERIALIZED_NAME_PRICE)
   private ListingInventoryProductOfferingPrice price;
+
+  public static final String SERIALIZED_NAME_READINESS_STATE_ID = "readiness_state_id";
+  @SerializedName(SERIALIZED_NAME_READINESS_STATE_ID)
+  private Long readinessStateId;
 
   public ListingInventoryProductOffering() {
   }
@@ -184,6 +189,29 @@ public class ListingInventoryProductOffering {
   }
 
 
+  public ListingInventoryProductOffering readinessStateId(Long readinessStateId) {
+    
+    this.readinessStateId = readinessStateId;
+    return this;
+  }
+
+   /**
+   * Processing Profile for this ProductOffering
+   * minimum: 1
+   * @return readinessStateId
+  **/
+  @javax.annotation.Nullable
+
+  public Long getReadinessStateId() {
+    return readinessStateId;
+  }
+
+
+  public void setReadinessStateId(Long readinessStateId) {
+    this.readinessStateId = readinessStateId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -198,12 +226,24 @@ public class ListingInventoryProductOffering {
         Objects.equals(this.quantity, listingInventoryProductOffering.quantity) &&
         Objects.equals(this.isEnabled, listingInventoryProductOffering.isEnabled) &&
         Objects.equals(this.isDeleted, listingInventoryProductOffering.isDeleted) &&
-        Objects.equals(this.price, listingInventoryProductOffering.price);
+        Objects.equals(this.price, listingInventoryProductOffering.price) &&
+        Objects.equals(this.readinessStateId, listingInventoryProductOffering.readinessStateId);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offeringId, quantity, isEnabled, isDeleted, price);
+    return Objects.hash(offeringId, quantity, isEnabled, isDeleted, price, readinessStateId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -215,6 +255,7 @@ public class ListingInventoryProductOffering {
     sb.append("    isEnabled: ").append(toIndentedString(isEnabled)).append("\n");
     sb.append("    isDeleted: ").append(toIndentedString(isDeleted)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    readinessStateId: ").append(toIndentedString(readinessStateId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -242,6 +283,7 @@ public class ListingInventoryProductOffering {
     openapiFields.add("is_enabled");
     openapiFields.add("is_deleted");
     openapiFields.add("price");
+    openapiFields.add("readiness_state_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

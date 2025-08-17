@@ -13,7 +13,7 @@ The Shop resources.
 |**shopName** | **String** | The shop&#39;s name string. |  [optional] |
 |**createDate** | **Long** | The date and time this shop was created, in epoch seconds. |  [optional] |
 |**createdTimestamp** | **Long** | The date and time this shop was created, in epoch seconds. |  [optional] |
-|**title** | **String** | A brief heading string for the shop\\&#39;s main page. |  [optional] |
+|**title** | **String** | A brief heading string for the shop&#39;s main page. |  [optional] |
 |**announcement** | **String** | An announcement string to buyers that displays on the shop&#39;s homepage. |  [optional] |
 |**currencyCode** | **String** | The ISO (alphabetic) code for the shop&#39;s currency. The shop displays all prices in this currency by default. |  [optional] |
 |**isVacation** | **Boolean** | When true, this shop is not accepting purchases. |  [optional] |
@@ -24,7 +24,7 @@ The Shop resources.
 |**updatedTimestamp** | **Long** | The date and time of the last update to the shop, in epoch seconds. |  [optional] |
 |**listingActiveCount** | **Long** | The number of active listings in the shop. |  [optional] |
 |**digitalListingCount** | **Long** | The number of digital listings in the shop. |  [optional] |
-|**loginName** | **String** | The shop owner\\&#39;s login name string. |  [optional] |
+|**loginName** | **String** | The shop owner&#39;s login name string. |  [optional] |
 |**acceptsCustomRequests** | **Boolean** | When true, the shop accepts customization requests. |  [optional] |
 |**policyWelcome** | **String** | The shop&#39;s policy welcome string (may be blank). |  [optional] |
 |**policyPayment** | **String** | The shop&#39;s payment policy string (may be blank). |  [optional] |
@@ -44,7 +44,7 @@ The Shop resources.
 |**iconUrlFullxfull** | **String** | The URL string for this shop&#39;s icon image. |  [optional] |
 |**isUsingStructuredPolicies** | **Boolean** | When true, the shop accepted using structured policies. |  [optional] |
 |**hasOnboardedStructuredPolicies** | **Boolean** | When true, the shop accepted OR declined after viewing structured policies onboarding. |  [optional] |
-|**includeDisputeFormLink** | **Boolean** | When true, this shop\\&#39;s policies include a link to an EU online dispute form. |  [optional] |
+|**includeDisputeFormLink** | **Boolean** | When true, this shop&#39;s policies include a link to an EU online dispute form. |  [optional] |
 |**isDirectCheckoutOnboarded** | **Boolean** | (**DEPRECATED: Replaced by _is_etsy_payments_onboarded_.) When true, the shop has onboarded onto Etsy Payments. |  [optional] |
 |**isEtsyPaymentsOnboarded** | **Boolean** | When true, the shop has onboarded onto Etsy Payments. |  [optional] |
 |**isCalculatedEligible** | **Boolean** | When true, the shop is eligible for calculated shipping profiles. (Only available in the US and Canada) |  [optional] |

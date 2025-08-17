@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -79,6 +79,7 @@ public class ShopListingOfferingApi {
      * @param listingId  (required)
      * @param productId  (required)
      * @param productOfferingId  (required)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,7 +92,7 @@ public class ShopListingOfferingApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getListingOfferingCall(Long listingId, Long productId, Long productOfferingId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getListingOfferingCall(Long listingId, Long productId, Long productOfferingId, Boolean legacy, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -119,6 +120,10 @@ public class ShopListingOfferingApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (legacy != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("legacy", legacy));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -139,7 +144,7 @@ public class ShopListingOfferingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getListingOfferingValidateBeforeCall(Long listingId, Long productId, Long productOfferingId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getListingOfferingValidateBeforeCall(Long listingId, Long productId, Long productOfferingId, Boolean legacy, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'listingId' is set
         if (listingId == null) {
             throw new ApiException("Missing the required parameter 'listingId' when calling getListingOffering(Async)");
@@ -155,7 +160,7 @@ public class ShopListingOfferingApi {
             throw new ApiException("Missing the required parameter 'productOfferingId' when calling getListingOffering(Async)");
         }
 
-        return getListingOfferingCall(listingId, productId, productOfferingId, _callback);
+        return getListingOfferingCall(listingId, productId, productOfferingId, legacy, _callback);
 
     }
 
@@ -165,6 +170,7 @@ public class ShopListingOfferingApi {
      * @param listingId  (required)
      * @param productId  (required)
      * @param productOfferingId  (required)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @return ListingInventoryProductOffering
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -176,8 +182,8 @@ public class ShopListingOfferingApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public ListingInventoryProductOffering getListingOffering(Long listingId, Long productId, Long productOfferingId) throws ApiException {
-        ApiResponse<ListingInventoryProductOffering> localVarResp = getListingOfferingWithHttpInfo(listingId, productId, productOfferingId);
+    public ListingInventoryProductOffering getListingOffering(Long listingId, Long productId, Long productOfferingId, Boolean legacy) throws ApiException {
+        ApiResponse<ListingInventoryProductOffering> localVarResp = getListingOfferingWithHttpInfo(listingId, productId, productOfferingId, legacy);
         return localVarResp.getData();
     }
 
@@ -187,6 +193,7 @@ public class ShopListingOfferingApi {
      * @param listingId  (required)
      * @param productId  (required)
      * @param productOfferingId  (required)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @return ApiResponse&lt;ListingInventoryProductOffering&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -198,8 +205,8 @@ public class ShopListingOfferingApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListingInventoryProductOffering> getListingOfferingWithHttpInfo(Long listingId, Long productId, Long productOfferingId) throws ApiException {
-        okhttp3.Call localVarCall = getListingOfferingValidateBeforeCall(listingId, productId, productOfferingId, null);
+    public ApiResponse<ListingInventoryProductOffering> getListingOfferingWithHttpInfo(Long listingId, Long productId, Long productOfferingId, Boolean legacy) throws ApiException {
+        okhttp3.Call localVarCall = getListingOfferingValidateBeforeCall(listingId, productId, productOfferingId, legacy, null);
         Type localVarReturnType = new TypeToken<ListingInventoryProductOffering>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -210,6 +217,7 @@ public class ShopListingOfferingApi {
      * @param listingId  (required)
      * @param productId  (required)
      * @param productOfferingId  (required)
+     * @param legacy This parameter needed to enable new parameters and response values related to processing profiles. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -222,9 +230,9 @@ public class ShopListingOfferingApi {
         <tr><td> 500 </td><td> The server encountered an internal error. See the error message for details. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getListingOfferingAsync(Long listingId, Long productId, Long productOfferingId, final ApiCallback<ListingInventoryProductOffering> _callback) throws ApiException {
+    public okhttp3.Call getListingOfferingAsync(Long listingId, Long productId, Long productOfferingId, Boolean legacy, final ApiCallback<ListingInventoryProductOffering> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getListingOfferingValidateBeforeCall(listingId, productId, productOfferingId, _callback);
+        okhttp3.Call localVarCall = getListingOfferingValidateBeforeCall(listingId, productId, productOfferingId, legacy, _callback);
         Type localVarReturnType = new TypeToken<ListingInventoryProductOffering>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

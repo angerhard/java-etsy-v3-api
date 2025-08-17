@@ -18,8 +18,8 @@ Represents a refund, which applies to a prior Etsy payment. All monetary amounts
 |**shopTotalAdjustmentAmount** | **Long** | The numeric amount of the refund in the shop currency. |  [optional] |
 |**buyerTotalAdjustmentAmount** | **Long** | The numeric amount of the refund in the buyer currency. |  [optional] |
 |**totalFeeAdjustmentAmount** | **Long** | The numeric amount of card processing fees associated with a payment adjustment. |  [optional] |
-|**createTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
-|**createdTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**createTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**createdTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
 |**updateTimestamp** | **Long** | The date and time of the last change to the payment adjustment in epoch seconds. |  [optional] |
 |**updatedTimestamp** | **Long** | The date and time of the last change to the payment adjustment in epoch seconds. |  [optional] |
 |**paymentAdjustmentItems** | [**List&lt;PaymentAdjustmentPaymentAdjustmentItemsInner&gt;**](PaymentAdjustmentPaymentAdjustmentItemsInner.md) | List of payment adjustment line items. |  [optional] |

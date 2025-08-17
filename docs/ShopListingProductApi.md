@@ -9,7 +9,7 @@ All URIs are relative to *https://openapi.etsy.com*
 
 <a name="getListingProduct"></a>
 # **getListingProduct**
-> ListingInventoryProduct getListingProduct(listingId, productId)
+> ListingInventoryProduct getListingProduct(listingId, productId, legacy)
 
 
 
@@ -43,8 +43,9 @@ public class Example {
     ShopListingProductApi apiInstance = new ShopListingProductApi(defaultClient);
     Long listingId = 56L; // Long | The listing to return a ListingProduct for.
     Long productId = 56L; // Long | The numeric ID for a specific [product](/documentation/reference#tag/ShopListing-Product) purchased from a listing.
+    Boolean legacy = true; // Boolean | This parameter needed to enable new parameters and response values related to processing profiles.
     try {
-      ListingInventoryProduct result = apiInstance.getListingProduct(listingId, productId);
+      ListingInventoryProduct result = apiInstance.getListingProduct(listingId, productId, legacy);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ShopListingProductApi#getListingProduct");
@@ -63,6 +64,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **listingId** | **Long**| The listing to return a ListingProduct for. | |
 | **productId** | **Long**| The numeric ID for a specific [product](/documentation/reference#tag/ShopListing-Product) purchased from a listing. | |
+| **legacy** | **Boolean**| This parameter needed to enable new parameters and response values related to processing profiles. | [optional] |
 
 ### Return type
 

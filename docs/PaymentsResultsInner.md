@@ -28,9 +28,9 @@ A list of payments.
 |**shippingAddressId** | **Long** | The numeric id identifying the shipping address. |  [optional] |
 |**billingAddressId** | **Long** | The numeric ID identifying the billing address of the buyer. |  [optional] |
 |**status** | **String** | A string indicating the current status of the payment, most commonly \&quot;settled\&quot; or \&quot;authed\&quot;. |  [optional] |
-|**shippedTimestamp** | **Long** | The transaction\\&#39;s shipping date and time, in epoch seconds. |  [optional] |
-|**createTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
-|**createdTimestamp** | **Long** | The transaction\\&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**shippedTimestamp** | **Long** | The transaction&#39;s shipping date and time, in epoch seconds. |  [optional] |
+|**createTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
+|**createdTimestamp** | **Long** | The transaction&#39;s creation date and time, in epoch seconds. |  [optional] |
 |**updateTimestamp** | **Long** | The date and time of the last change to the payment adjustment in epoch seconds. |  [optional] |
 |**updatedTimestamp** | **Long** | The date and time of the last change to the payment adjustment in epoch seconds. |  [optional] |
 |**paymentAdjustments** | [**List&lt;PaymentAccountLedgerEntryPaymentAdjustmentsInner&gt;**](PaymentAccountLedgerEntryPaymentAdjustmentsInner.md) | List of refund objects on an Etsy Payments transaction. All monetary amounts are in USD pennies unless otherwise specified. |  [optional] |

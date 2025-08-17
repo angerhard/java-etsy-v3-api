@@ -3,19 +3,13 @@ info:
   contact:
     email: developers@etsy.com
   description: "<div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\"\
-    >Etsy's Open API provides a simple RESTful interface for various Etsy.com features.\
-    \ The API endpoints are meant to replace Etsy's Open API v2, which is scheduled\
-    \ to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are\
-    \ callable and the majority of the API endpoints are now in a beta phase. This\
-    \ means we do not expect to make any breaking changes before our general release.\
-    \ A handful of endpoints are currently interface stubs (labeled “Feedback Only”\
-    ) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"\
-    wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design,\
-    \ <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\"\
-    >please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights\
-    \ Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0'\
-    \ target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of\
-    \ Use</a>."
+    >Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p\
+    \ class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on\
+    \ the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"\
+    https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy;\
+    \ 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's\
+    \ <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API\
+    \ Developer Terms of Use</a>."
   termsOfService: https://www.etsy.com/legal/api
   title: Etsy Open API v3
   version: 3.0.0
@@ -33,6 +27,7 @@ tags:
 - name: Shop ShippingProfile
 - name: Shop Section
 - name: ShopListing
+- name: Shop ProcessingProfiles
 - name: Shop ProductionPartner
 - name: Shop Return Policy
 - name: Shop HolidayPreferences
@@ -108,6 +103,7 @@ paths:
             \ \"EU\" shoe size scale with its associated property names and IDs for\
             \ EU shoe sizes, such as property `value_id`:\"1394\", and `name`:\"38\"\
             ."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -156,6 +152,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -270,6 +267,17 @@ paths:
             type: string
           type: array
         style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -326,6 +334,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -400,6 +409,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -470,6 +480,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -505,6 +516,17 @@ paths:
           description: "The IETF language tag for the language of this translation.\
             \ Ex: `de`, `en`, `es`, `fr`, `it`, `ja`, `nl`, `pl`, `pt`."
           type: string
+        style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         style: form
       responses:
         "200":
@@ -551,6 +573,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -563,6 +586,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -573,6 +597,7 @@ paths:
         required: true
         schema:
           description: The unique numeric ID of a file associated with a digital listing.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -641,6 +666,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -653,6 +679,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -663,6 +690,7 @@ paths:
         required: true
         schema:
           description: The unique numeric ID of a file associated with a digital listing.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -731,6 +759,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -741,6 +770,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -800,6 +830,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -812,6 +843,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -982,6 +1014,7 @@ paths:
           description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
             \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
             \ more information."
+          format: int64
           minimum: 1
           type: integer
         style: form
@@ -995,6 +1028,17 @@ paths:
           description: "Filters by shop location. If location cannot be parsed, Etsy\
             \ responds with an error."
           type: string
+        style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         style: form
       responses:
         "200":
@@ -1035,6 +1079,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1112,6 +1157,17 @@ paths:
           description: Search term or phrase that must appear in all results.
           type: string
         style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -1158,6 +1214,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1170,6 +1227,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1182,6 +1240,7 @@ paths:
         schema:
           description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
             \ for this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1229,84 +1288,6 @@ paths:
       tags:
       - ShopListing Image
       x-accepts: application/json
-    get:
-      description: |-
-        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
-
-        NOTE: This endpoint is being deprecated in favor of not requiring the shops/:shop_id as part of the URL. Retrieves the references and metadata for a listing image with a specific image ID.
-      operationId: getListingImageDeprecated
-      parameters:
-      - description: The unique positive non-zero numeric ID for an Etsy Shop.
-        explode: false
-        in: path
-        name: shop_id
-        required: true
-        schema:
-          description: The unique positive non-zero numeric ID for an Etsy Shop.
-          minimum: 1
-          type: integer
-        style: simple
-      - description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-          \ associated to this transaction."
-        explode: false
-        in: path
-        name: listing_id
-        required: true
-        schema:
-          description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-            \ associated to this transaction."
-          minimum: 1
-          type: integer
-        style: simple
-      - description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
-          \ for this transaction."
-        explode: false
-        in: path
-        name: listing_image_id
-        required: true
-        schema:
-          description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
-            \ for this transaction."
-          minimum: 1
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListingImage'
-          description: A single ListingImage
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: A resource could not be found. See the error message for details.
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: There was a problem with the request data. See the error message
-            for details.
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The request attempted to perform an operation it is not allowed
-            to. See the error message for details.
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The server encountered an internal error. See the error message
-            for details.
-      tags:
-      - ShopListing Image
-      x-accepts: application/json
   /v3/application/listings/{listing_id}/images/{listing_image_id}:
     get:
       description: |-
@@ -1324,6 +1305,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1336,6 +1318,7 @@ paths:
         schema:
           description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
             \ for this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1393,6 +1376,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1434,72 +1418,6 @@ paths:
       - ShopListing Image
       x-accepts: application/json
   /v3/application/shops/{shop_id}/listings/{listing_id}/images:
-    get:
-      description: |-
-        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
-
-        NOTE: This endpoint is being deprecated in favor of not requiring the shops/:shop_id as part of the URL. Retrieves all listing image resources for a listing with a specific listing ID.
-      operationId: getListingImagesDeprecated
-      parameters:
-      - description: The unique positive non-zero numeric ID for an Etsy Shop.
-        explode: false
-        in: path
-        name: shop_id
-        required: true
-        schema:
-          description: The unique positive non-zero numeric ID for an Etsy Shop.
-          minimum: 1
-          type: integer
-        style: simple
-      - description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-          \ associated to this transaction."
-        explode: false
-        in: path
-        name: listing_id
-        required: true
-        schema:
-          description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-            \ associated to this transaction."
-          minimum: 1
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ListingImages'
-          description: A single ListingImage
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: A resource could not be found. See the error message for details.
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: There was a problem with the request data. See the error message
-            for details.
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The request attempted to perform an operation it is not allowed
-            to. See the error message for details.
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The server encountered an internal error. See the error message
-            for details.
-      tags:
-      - ShopListing Image
-      x-accepts: application/json
     post:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
@@ -1514,6 +1432,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1526,6 +1445,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1607,6 +1527,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1633,6 +1554,17 @@ paths:
           enum:
           - Listing
           type: string
+        style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         style: form
       responses:
         "200":
@@ -1698,6 +1630,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1770,6 +1703,7 @@ paths:
         required: true
         schema:
           description: The listing to return a ListingProduct for.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1782,9 +1716,21 @@ paths:
         schema:
           description: "The numeric ID for a specific [product](/documentation/reference#tag/ShopListing-Product)\
             \ purchased from a listing."
+          format: int64
           minimum: 1
           type: integer
         style: simple
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -1840,6 +1786,7 @@ paths:
         name: listing_id
         required: true
         schema:
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1849,6 +1796,7 @@ paths:
         name: product_id
         required: true
         schema:
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -1858,9 +1806,21 @@ paths:
         name: product_offering_id
         required: true
         schema:
+          format: int64
           minimum: 1
           type: integer
         style: simple
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -1908,6 +1868,7 @@ paths:
           description: The list of numeric IDS for the listings in a specific Etsy
             shop.
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -1979,6 +1940,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2051,6 +2013,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2063,6 +2026,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2073,6 +2037,7 @@ paths:
         required: true
         schema:
           description: "The unique ID of an Etsy [listing property](/documentation/reference#operation/getListingProperties)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2134,6 +2099,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2146,6 +2112,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2156,6 +2123,7 @@ paths:
         required: true
         schema:
           description: "The unique ID of an Etsy [listing property](/documentation/reference#operation/getListingProperties)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2230,6 +2198,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2240,6 +2209,7 @@ paths:
         required: true
         schema:
           description: "The unique ID of an Etsy [listing property](/documentation/reference#operation/getListingProperties)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2294,6 +2264,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2306,6 +2277,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2354,6 +2326,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2366,6 +2339,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2391,6 +2365,17 @@ paths:
           description: The number of records to skip before selecting the first result.
           minimum: 0
           type: integer
+        style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         style: form
       responses:
         "200":
@@ -2455,6 +2440,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2467,6 +2453,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2525,6 +2512,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2537,6 +2525,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2619,6 +2608,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2631,6 +2621,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2714,6 +2705,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2726,6 +2718,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2734,96 +2727,6 @@ paths:
           application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/updateListing_request'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ShopListing'
-          description: A single ShopListing
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: There was a problem with the request data. See the error message
-            for details.
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The request lacks valid authentication credentials. See the
-            error message for details.
-        "403":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The request attempted to perform an operation it is not allowed
-            to. See the error message for details.
-        "409":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: There was a request conflict with the current state of the
-            target resource. See the error message for details.
-        "404":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: A resource could not be found. See the error message for details.
-        "500":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: The server encountered an internal error. See the error message
-            for details.
-      security:
-      - api_key: []
-        oauth2:
-        - listings_w
-      tags:
-      - ShopListing
-      x-content-type: application/x-www-form-urlencoded
-      x-accepts: application/json
-    put:
-      description: |-
-        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
-
-        Updates a listing, identified by a listing ID, for a specific shop identified by a shop ID. This endpoint will be removed in the near future in favor of `updateListing` PATCH version.
-      operationId: updateListingDeprecated
-      parameters:
-      - description: The unique positive non-zero numeric ID for an Etsy Shop.
-        explode: false
-        in: path
-        name: shop_id
-        required: true
-        schema:
-          description: The unique positive non-zero numeric ID for an Etsy Shop.
-          minimum: 1
-          type: integer
-        style: simple
-      - description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-          \ associated to this transaction."
-        explode: false
-        in: path
-        name: listing_id
-        required: true
-        schema:
-          description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
-            \ associated to this transaction."
-          minimum: 1
-          type: integer
-        style: simple
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/updateListingDeprecated_request'
       responses:
         "200":
           content:
@@ -2895,6 +2798,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2907,6 +2811,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2973,6 +2878,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -2985,6 +2891,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3064,6 +2971,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3076,6 +2984,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3086,6 +2995,7 @@ paths:
         required: true
         schema:
           description: The unique ID of a video associated with a listing.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3148,6 +3058,7 @@ paths:
         required: true
         schema:
           description: The unique ID of a video associated with a listing.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3160,6 +3071,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3224,6 +3136,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3279,6 +3192,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3291,6 +3205,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3363,6 +3278,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3373,6 +3289,7 @@ paths:
         required: true
         schema:
           description: The unique ID of the shop owner ledger entry.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3433,6 +3350,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3536,6 +3454,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3546,6 +3465,7 @@ paths:
         required: true
         schema:
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -3607,6 +3527,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3619,6 +3540,7 @@ paths:
         schema:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3685,6 +3607,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3696,6 +3619,7 @@ paths:
         schema:
           description: A comma-separated array of Payment IDs numbers.
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -3801,6 +3725,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3813,9 +3738,21 @@ paths:
         schema:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -3878,6 +3815,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3890,6 +3828,7 @@ paths:
         schema:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -3962,6 +3901,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4114,6 +4054,17 @@ paths:
           nullable: true
           type: boolean
         style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -4179,6 +4130,7 @@ paths:
         schema:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4189,6 +4141,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4278,6 +4231,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4288,6 +4242,7 @@ paths:
         required: true
         schema:
           description: The receipt to submit tracking for.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4367,6 +4322,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4379,9 +4335,21 @@ paths:
         schema:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -4447,6 +4415,7 @@ paths:
         schema:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4540,6 +4509,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4681,6 +4651,7 @@ paths:
             \ \"EU\" shoe size scale with its associated property names and IDs for\
             \ EU shoe sizes, such as property `value_id`:\"1394\", and `name`:\"38\"\
             ."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4771,6 +4742,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4818,6 +4790,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4893,6 +4866,7 @@ paths:
         schema:
           description: "The numeric user ID of the [user](/documentation/reference#tag/User)\
             \ who owns this shop."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4948,6 +4922,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -4993,7 +4968,7 @@ paths:
       description: |-
         <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
-            Updates the preference for whether the seller will process orders or not on the holiday.     "Currently only supported in the US and CA"
+        Updates the preference for whether the seller will process orders or not on the holiday. Currently only supported in the US and CA
       operationId: updateHolidayPreferences
       parameters:
       - description: The unique positive non-zero numeric ID for an Etsy Shop.
@@ -5003,6 +4978,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5238,6 +5214,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5310,6 +5287,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5368,6 +5346,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5434,6 +5413,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5444,6 +5424,7 @@ paths:
         required: true
         schema:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5499,6 +5480,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5509,6 +5491,7 @@ paths:
         required: true
         schema:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5567,6 +5550,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5577,6 +5561,7 @@ paths:
         required: true
         schema:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5656,6 +5641,7 @@ paths:
         required: true
         schema:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5666,6 +5652,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5732,6 +5719,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5770,6 +5758,394 @@ paths:
       tags:
       - Shop ProductionPartner
       x-accepts: application/json
+  /v3/application/shops/{shop_id}/readiness-state-definitions:
+    get:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Retrieves a list of ProcessingProfiles available in the specific Etsy shop identified by its shop ID.
+      operationId: getShopReadinessStateDefinitions
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      - description: The maximum number of results to return.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 25
+          description: The maximum number of results to return.
+          maximum: 100
+          minimum: 1
+          type: integer
+        style: form
+      - description: The number of records to skip before selecting the first result.
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          description: The number of records to skip before selecting the first result.
+          minimum: 0
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopProcessingProfiles'
+          description: A list of ProcessingProfiles
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: A resource could not be found. See the error message for details.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request lacks valid authentication credentials. See the
+            error message for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_r
+      tags:
+      - Shop ProcessingProfiles
+      x-accepts: application/json
+    post:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Creates a new ReadinessStateDefinition. If an existing definition matches the input values, this endpoint will throw a Conflict error, please refer to the Content-Location header to obtain the get endpoint url for the values of the existing definition. Does not affect the product offering-readiness states definition relationship.
+      operationId: createShopReadinessStateDefinition
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/createShopReadinessStateDefinition_request'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopProcessingProfile'
+          description: A single ReadinessStateDefinition
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a request conflict with the current state of the
+            target resource. See the error message for details.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: A resource could not be found. See the error message for details.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request lacks valid authentication credentials. See the
+            error message for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_w
+      tags:
+      - Shop ProcessingProfiles
+      x-content-type: application/x-www-form-urlencoded
+      x-accepts: application/json
+  /v3/application/shops/{shop_id}/readiness-state-definitions/{readiness_state_definition_id}:
+    delete:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Deletes a ReadinessStateDefinition by given readiness state definition ID. If there any active offerings linked to the definition, this endpoint will throw a Bad Request error. If you want to delete a ReadinessStateDefinition that is linked to active offerings, you must link the offerings to a different readiness state definition.
+      operationId: deleteShopReadinessStateDefinition
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      - description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+          \ associated with the listing. Required when listing type is `physical`."
+        explode: false
+        in: path
+        name: readiness_state_definition_id
+        required: true
+        schema:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      responses:
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request attempted to perform an operation it is not allowed
+            to. See the error message for details.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: A resource could not be found. See the error message for details.
+        "204":
+          description: The ReadinessStateDefinition was successfully deleted
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request lacks valid authentication credentials. See the
+            error message for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_w
+      tags:
+      - Shop ProcessingProfiles
+      x-accepts: application/json
+    get:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Retrieves a ProcessingProfile referenced by readiness state definition ID.
+      operationId: getShopReadinessStateDefinition
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      - description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+          \ associated with the listing. Required when listing type is `physical`."
+        explode: false
+        in: path
+        name: readiness_state_definition_id
+        required: true
+        schema:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopProcessingProfile'
+          description: A single ProcessingProfile
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: A resource could not be found. See the error message for details.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request lacks valid authentication credentials. See the
+            error message for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_r
+      tags:
+      - Shop ProcessingProfiles
+      x-accepts: application/json
+    put:
+      description: |-
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
+
+        Updates an existing ReadinessStateDefinition. If an existing definition matches the input values, this endpoint will throw a Conflict error, please refer to the Content-Location header to obtain the get endpoint url for the values of the existing definition. Does not affect the product offering-readiness states definition relationship.
+      operationId: updateShopReadinessStateDefinition
+      parameters:
+      - description: The unique positive non-zero numeric ID for an Etsy Shop.
+        explode: false
+        in: path
+        name: shop_id
+        required: true
+        schema:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      - description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+          \ associated with the listing. Required when listing type is `physical`."
+        explode: false
+        in: path
+        name: readiness_state_definition_id
+        required: true
+        schema:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/updateShopReadinessStateDefinition_request'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopProcessingProfile'
+          description: The updated ReadinessStateDefinition
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a request conflict with the current state of the
+            target resource. See the error message for details.
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: There was a problem with the request data. See the error message
+            for details.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: A resource could not be found. See the error message for details.
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The request lacks valid authentication credentials. See the
+            error message for details.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+          description: The server encountered an internal error. See the error message
+            for details.
+      security:
+      - api_key: []
+        oauth2:
+        - shops_w
+      tags:
+      - Shop ProcessingProfiles
+      x-content-type: application/x-www-form-urlencoded
+      x-accepts: application/json
   /v3/application/shops/{shop_id}/sections:
     get:
       description: |-
@@ -5785,6 +6161,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5832,6 +6209,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5905,6 +6283,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5915,6 +6294,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5977,6 +6357,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -5987,6 +6368,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6034,6 +6416,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6044,6 +6427,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6117,6 +6501,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6128,6 +6513,7 @@ paths:
         schema:
           description: A list of numeric IDS for all sections in a specific Etsy shop.
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -6236,6 +6622,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6288,6 +6675,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6354,6 +6742,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6366,6 +6755,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6427,6 +6817,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6439,6 +6830,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6504,6 +6896,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6516,6 +6909,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6595,6 +6989,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6607,6 +7002,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6695,6 +7091,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6707,6 +7104,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6773,6 +7171,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6785,6 +7184,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6799,6 +7199,7 @@ paths:
           description: "The numeric ID of the shipping profile destination in the\
             \ [shipping profile](/documentation/reference#tag/Shop-ShippingProfile)\
             \ associated with the listing."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6860,6 +7261,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6872,6 +7274,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6886,6 +7289,7 @@ paths:
           description: "The numeric ID of the shipping profile destination in the\
             \ [shipping profile](/documentation/reference#tag/Shop-ShippingProfile)\
             \ associated with the listing."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6965,6 +7369,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -6977,6 +7382,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7042,6 +7448,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7054,6 +7461,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7126,6 +7534,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7136,6 +7545,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of the shipping profile.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7146,6 +7556,7 @@ paths:
         required: true
         schema:
           description: The numeric ID that is associated with a shipping upgrade
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7207,6 +7618,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7219,6 +7631,7 @@ paths:
         schema:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7229,6 +7642,7 @@ paths:
         required: true
         schema:
           description: The numeric ID that is associated with a shipping upgrade
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7346,6 +7760,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7356,6 +7771,7 @@ paths:
         required: true
         schema:
           description: The unique numeric ID for a transaction.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7422,6 +7838,7 @@ paths:
         required: true
         schema:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7447,6 +7864,17 @@ paths:
           description: The number of records to skip before selecting the first result.
           minimum: 0
           type: integer
+        style: form
+      - description: This parameter needed to enable new parameters and response values
+          related to processing profiles.
+        explode: true
+        in: query
+        name: legacy
+        required: false
+        schema:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         style: form
       responses:
         "200":
@@ -7504,6 +7932,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of the user's address.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7540,7 +7969,7 @@ paths:
       x-accepts: application/json
     get:
       description: |-
-        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationTertiary wt-mr-xs-2"> Feedback only </span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Give feedback</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">Development for this endpoint is in progress. It will only return a 501 response.</p></div>
+        <div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><span class="wt-badge wt-badge--notificationPrimary wt-bg-slime-tint wt-mr-xs-2">General Release</span><a class="wt-text-link" href="https://github.com/etsy/open-api/discussions" target="_blank" rel="noopener noreferrer">Report bug</a></div><div class="wt-display-flex-xs wt-align-items-center wt-mt-xs-2 wt-mb-xs-3"><p class="wt-text-body-01 banner-text">This endpoint is ready for production use.</p></div>
 
         Open API V3 endpoint to retrieve a UserAddress for a User.
       operationId: getUserAddress
@@ -7552,6 +7981,7 @@ paths:
         required: true
         schema:
           description: The numeric ID of the user's address.
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7562,12 +7992,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserAddress'
           description: A single UserAddress
-        "501":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorSchema'
-          description: This endpoint is not functional at this time.
         "400":
           content:
             application/json:
@@ -7681,6 +8105,7 @@ paths:
         name: user_id
         required: true
         schema:
+          format: int64
           minimum: 1
           type: integer
         style: simple
@@ -7809,14 +8234,15 @@ components:
         id:
           description: "The unique numeric ID of an Etsy taxonomy node, which is a\
             \ metadata category for listings organized into the seller taxonomy hierarchy\
-            \ tree. For example, the \\\"shoes\\\" taxonomy node (ID: 1429, level:\
-            \ 1) is higher in the hierarchy than \\\"girls' shoes\\\" (ID: 1440, level:\
-            \ 2). The taxonomy nodes assigned to a listing support access to specific\
+            \ tree. For example, the \"shoes\" taxonomy node (ID: 1429, level: 1)\
+            \ is higher in the hierarchy than \"girls' shoes\" (ID: 1440, level: 2).\
+            \ The taxonomy nodes assigned to a listing support access to specific\
             \ standardized product scales and properties. For example, listings assigned\
-            \ the taxonomy nodes \\\"shoes\\\" or \\\"girls' shoes\\\" support access\
-            \ to the \\\"EU\\\" shoe size scale with its associated property names\
-            \ and IDs for EU shoe sizes, such as property `value_id`:\\\"1394\\\"\
-            , and `name`:\\\"38\\\"."
+            \ the taxonomy nodes \"shoes\" or \"girls' shoes\" support access to the\
+            \ \"EU\" shoe size scale with its associated property names and IDs for\
+            \ EU shoe sizes, such as property `value_id`:\"1394\", and `name`:\"38\"\
+            ."
+          format: int64
           minimum: 1
           type: integer
         level:
@@ -7829,6 +8255,7 @@ components:
           type: string
         parent_id:
           description: The numeric taxonomy ID of the parent of this node.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -7843,6 +8270,7 @@ components:
             direct parents in the seller taxonomy tree up to a root node. They are
             listed in order from root to leaf.
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -7877,6 +8305,7 @@ components:
       properties:
         property_id:
           description: The unique numeric ID of this product property.
+          format: int64
           minimum: 1
           type: integer
         name:
@@ -7927,6 +8356,7 @@ components:
       properties:
         scale_id:
           description: The unique numeric ID of a scale.
+          format: int64
           minimum: 1
           type: integer
         display_name:
@@ -7942,6 +8372,7 @@ components:
       properties:
         value_id:
           description: The numeric ID of this property value.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -7951,6 +8382,7 @@ components:
         scale_id:
           description: The numeric scale ID of the scale to which this property value
             belongs.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -7999,6 +8431,7 @@ components:
         style:
         - style
         - style
+        readiness_state_id: 1
         item_width: 9.36931
         is_private: true
         listing_id: 1
@@ -8025,23 +8458,26 @@ components:
         listing_id:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ posting the listing."
+          format: int64
           minimum: 1
           type: integer
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         title:
           description: "The listing's title string. When creating or updating a listing,\
             \ valid title strings contain only letters, numbers, punctuation marks,\
             \ mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\
-            \\p{L}\\\\p{Nd}\\\\p{P}\\\\p{Sm}\\\\p{Zs}™©®]/u) You can only use the\
-            \ %, :, & and + characters once each."
+            p{L}\\p{Nd}\\p{P}\\p{Sm}\\p{Zs}™©®]/u) You can only use the %, :, & and\
+            \ + characters once each."
           type: string
         description:
           description: A description string of the product for sale in the listing.
@@ -8060,19 +8496,19 @@ components:
           - expired
           type: string
         creation_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         ending_timestamp:
-          description: "The listing\\'s expiration time, in epoch seconds."
+          description: "The listing's expiration time, in epoch seconds."
           minimum: 946684800
           type: integer
         original_creation_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         last_modified_timestamp:
@@ -8098,13 +8534,14 @@ components:
           type: integer
         shop_section_id:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         featured_rank:
           description: "The positive non-zero numeric position in the featured listings\
             \ of the shop, with rank 1 listings appearing in the left-most position\
-            \ in featured listing on a shop’s home page."
+            \ in featured listing on a shop's home page."
           type: integer
         url:
           description: The full URL to the listing's page on Etsy.
@@ -8156,27 +8593,28 @@ components:
         tags:
           description: "A comma-separated list of tag strings for the listing. When\
             \ creating or updating a listing, valid tag strings contain only letters,\
-            \ numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\\\p{L}\\\
-            \\p{Nd}\\\\p{Zs}\\\\-'™©®]/u) Default value is null."
+            \ numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\p{L}\\\
+            p{Nd}\\p{Zs}\\-'™©®]/u) Default value is null."
           items:
             type: string
           type: array
         materials:
           description: "A list of material strings for materials used in the product.\
             \ Valid materials strings contain only letters, numbers, and whitespace\
-            \ characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value\
-            \ is null."
+            \ characters. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null."
           items:
             type: string
           type: array
         shipping_profile_id:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -8236,8 +8674,8 @@ components:
           type: boolean
         item_weight:
           description: "The numeric weight of the product measured in units set in\
-            \ \\'item_weight_unit\\'. Default value is null. If set, the value must\
-            \ be greater than 0."
+            \ 'item_weight_unit'. Default value is null. If set, the value must be\
+            \ greater than 0."
           format: float
           nullable: true
           type: number
@@ -8253,22 +8691,22 @@ components:
           type: string
         item_length:
           description: "The numeric length of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
         item_width:
           description: "The numeric width of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
         item_height:
           description: "The numeric length of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
@@ -8291,11 +8729,10 @@ components:
           type: boolean
         style:
           description: "An array of style strings for this listing, each of which\
-            \ is free-form text string such as \\\"Formal\\\", or \\\"Steampunk\\\"\
-            . When creating or updating a listing, the listing may have up to two\
-            \ styles. Valid style strings contain only letters, numbers, and whitespace\
-            \ characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value\
-            \ is null."
+            \ is free-form text string such as \"Formal\", or \"Steampunk\". When\
+            \ creating or updating a listing, the listing may have up to two styles.\
+            \ Valid style strings contain only letters, numbers, and whitespace characters.\
+            \ (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null."
           items:
             type: string
           type: array
@@ -8319,6 +8756,13 @@ components:
           description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
             \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
             \ more information."
+          nullable: true
+          type: integer
+        readiness_state_id:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
           nullable: true
           type: integer
       type: object
@@ -8351,11 +8795,13 @@ components:
       properties:
         listing_file_id:
           description: The unique numeric ID of a file associated with a digital listing.
+          format: int64
           minimum: 1
           type: integer
         listing_id:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         rank:
@@ -8469,6 +8915,7 @@ components:
         style:
         - style
         - style
+        readiness_state_id: 1
         item_width: 9.36931
         is_private: true
         shop: null
@@ -8481,7 +8928,7 @@ components:
         title: title
         inventory: null
         item_height: 6.6835623
-        views: 9
+        views: 6
         item_length: 9.965781
         quantity: 0
         creation_timestamp: 946684800
@@ -8502,23 +8949,26 @@ components:
         listing_id:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ posting the listing."
+          format: int64
           minimum: 1
           type: integer
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         title:
           description: "The listing's title string. When creating or updating a listing,\
             \ valid title strings contain only letters, numbers, punctuation marks,\
             \ mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\
-            \\p{L}\\\\p{Nd}\\\\p{P}\\\\p{Sm}\\\\p{Zs}™©®]/u) You can only use the\
-            \ %, :, & and + characters once each."
+            p{L}\\p{Nd}\\p{P}\\p{Sm}\\p{Zs}™©®]/u) You can only use the %, :, & and\
+            \ + characters once each."
           type: string
         description:
           description: A description string of the product for sale in the listing.
@@ -8537,19 +8987,19 @@ components:
           - expired
           type: string
         creation_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         ending_timestamp:
-          description: "The listing\\'s expiration time, in epoch seconds."
+          description: "The listing's expiration time, in epoch seconds."
           minimum: 946684800
           type: integer
         original_creation_timestamp:
-          description: "The listing\\'s creation time, in epoch seconds."
+          description: "The listing's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         last_modified_timestamp:
@@ -8575,13 +9025,14 @@ components:
           type: integer
         shop_section_id:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         featured_rank:
           description: "The positive non-zero numeric position in the featured listings\
             \ of the shop, with rank 1 listings appearing in the left-most position\
-            \ in featured listing on a shop’s home page."
+            \ in featured listing on a shop's home page."
           type: integer
         url:
           description: The full URL to the listing's page on Etsy.
@@ -8633,27 +9084,28 @@ components:
         tags:
           description: "A comma-separated list of tag strings for the listing. When\
             \ creating or updating a listing, valid tag strings contain only letters,\
-            \ numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\\\p{L}\\\
-            \\p{Nd}\\\\p{Zs}\\\\-'™©®]/u) Default value is null."
+            \ numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\p{L}\\\
+            p{Nd}\\p{Zs}\\-'™©®]/u) Default value is null."
           items:
             type: string
           type: array
         materials:
           description: "A list of material strings for materials used in the product.\
             \ Valid materials strings contain only letters, numbers, and whitespace\
-            \ characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value\
-            \ is null."
+            \ characters. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null."
           items:
             type: string
           type: array
         shipping_profile_id:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -8713,8 +9165,8 @@ components:
           type: boolean
         item_weight:
           description: "The numeric weight of the product measured in units set in\
-            \ \\'item_weight_unit\\'. Default value is null. If set, the value must\
-            \ be greater than 0."
+            \ 'item_weight_unit'. Default value is null. If set, the value must be\
+            \ greater than 0."
           format: float
           nullable: true
           type: number
@@ -8730,22 +9182,22 @@ components:
           type: string
         item_length:
           description: "The numeric length of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
         item_width:
           description: "The numeric width of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
         item_height:
           description: "The numeric length of the product measured in units set in\
-            \ \\'item_dimensions_unit\\'. Default value is null. If set, the value\
-            \ must be greater than 0."
+            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
+            \ be greater than 0."
           format: float
           nullable: true
           type: number
@@ -8768,11 +9220,10 @@ components:
           type: boolean
         style:
           description: "An array of style strings for this listing, each of which\
-            \ is free-form text string such as \\\"Formal\\\", or \\\"Steampunk\\\"\
-            . When creating or updating a listing, the listing may have up to two\
-            \ styles. Valid style strings contain only letters, numbers, and whitespace\
-            \ characters. (regex: /[^\\\\p{L}\\\\p{Nd}\\\\p{Zs}]/u) Default value\
-            \ is null."
+            \ is free-form text string such as \"Formal\", or \"Steampunk\". When\
+            \ creating or updating a listing, the listing may have up to two styles.\
+            \ Valid style strings contain only letters, numbers, and whitespace characters.\
+            \ (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null."
           items:
             type: string
           type: array
@@ -8796,6 +9247,13 @@ components:
           description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
             \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
             \ more information."
+          nullable: true
+          type: integer
+        readiness_state_id:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
           nullable: true
           type: integer
         shipping_profile:
@@ -8867,6 +9325,7 @@ components:
       properties:
         shipping_profile_id:
           description: The numeric ID of the shipping profile.
+          format: int64
           minimum: 1
           type: integer
         title:
@@ -8876,6 +9335,7 @@ components:
         user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ who owns the shipping profile."
+          format: int64
           minimum: 1
           type: integer
         min_processing_days:
@@ -8957,10 +9417,12 @@ components:
           description: "The numeric ID of the shipping profile destination in the\
             \ [shipping profile](/documentation/reference#tag/Shop-ShippingProfile)\
             \ associated with the listing."
+          format: int64
           minimum: 1
           type: integer
         shipping_profile_id:
           description: The numeric ID of the shipping profile.
+          format: int64
           minimum: 1
           type: integer
         origin_country_iso:
@@ -8975,7 +9437,7 @@ components:
         destination_region:
           description: "The code of the region to which the listing ships. A region\
             \ represents a set of countries. Supported regions are Europe Union and\
-            \ Non-Europe Union (countries in Europe not in EU). If \\`none\\`, request\
+            \ Non-Europe Union (countries in Europe not in EU). If `none`, request\
             \ sets destination to destination_country_iso. Required if destination_country_iso\
             \ is null or not provided."
           enum:
@@ -9034,10 +9496,12 @@ components:
       properties:
         shipping_profile_id:
           description: The numeric ID of the base shipping profile.
+          format: int64
           minimum: 1
           type: integer
         upgrade_id:
           description: The numeric ID that is associated with a shipping upgrade
+          format: int64
           minimum: 1
           type: integer
         upgrade_name:
@@ -9105,26 +9569,27 @@ components:
       properties:
         user_id:
           description: The numeric ID of a user. This number is also a valid shop
-            ID for the user\'s shop.
+            ID for the user's shop.
+          format: int64
           minimum: 1
           type: integer
         primary_email:
-          description: An email address string for the user\'s primary email address.
+          description: An email address string for the user's primary email address.
             Access to this field is granted on a case by case basis for third-party
             integrations that require full access
           format: email
           nullable: true
           type: string
         first_name:
-          description: The user\'s first name.
+          description: The user's first name.
           nullable: true
           type: string
         last_name:
-          description: The user\'s last name.
+          description: The user's last name.
           nullable: true
           type: string
         image_url_75x75:
-          description: The user\'s avatar URL.
+          description: The user's avatar URL.
           nullable: true
           type: string
       type: object
@@ -9183,11 +9648,13 @@ components:
       properties:
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         user_id:
           description: "The numeric user ID of the [user](/documentation/reference#tag/User)\
             \ who owns this shop."
+          format: int64
           minimum: 1
           type: integer
         shop_name:
@@ -9202,7 +9669,7 @@ components:
           minimum: 0
           type: integer
         title:
-          description: A brief heading string for the shop\'s main page.
+          description: A brief heading string for the shop's main page.
           nullable: true
           type: string
         announcement:
@@ -9250,7 +9717,7 @@ components:
           minimum: 0
           type: integer
         login_name:
-          description: The shop owner\'s login name string.
+          description: The shop owner's login name string.
           type: string
         accepts_custom_requests:
           description: "When true, the shop accepts customization requests."
@@ -9329,8 +9796,8 @@ components:
             \ policies onboarding."
           type: boolean
         include_dispute_form_link:
-          description: "When true, this shop\\'s policies include a link to an EU\
-            \ online dispute form."
+          description: "When true, this shop's policies include a link to an EU online\
+            \ dispute form."
           type: boolean
         is_direct_checkout_onboarded:
           description: "(**DEPRECATED: Replaced by _is_etsy_payments_onboarded_.)\
@@ -9404,11 +9871,13 @@ components:
         listing_id:
           description: "The numeric ID for the [listing](/documentation/reference#tag/ShopListing)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         listing_image_id:
           description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
             \ for this transaction."
+          format: int64
           minimum: 1
           type: integer
         hex_code:
@@ -9457,11 +9926,11 @@ components:
           nullable: true
           type: boolean
         creation_tsz:
-          description: "The listing image\\'s creation time, in epoch seconds."
+          description: "The listing image's creation time, in epoch seconds."
           minimum: 0
           type: integer
         created_timestamp:
-          description: "The listing image\\'s creation time, in epoch seconds."
+          description: "The listing image's creation time, in epoch seconds."
           minimum: 0
           type: integer
         rank:
@@ -9514,6 +9983,7 @@ components:
       properties:
         video_id:
           description: The unique ID of a video associated with a listing.
+          format: int64
           minimum: 1
           type: integer
         height:
@@ -9541,6 +10011,9 @@ components:
     ListingInventory:
       description: A representation of a single listing's inventory record.
       example:
+        readiness_state_on_property:
+        - 1
+        - 1
         price_on_property:
         - 0
         - 0
@@ -9585,6 +10058,17 @@ components:
           items:
             type: integer
           type: array
+        readiness_state_on_property:
+          description: "An array of unique [listing property](/documentation/reference#operation/getListingProperties)\
+            \ ID integers for the properties that change processing profile, if any.\
+            \ For example, if you need specific processing profiles for different\
+            \ colored products in the same listing, then this array contains the property\
+            \ ID for color."
+          items:
+            format: int64
+            minimum: 1
+            type: integer
+          type: array
       type: object
     ListingInventoryProduct:
       description: A representation of a product for a listing.
@@ -9602,6 +10086,7 @@ components:
         product_id:
           description: "The numeric ID for a specific [product](/documentation/reference#tag/ShopListing-Product)\
             \ purchased from a listing."
+          format: int64
           minimum: 1
           type: integer
         sku:
@@ -9630,9 +10115,11 @@ components:
         is_deleted: true
         price: null
         offering_id: 1
+        readiness_state_id: 1
       properties:
         offering_id:
           description: The ID for the ProductOffering
+          format: int64
           minimum: 1
           type: integer
         quantity:
@@ -9647,6 +10134,12 @@ components:
           type: boolean
         price:
           $ref: '#/components/schemas/ListingInventoryProductOffering_price'
+        readiness_state_id:
+          description: Processing Profile for this ProductOffering
+          format: int64
+          minimum: 1
+          nullable: true
+          type: integer
       type: object
     ListingPropertyValue:
       description: A representation of structured data values.
@@ -9664,6 +10157,7 @@ components:
       properties:
         property_id:
           description: The numeric ID of the Property.
+          format: int64
           minimum: 1
           type: integer
         property_name:
@@ -9672,6 +10166,7 @@ components:
           type: string
         scale_id:
           description: The numeric ID of the scale (if any).
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -9682,6 +10177,7 @@ components:
         value_ids:
           description: The numeric IDs of the Property values
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -9696,6 +10192,7 @@ components:
       properties:
         production_partner_id:
           description: The numeric ID of a production partner.
+          format: int64
           minimum: 1
           type: integer
         partner_name:
@@ -9772,6 +10269,7 @@ components:
       properties:
         listing_id:
           description: The numeric ID for the Listing.
+          format: int64
           minimum: 1
           type: integer
         language:
@@ -9814,6 +10312,9 @@ components:
     ListingInventoryWithAssociations:
       description: A representation of a single listing's inventory record with associations
       example:
+        readiness_state_on_property:
+        - 1
+        - 1
         listing: null
         price_on_property:
         - 0
@@ -9857,6 +10358,17 @@ components:
             \ For example, if you use specific skus for different colored products\
             \ in the same listing, then this array contains the property ID for color."
           items:
+            type: integer
+          type: array
+        readiness_state_on_property:
+          description: "An array of unique [listing property](/documentation/reference#operation/getListingProperties)\
+            \ ID integers for the properties that change processing profile, if any.\
+            \ For example, if you need specific processing profiles for different\
+            \ colored products in the same listing, then this array contains the property\
+            \ ID for color."
+          items:
+            format: int64
+            minimum: 1
             type: integer
           type: array
         listing:
@@ -9972,6 +10484,7 @@ components:
       properties:
         transaction_id:
           description: The unique numeric ID for a transaction.
+          format: int64
           minimum: 1
           type: integer
         title:
@@ -9986,27 +10499,29 @@ components:
           type: string
         seller_user_id:
           description: The numeric user ID for the seller in this transaction.
+          format: int64
           minimum: 1
           type: integer
         buyer_user_id:
           description: The numeric user ID for the buyer in this transaction.
+          format: int64
           minimum: 1
           type: integer
         create_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         paid_timestamp:
-          description: "The transaction\\'s paid date and time, in epoch seconds."
+          description: "The transaction's paid date and time, in epoch seconds."
           minimum: 946684800
           nullable: true
           type: integer
         shipped_timestamp:
-          description: "The transaction\\'s shipping date and time, in epoch seconds."
+          description: "The transaction's shipping date and time, in epoch seconds."
           minimum: 946684800
           nullable: true
           type: integer
@@ -10017,12 +10532,14 @@ components:
         listing_image_id:
           description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
             \ for this transaction."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         receipt_id:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         is_digital:
@@ -10044,6 +10561,7 @@ components:
         product_id:
           description: "The numeric ID for a specific [product](/documentation/reference#tag/ShopListing-Product)\
             \ purchased from a listing."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -10068,16 +10586,19 @@ components:
           type: array
         shipping_profile_id:
           description: The ID of the shipping profile selected for this listing.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         min_processing_days:
           description: The minimum number of days for processing the listing.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         max_processing_days:
           description: The maximum number of days for processing the listing.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -10158,10 +10679,12 @@ components:
       properties:
         property_id:
           description: The numeric ID of the Property.
+          format: int64
           minimum: 1
           type: integer
         value_id:
           description: The numeric ID of the Value.
+          format: int64
           minimum: 1
           type: integer
         value:
@@ -10170,6 +10693,7 @@ components:
           type: string
         image_id:
           description: The numeric ID of the Image.
+          format: int64
           minimum: 1
           type: integer
       type: object
@@ -10213,10 +10737,12 @@ components:
       properties:
         entry_id:
           description: The ledger entry's numeric ID.
+          format: int64
           minimum: 1
           type: integer
         ledger_id:
           description: The ledger's numeric ID.
+          format: int64
           minimum: 1
           type: integer
         sequence_number:
@@ -10269,10 +10795,12 @@ components:
       properties:
         payment_adjustment_id:
           description: The numeric ID for a payment adjustment.
+          format: int64
           minimum: 1
           type: integer
         payment_id:
           description: "A unique numeric ID for a payment to a specific Etsy [shop](/documentation/reference#tag/Shop)."
+          format: int64
           minimum: 1
           type: integer
         status:
@@ -10285,6 +10813,7 @@ components:
         user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ (seller) fulfilling the purchase."
+          format: int64
           minimum: 1
           type: integer
         reason_code:
@@ -10312,11 +10841,11 @@ components:
           nullable: true
           type: integer
         create_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         update_timestamp:
@@ -10340,10 +10869,12 @@ components:
       properties:
         payment_adjustment_id:
           description: The numeric ID for a payment adjustment.
+          format: int64
           minimum: 1
           type: integer
         payment_adjustment_item_id:
           description: Unique ID for the adjustment line item.
+          format: int64
           minimum: 1
           type: integer
         adjustment_type:
@@ -10362,16 +10893,18 @@ components:
           type: integer
         transaction_id:
           description: The unique numeric ID for a transaction.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         bill_payment_id:
           description: Unique ID for the bill payment adjustment.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         created_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         updated_timestamp:
@@ -10422,20 +10955,24 @@ components:
       properties:
         payment_id:
           description: "A unique numeric ID for a payment to a specific Etsy [shop](/documentation/reference#tag/Shop)."
+          format: int64
           minimum: 1
           type: integer
         buyer_user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ who paid the purchase."
+          format: int64
           minimum: 1
           type: integer
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         receipt_id:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         amount_gross:
@@ -10470,11 +11007,13 @@ components:
           type: string
         shipping_user_id:
           description: The numeric ID of the user to which the seller ships the order.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         shipping_address_id:
           description: The numeric id identifying the shipping address.
+          format: int64
           minimum: 1
           type: integer
         billing_address_id:
@@ -10487,16 +11026,16 @@ components:
             \ commonly \"settled\" or \"authed\"."
           type: string
         shipped_timestamp:
-          description: "The transaction\\'s shipping date and time, in epoch seconds."
+          description: "The transaction's shipping date and time, in epoch seconds."
           minimum: 946684800
           nullable: true
           type: integer
         create_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The transaction\\'s creation date and time, in epoch seconds."
+          description: "The transaction's creation date and time, in epoch seconds."
           minimum: 946684800
           type: integer
         update_timestamp:
@@ -10524,6 +11063,7 @@ components:
       properties:
         application_id:
           description: The authenticated application's ID
+          format: int64
           minimum: 1
           type: integer
       type: object
@@ -10581,6 +11121,7 @@ components:
         receipt_id:
           description: "The numeric ID for the [receipt](/documentation/reference#tag/Shop-Receipt)\
             \ associated to this transaction."
+          format: int64
           minimum: 1
           type: integer
         receipt_type:
@@ -10591,6 +11132,7 @@ components:
         seller_user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ (seller) fulfilling the purchase."
+          format: int64
           minimum: 1
           type: integer
         seller_email:
@@ -10601,6 +11143,7 @@ components:
         buyer_user_id:
           description: "The numeric ID for the [user](/documentation/reference#tag/User)\
             \ making the purchase."
+          format: int64
           minimum: 1
           type: integer
         buyer_email:
@@ -10659,11 +11202,10 @@ components:
           type: string
         payment_method:
           description: "The payment method string identifying purchaser's payment\
-            \ method, which must be one of: \\'cc\\' (credit card), \\'paypal\\',\
-            \ \\'check\\', \\'mo\\' (money order), \\'bt\\' (bank transfer), \\'other\\\
-            ', \\'ideal\\', \\'sofort\\', \\'apple_pay\\', \\'google\\', \\'android_pay\\\
-            ', \\'google_pay\\', \\'klarna\\', \\'k_pay_in_4\\' (klarna), \\'k_pay_in_3\\\
-            ' (klarna), or \\'k_financing\\' (klarna)."
+            \ method, which must be one of: 'cc' (credit card), 'paypal', 'check',\
+            \ 'mo' (money order), 'bt' (bank transfer), 'other', 'ideal', 'sofort',\
+            \ 'apple_pay', 'google', 'android_pay', 'google_pay', 'klarna', 'k_pay_in_4'\
+            \ (klarna), 'k_pay_in_3' (klarna), or 'k_financing' (klarna)."
           type: string
         payment_email:
           description: The email address string for the email address to which to
@@ -10690,11 +11232,11 @@ components:
           description: "When true, seller shipped the products."
           type: boolean
         create_timestamp:
-          description: "The receipt\\'s creation time, in epoch seconds."
+          description: "The receipt's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         created_timestamp:
-          description: "The receipt\\'s creation time, in epoch seconds."
+          description: "The receipt's creation time, in epoch seconds."
           minimum: 946684800
           type: integer
         update_timestamp:
@@ -10753,6 +11295,7 @@ components:
       properties:
         receipt_shipping_id:
           description: The unique numeric ID of a Shop Receipt Shipment record.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -10833,11 +11376,13 @@ components:
       properties:
         shop_id:
           description: The shop's numeric ID.
+          format: int64
           minimum: 1
           type: integer
         listing_id:
           description: The ID of the ShopListing that the TransactionReview belongs
             to.
+          format: int64
           minimum: 1
           type: integer
         rating:
@@ -10903,21 +11448,25 @@ components:
       properties:
         shop_id:
           description: The shop's numeric ID.
+          format: int64
           minimum: 1
           type: integer
         listing_id:
           description: The ID of the ShopListing that the TransactionReview belongs
             to.
+          format: int64
           minimum: 1
           type: integer
         transaction_id:
           description: The ID of the ShopReceipt Transaction that the TransactionReview
             belongs to.
+          format: int64
           minimum: 1
           type: integer
         buyer_user_id:
           description: "The numeric ID of the user who was the buyer in this transaction.\
             \ Note: This field may be absent, depending on the buyer's privacy settings."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -10985,14 +11534,15 @@ components:
         id:
           description: "The unique numeric ID of an Etsy taxonomy node, which is a\
             \ metadata category for listings organized into the seller taxonomy hierarchy\
-            \ tree. For example, the \\\"shoes\\\" taxonomy node (ID: 1429, level:\
-            \ 1) is higher in the hierarchy than \\\"girls' shoes\\\" (ID: 1440, level:\
-            \ 2). The taxonomy nodes assigned to a listing support access to specific\
+            \ tree. For example, the \"shoes\" taxonomy node (ID: 1429, level: 1)\
+            \ is higher in the hierarchy than \"girls' shoes\" (ID: 1440, level: 2).\
+            \ The taxonomy nodes assigned to a listing support access to specific\
             \ standardized product scales and properties. For example, listings assigned\
-            \ the taxonomy nodes \\\"shoes\\\" or \\\"girls' shoes\\\" support access\
-            \ to the \\\"EU\\\" shoe size scale with its associated property names\
-            \ and IDs for EU shoe sizes, such as property `value_id`:\\\"1394\\\"\
-            , and `name`:\\\"38\\\"."
+            \ the taxonomy nodes \"shoes\" or \"girls' shoes\" support access to the\
+            \ \"EU\" shoe size scale with its associated property names and IDs for\
+            \ EU shoe sizes, such as property `value_id`:\"1394\", and `name`:\"38\"\
+            ."
+          format: int64
           minimum: 1
           type: integer
         level:
@@ -11005,6 +11555,7 @@ components:
           type: string
         parent_id:
           description: The numeric taxonomy ID of the parent of this node.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -11019,6 +11570,7 @@ components:
             direct parents in the seller taxonomy tree up to a root node. They are
             listed in order from root to leaf.
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -11046,6 +11598,7 @@ components:
       properties:
         property_id:
           description: The unique numeric ID of this product property.
+          format: int64
           minimum: 1
           type: integer
         name:
@@ -11096,6 +11649,7 @@ components:
       properties:
         scale_id:
           description: The unique numeric ID of a scale.
+          format: int64
           minimum: 1
           type: integer
         display_name:
@@ -11111,6 +11665,7 @@ components:
       properties:
         value_id:
           description: The numeric ID of this property value.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -11120,6 +11675,7 @@ components:
         scale_id:
           description: The numeric scale ID of the scale to which this property value
             belongs.
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -11176,6 +11732,7 @@ components:
       properties:
         shipping_carrier_id:
           description: The numeric ID of this shipping carrier.
+          format: int64
           minimum: 1
           type: integer
         name:
@@ -11214,6 +11771,7 @@ components:
       properties:
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         holiday_id:
@@ -11368,10 +11926,12 @@ components:
       properties:
         return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
         accepts_returns:
@@ -11428,6 +11988,74 @@ components:
             $ref: '#/components/schemas/ShopProductionPartners_results_inner'
           type: array
       type: object
+    ShopProcessingProfile:
+      description: Represents a processing profile to set a product offering's readiness
+        state and processing time info.
+      example:
+        shop_id: 1
+        min_processing_days: 0
+        readiness_state: ready_to_ship
+        processing_days_display_label: processing_days_display_label
+        max_processing_days: 0
+        readiness_state_id: 1
+      properties:
+        shop_id:
+          description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
+          minimum: 1
+          type: integer
+        readiness_state_id:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
+          type: integer
+        readiness_state:
+          description: "The readiness state of a product: \\\"1\\\" means \\\"ready_to_ship\\\
+            \", and \\\"2\\\" means \\\"made_to_order\\\""
+          enum:
+          - ready_to_ship
+          - made_to_order
+          type: string
+        min_processing_days:
+          description: The minimum number of days for processing a specific product.
+          minimum: 0
+          type: integer
+        max_processing_days:
+          description: The maximum number of days for processing a specific product.
+          minimum: 0
+          type: integer
+        processing_days_display_label:
+          description: "Translated display label string for processing days, for example\
+            \ \"3 - 5 days\"."
+          type: string
+      type: object
+    ShopProcessingProfiles:
+      description: Represents several ProcessingProfiles.
+      example:
+        count: 0
+        results:
+        - shop_id: 1
+          min_processing_days: 0
+          readiness_state: ready_to_ship
+          processing_days_display_label: processing_days_display_label
+          max_processing_days: 0
+          readiness_state_id: 1
+        - shop_id: 1
+          min_processing_days: 0
+          readiness_state: ready_to_ship
+          processing_days_display_label: processing_days_display_label
+          max_processing_days: 0
+          readiness_state_id: 1
+      properties:
+        count:
+          minimum: 0
+          type: integer
+        results:
+          items:
+            $ref: '#/components/schemas/ShopProcessingProfile'
+          type: array
+      type: object
     ShopSection:
       description: "A section within a shop, into which a user can sort listings."
       example:
@@ -11439,6 +12067,7 @@ components:
       properties:
         shop_section_id:
           description: The numeric ID of a section in a specific Etsy shop.
+          format: int64
           minimum: 1
           type: integer
         title:
@@ -11453,6 +12082,7 @@ components:
         user_id:
           description: "The numeric ID of the [user](/documentation/reference#tag/User)\
             \ who owns this shop section."
+          format: int64
           minimum: 1
           type: integer
         active_listing_count:
@@ -11586,10 +12216,12 @@ components:
       properties:
         user_address_id:
           description: The numeric ID of the user's address.
+          format: int64
           minimum: 1
           type: integer
         user_id:
           description: The user's numeric ID.
+          format: int64
           minimum: 1
           type: integer
         name:
@@ -11651,11 +12283,13 @@ components:
       properties:
         user_id:
           description: The numeric ID of a user. This number is also a valid shop
-            ID for the user\'s shop.
+            ID for the user's shop.
+          format: int64
           minimum: 1
           type: integer
         shop_id:
           description: The unique positive non-zero numeric ID for an Etsy Shop.
+          format: int64
           minimum: 1
           type: integer
       type: object
@@ -11723,16 +12357,19 @@ components:
           description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
             \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
             \ more information."
+          format: int64
           minimum: 1
           type: integer
         shipping_profile_id:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
         return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -11747,6 +12384,7 @@ components:
         shop_section_id:
           description: "The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section)\
             \ for this listing. Default value is null."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -11758,6 +12396,13 @@ components:
         processing_max:
           description: The maximum number of days required to process this listing.
             Default value is null.
+          nullable: true
+          type: integer
+        readiness_state_id:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
           nullable: true
           type: integer
         tags:
@@ -11858,6 +12503,7 @@ components:
         production_partner_ids:
           description: An array of unique IDs of production partner ids.
           items:
+            format: int64
             minimum: 1
             type: integer
           nullable: true
@@ -11866,6 +12512,7 @@ components:
           description: "An array of numeric image IDs of the images in a listing,\
             \ which can include up to 10 images."
           items:
+            format: int64
             minimum: 1
             type: integer
           nullable: true
@@ -11895,6 +12542,10 @@ components:
           - download
           - both
           type: string
+        legacy:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
       required:
       - description
       - price
@@ -11908,6 +12559,7 @@ components:
       properties:
         listing_file_id:
           description: The unique numeric ID of a file associated with a digital listing.
+          format: int64
           minimum: 1
           type: integer
         file:
@@ -11923,6 +12575,7 @@ components:
           description: "The positive non-zero numeric position in the images displayed\
             \ in a listing, with rank 1 images appearing in the left-most position\
             \ in a listing."
+          format: int64
           minimum: 1
           type: integer
       type: object
@@ -11936,6 +12589,7 @@ components:
         listing_image_id:
           description: "The numeric ID of the primary [listing image](/documentation/reference#tag/ShopListing-Image)\
             \ for this transaction."
+          format: int64
           minimum: 1
           type: integer
         rank:
@@ -11963,6 +12617,7 @@ components:
       properties:
         property_id:
           description: "The unique ID of an Etsy [listing property](/documentation/reference#operation/getListingProperties)."
+          format: int64
           minimum: 1
           type: integer
         value_ids:
@@ -11970,6 +12625,7 @@ components:
             \ values. For example, if your listing offers different sizes of a product,\
             \ then the value ID list contains value IDs for each size."
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -11977,6 +12633,7 @@ components:
           description: "The numeric ID of a single Etsy.com measurement scale. For\
             \ example, for shoe size, there are three `scale_id`s available - `UK`,\
             \ `US/Canada`, and `EU`, where `US/Canada` has `scale_id` 19."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -12006,10 +12663,18 @@ components:
         is_enabled:
           description: True if the offering is shown to buyers
           type: boolean
+        readiness_state_id:
+          description: "The numeric ID of the [processing profile](/documentation/reference#operation/getShopReadinessStateDefinition)\
+            \ associated with the listing. Required when listing type is `physical`."
+          format: int64
+          minimum: 1
+          nullable: true
+          type: integer
       required:
       - is_enabled
       - price
       - quantity
+      - readiness_state_id
       type: object
     updateListingInventory_request_products_inner:
       properties:
@@ -12064,6 +12729,22 @@ components:
           items:
             type: integer
           type: array
+        readiness_state_on_property:
+          description: "An array of unique [listing property](/documentation/reference#operation/getListingProperties)\
+            \ ID integers for the properties that change processing profile, if any.\
+            \ For example, if you need specific processing profiles for different\
+            \ colored products in the same listing, then this array contains the property\
+            \ ID for color."
+          items:
+            format: int64
+            minimum: 1
+            type: integer
+          nullable: true
+          type: array
+        legacy:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
       required:
       - products
       type: object
@@ -12074,6 +12755,7 @@ components:
             \ values. For example, if your listing offers different sizes of a product,\
             \ then the value ID list contains value IDs for each size."
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -12089,6 +12771,7 @@ components:
           description: "The numeric ID of a single Etsy.com measurement scale. For\
             \ example, for shoe size, there are three `scale_id`s available - `UK`,\
             \ `US/Canada`, and `EU`, where `US/Canada` has `scale_id` 19."
+          format: int64
           minimum: 1
           type: integer
       required:
@@ -12112,220 +12795,13 @@ components:
       - description
       - title
       type: object
-    updateListingDeprecated_request:
-      properties:
-        image_ids:
-          description: "An array of numeric image IDs of the images in a listing,\
-            \ which can include up to 10 images."
-          items:
-            minimum: 1
-            type: integer
-          type: array
-        title:
-          description: "The listing's title string. When creating or updating a listing,\
-            \ valid title strings contain only letters, numbers, punctuation marks,\
-            \ mathematical symbols, whitespace characters, ™, ©, and ®. (regex: /[^\\\
-            p{L}\\p{Nd}\\p{P}\\p{Sm}\\p{Zs}™©®]/u) You can only use the %, :, & and\
-            \ + characters once each."
-          type: string
-        description:
-          description: A description string of the product for sale in the listing.
-          type: string
-        materials:
-          description: "A list of material strings for materials used in the product.\
-            \ Valid materials strings contain only letters, numbers, and whitespace\
-            \ characters. (regex: /[^\\p{L}\\p{Nd}\\p{Zs}]/u) Default value is null."
-          items:
-            type: string
-          nullable: true
-          type: array
-        should_auto_renew:
-          description: "When true, renews a listing for four months upon expiration."
-          type: boolean
-        shipping_profile_id:
-          description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
-            \ associated with the listing. Required when listing type is `physical`."
-          minimum: 1
-          nullable: true
-          type: integer
-        shop_section_id:
-          description: "The numeric ID of the [shop section](/documentation/reference#tag/Shop-Section)\
-            \ for this listing. Default value is null."
-          nullable: true
-          type: integer
-        item_weight:
-          description: "The numeric weight of the product measured in units set in\
-            \ 'item_weight_unit'. Default value is null. If set, the value must be\
-            \ greater than 0."
-          format: float
-          maximum: 179769313486000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-          minimum: 0
-          nullable: true
-          type: number
-        item_length:
-          description: "The numeric length of the product measured in units set in\
-            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
-            \ be greater than 0."
-          format: float
-          maximum: 179769313486000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-          minimum: 0
-          nullable: true
-          type: number
-        item_width:
-          description: "The numeric width of the product measured in units set in\
-            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
-            \ be greater than 0."
-          format: float
-          maximum: 179769313486000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-          minimum: 0
-          nullable: true
-          type: number
-        item_height:
-          description: "The numeric height of the product measured in units set in\
-            \ 'item_dimensions_unit'. Default value is null. If set, the value must\
-            \ be greater than 0."
-          format: float
-          maximum: 179769313486000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-          minimum: 0
-          nullable: true
-          type: number
-        item_weight_unit:
-          description: A string defining the units used to measure the weight of the
-            product. Default value is null.
-          enum:
-          - oz
-          - lb
-          - g
-          - kg
-          nullable: true
-          type: string
-        item_dimensions_unit:
-          description: A string defining the units used to measure the dimensions
-            of the product. Default value is null.
-          enum:
-          - in
-          - ft
-          - mm
-          - cm
-          - m
-          - yd
-          - inches
-          nullable: true
-          type: string
-        is_taxable:
-          description: "When true, applicable [shop](/documentation/reference#tag/Shop)\
-            \ tax rates apply to this listing at checkout."
-          type: boolean
-        taxonomy_id:
-          description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
-            \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
-            \ more information."
-          minimum: 1
-          type: integer
-        tags:
-          description: "A comma-separated list of tag strings for the listing. When\
-            \ creating or updating a listing, valid tag strings contain only letters,\
-            \ numbers, whitespace characters, -, ', ™, ©, and ®. (regex: /[^\\p{L}\\\
-            p{Nd}\\p{Zs}\\-'™©®]/u) Default value is null."
-          items:
-            type: string
-          nullable: true
-          type: array
-        who_made:
-          description: An enumerated string indicating who made the product. Helps
-            buyers locate the listing under the Handmade heading. Requires 'is_supply'
-            and 'when_made'.
-          enum:
-          - i_did
-          - someone_else
-          - collective
-          type: string
-        when_made:
-          description: An enumerated string for the era in which the maker made the
-            product in this listing. Helps buyers locate the listing under the Vintage
-            heading. Requires 'is_supply' and 'who_made'.
-          enum:
-          - made_to_order
-          - 2020_2025
-          - 2010_2019
-          - 2006_2009
-          - before_2006
-          - 2000_2005
-          - 1990s
-          - 1980s
-          - 1970s
-          - 1960s
-          - 1950s
-          - 1940s
-          - 1930s
-          - 1920s
-          - 1910s
-          - 1900s
-          - 1800s
-          - 1700s
-          - before_1700
-          type: string
-        featured_rank:
-          description: "The positive non-zero numeric position in the featured listings\
-            \ of the shop, with rank 1 listings appearing in the left-most position\
-            \ in featured listing on a shop’s home page."
-          nullable: true
-          type: integer
-        is_personalizable:
-          description: "When true, this listing is personalizable. The default value\
-            \ is null."
-          type: boolean
-        personalization_is_required:
-          description: "When true, this listing requires personalization. The default\
-            \ value is null. Will only change if is_personalizable is 'true'."
-          type: boolean
-        personalization_char_count_max:
-          description: This is an integer value representing the maximum length for
-            the personalization message entered by the buyer. Will only change if
-            is_personalizable is 'true'.
-          type: integer
-        personalization_instructions:
-          description: A string representing instructions for the buyer to enter the
-            personalization. Will only change if is_personalizable is 'true'.
-          type: string
-        state:
-          description: "When _updating_ a listing, this value can be either `active`\
-            \ or `inactive`. Note: Setting a `draft` listing to `active` will also\
-            \ publish the listing on etsy.com and requires that the listing have an\
-            \ image set. Setting a `sold_out` listing to active will update the quantity\
-            \ to 1 and renew the listing on etsy.com."
-          enum:
-          - active
-          - inactive
-          type: string
-        is_supply:
-          description: "When true, tags the listing as a supply product, else indicates\
-            \ that it's a finished product. Helps buyers locate the listing under\
-            \ the Supplies heading. Requires 'who_made' and 'when_made'."
-          type: boolean
-        production_partner_ids:
-          description: An array of unique IDs of production partner ids.
-          items:
-            minimum: 1
-            type: integer
-          nullable: true
-          type: array
-        type:
-          description: An enumerated type string that indicates whether the listing
-            is physical or a digital download.
-          enum:
-          - physical
-          - download
-          - both
-          nullable: true
-          type: string
-      type: object
     updateListing_request:
       properties:
         image_ids:
           description: "An array of numeric image IDs of the images in a listing,\
             \ which can include up to 10 images."
           items:
+            format: int64
             minimum: 1
             type: integer
           type: array
@@ -12353,6 +12829,7 @@ components:
         shipping_profile_id:
           description: "The numeric ID of the [shipping profile](/documentation/reference#operation/getShopShippingProfile)\
             \ associated with the listing. Required when listing type is `physical`."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -12360,6 +12837,7 @@ components:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies).\
             \ Required for active physical listings. This requirement does not apply\
             \ to listings of EU-based shops."
+          format: int64
           minimum: 1
           nullable: true
           type: integer
@@ -12437,6 +12915,7 @@ components:
           description: "The numerical taxonomy ID of the listing. See [SellerTaxonomy](/documentation/reference#tag/SellerTaxonomy)\
             \ and [BuyerTaxonomy](/documentation/reference#tag/BuyerTaxonomy) for\
             \ more information."
+          format: int64
           minimum: 1
           type: integer
         tags:
@@ -12485,7 +12964,7 @@ components:
         featured_rank:
           description: "The positive non-zero numeric position in the featured listings\
             \ of the shop, with rank 1 listings appearing in the left-most position\
-            \ in featured listing on a shop’s home page."
+            \ in featured listing on a shop's home page."
           nullable: true
           type: integer
         is_personalizable:
@@ -12523,6 +13002,7 @@ components:
         production_partner_ids:
           description: An array of unique IDs of production partner ids.
           items:
+            format: int64
             minimum: 1
             type: integer
           nullable: true
@@ -12536,16 +13016,23 @@ components:
           - both
           nullable: true
           type: string
+        legacy:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
       type: object
     updateVariationImages_request_variation_images_inner:
       properties:
         property_id:
+          format: int64
           minimum: 1
           type: integer
         value_id:
+          format: int64
           minimum: 1
           type: integer
         image_id:
+          format: int64
           minimum: 1
           type: integer
       required:
@@ -12567,6 +13054,7 @@ components:
       properties:
         video_id:
           description: The unique ID of a video associated with a listing.
+          format: int64
           minimum: 1
           type: integer
         video:
@@ -12580,6 +13068,10 @@ components:
       type: object
     updateShopReceipt_request:
       properties:
+        legacy:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         was_shipped:
           description: "When `true`, returns receipts where the seller shipped the\
             \ product(s) in this receipt. When `false`, returns receipts where shipment\
@@ -12595,6 +13087,10 @@ components:
       type: object
     createReceiptShipment_request:
       properties:
+        legacy:
+          description: This parameter needed to enable new parameters and response
+            values related to processing profiles.
+          type: boolean
         tracking_code:
           description: The tracking code for this receipt.
           type: string
@@ -12643,10 +13139,12 @@ components:
       properties:
         source_return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
         destination_return_policy_id:
           description: "The numeric ID of the [Return Policy](/documentation/reference#operation/getShopReturnPolicies)."
+          format: int64
           minimum: 1
           type: integer
       required:
@@ -12667,6 +13165,74 @@ components:
       required:
       - accepts_exchanges
       - accepts_returns
+      type: object
+    createShopReadinessStateDefinition_request:
+      properties:
+        readiness_state:
+          description: "The readiness state of a product: \\\"1\\\" means \\\"ready_to_ship\\\
+            \", and \\\"2\\\" means \\\"made_to_order\\\""
+          enum:
+          - ready_to_ship
+          - made_to_order
+          type: string
+        min_processing_time:
+          description: The minimum number of days or weeks for processing a specific
+            product.
+          maximum: 10
+          minimum: 1
+          type: integer
+        max_processing_time:
+          description: The maximum number of days or weeks for processing a specific
+            product.
+          maximum: 10
+          minimum: 1
+          type: integer
+        processing_time_unit:
+          default: days
+          description: "The unit used to represent how long a processing time is.\
+            \ A week is equivalent to how many days the seller works per week as stated\
+            \ in their processing schedule. If none is provided, the unit is set to\
+            \ \\\"days\\\"."
+          enum:
+          - days
+          - weeks
+          type: string
+      required:
+      - max_processing_time
+      - min_processing_time
+      - readiness_state
+      type: object
+    updateShopReadinessStateDefinition_request:
+      properties:
+        readiness_state:
+          description: "The readiness state of a product: \\\"1\\\" means \\\"ready_to_ship\\\
+            \", and \\\"2\\\" means \\\"made_to_order\\\""
+          enum:
+          - ready_to_ship
+          - made_to_order
+          type: string
+        min_processing_time:
+          description: The minimum number of days or weeks for processing a specific
+            product.
+          maximum: 10
+          minimum: 1
+          type: integer
+        max_processing_time:
+          description: The maximum number of days or weeks for processing a specific
+            product.
+          maximum: 10
+          minimum: 1
+          type: integer
+        processing_time_unit:
+          default: days
+          description: "The unit used to represent how long a processing time is.\
+            \ A week is equivalent to how many days the seller works per week as stated\
+            \ in their processing schedule. If none is provided, the unit is set to\
+            \ \\\"days\\\"."
+          enum:
+          - days
+          - weeks
+          type: string
       type: object
     createShopSection_request:
       properties:
@@ -13292,7 +13858,7 @@ components:
     ShopReceipt_total_price:
       allOf:
       - $ref: '#/components/schemas/Money'
-      description: A number equal to the sum of the individual listings\' (price *
+      description: A number equal to the sum of the individual listings' (price *
         quantity). Does not included tax or shipping costs.
     ShopReceipt_total_shipping_cost:
       allOf:
@@ -13470,6 +14036,7 @@ x-tagGroups:
 - name: Shipping Management
   tags:
   - Shop HolidayPreferences
+  - Shop ProcessingProfiles
   - Shop ShippingProfile
 - name: Shop Management
   tags:

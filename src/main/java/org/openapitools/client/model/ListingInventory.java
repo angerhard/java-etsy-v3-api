@@ -1,6 +1,6 @@
 /*
  * Etsy Open API v3
- * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features. The API endpoints are meant to replace Etsy's Open API v2, which is scheduled to end service in 2022.</p><p class=\"wt-pb-xs-2\">All of the endpoints are callable and the majority of the API endpoints are now in a beta phase. This means we do not expect to make any breaking changes before our general release. A handful of endpoints are currently interface stubs (labeled “Feedback Only”) and returns a \"501 Not Implemented\" response code when called.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
+ * <div class=\"wt-text-body-01\"><p class=\"wt-pt-xs-2 wt-pb-xs-2\">Etsy's Open API provides a simple RESTful interface for various Etsy.com features.</p><p class=\"wt-pb-xs-2\">If you'd like to report an issue or provide feedback on the API design, <a target=\"_blank\" class=\"wt-text-link wt-p-xs-0\" href=\"https://github.com/etsy/open-api/discussions\">please add an issue in Github</a>.</p></div>&copy; 2021-2025 Etsy, Inc. All Rights Reserved. Use of this code is subject to Etsy's <a class='wt-text-link wt-p-xs-0' target='_blank' href='https://www.etsy.com/legal/api'>API Developer Terms of Use</a>.
  *
  * The version of the OpenAPI document: 3.0.0
  * Contact: developers@etsy.com
@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * A representation of a single listing&#39;s inventory record.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-15T11:53:41.521727200+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-17T14:01:44.125538310+02:00[Europe/Berlin]")
 public class ListingInventory {
   public static final String SERIALIZED_NAME_PRODUCTS = "products";
   @SerializedName(SERIALIZED_NAME_PRODUCTS)
@@ -66,6 +66,10 @@ public class ListingInventory {
   public static final String SERIALIZED_NAME_SKU_ON_PROPERTY = "sku_on_property";
   @SerializedName(SERIALIZED_NAME_SKU_ON_PROPERTY)
   private List<Long> skuOnProperty = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_READINESS_STATE_ON_PROPERTY = "readiness_state_on_property";
+  @SerializedName(SERIALIZED_NAME_READINESS_STATE_ON_PROPERTY)
+  private List<Long> readinessStateOnProperty = new ArrayList<>();
 
   public ListingInventory() {
   }
@@ -190,6 +194,36 @@ public class ListingInventory {
   }
 
 
+  public ListingInventory readinessStateOnProperty(List<Long> readinessStateOnProperty) {
+    
+    this.readinessStateOnProperty = readinessStateOnProperty;
+    return this;
+  }
+
+  public ListingInventory addReadinessStateOnPropertyItem(Long readinessStateOnPropertyItem) {
+    if (this.readinessStateOnProperty == null) {
+      this.readinessStateOnProperty = new ArrayList<>();
+    }
+    this.readinessStateOnProperty.add(readinessStateOnPropertyItem);
+    return this;
+  }
+
+   /**
+   * An array of unique [listing property](/documentation/reference#operation/getListingProperties) ID integers for the properties that change processing profile, if any. For example, if you need specific processing profiles for different colored products in the same listing, then this array contains the property ID for color.
+   * @return readinessStateOnProperty
+  **/
+  @javax.annotation.Nullable
+
+  public List<Long> getReadinessStateOnProperty() {
+    return readinessStateOnProperty;
+  }
+
+
+  public void setReadinessStateOnProperty(List<Long> readinessStateOnProperty) {
+    this.readinessStateOnProperty = readinessStateOnProperty;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -203,12 +237,13 @@ public class ListingInventory {
     return Objects.equals(this.products, listingInventory.products) &&
         Objects.equals(this.priceOnProperty, listingInventory.priceOnProperty) &&
         Objects.equals(this.quantityOnProperty, listingInventory.quantityOnProperty) &&
-        Objects.equals(this.skuOnProperty, listingInventory.skuOnProperty);
+        Objects.equals(this.skuOnProperty, listingInventory.skuOnProperty) &&
+        Objects.equals(this.readinessStateOnProperty, listingInventory.readinessStateOnProperty);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(products, priceOnProperty, quantityOnProperty, skuOnProperty);
+    return Objects.hash(products, priceOnProperty, quantityOnProperty, skuOnProperty, readinessStateOnProperty);
   }
 
   @Override
@@ -219,6 +254,7 @@ public class ListingInventory {
     sb.append("    priceOnProperty: ").append(toIndentedString(priceOnProperty)).append("\n");
     sb.append("    quantityOnProperty: ").append(toIndentedString(quantityOnProperty)).append("\n");
     sb.append("    skuOnProperty: ").append(toIndentedString(skuOnProperty)).append("\n");
+    sb.append("    readinessStateOnProperty: ").append(toIndentedString(readinessStateOnProperty)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -245,6 +281,7 @@ public class ListingInventory {
     openapiFields.add("price_on_property");
     openapiFields.add("quantity_on_property");
     openapiFields.add("sku_on_property");
+    openapiFields.add("readiness_state_on_property");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -295,6 +332,10 @@ public class ListingInventory {
       // ensure the optional json data is an array if present
       if (jsonObj.get("sku_on_property") != null && !jsonObj.get("sku_on_property").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `sku_on_property` to be an array in the JSON string but got `%s`", jsonObj.get("sku_on_property").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("readiness_state_on_property") != null && !jsonObj.get("readiness_state_on_property").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `readiness_state_on_property` to be an array in the JSON string but got `%s`", jsonObj.get("readiness_state_on_property").toString()));
       }
   }
 

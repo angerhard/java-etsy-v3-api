@@ -18,8 +18,8 @@ Represents a list of listing image resources, each of which contains the referen
 |**saturation** | **Long** | The numeric saturation equal to the image&#39;s average saturation, from 0-100 (HSV color). |  [optional] |
 |**brightness** | **Long** | The numeric brightness equal to the image&#39;s average brightness, from 0-100 (HSV color). |  [optional] |
 |**isBlackAndWhite** | **Boolean** | When true, the image is in black &amp; white. |  [optional] |
-|**creationTsz** | **Long** | The listing image\\&#39;s creation time, in epoch seconds. |  [optional] |
-|**createdTimestamp** | **Long** | The listing image\\&#39;s creation time, in epoch seconds. |  [optional] |
+|**creationTsz** | **Long** | The listing image&#39;s creation time, in epoch seconds. |  [optional] |
+|**createdTimestamp** | **Long** | The listing image&#39;s creation time, in epoch seconds. |  [optional] |
 |**rank** | **Long** | The positive non-zero numeric position in the images displayed in a listing, with rank 1 images appearing in the left-most position in a listing. |  [optional] |
 |**url75x75** | **String** | The url string for a 75x75 pixel thumbnail of the image. |  [optional] |
 |**url170x135** | **String** | The url string for a 170x135 pixel thumbnail of the image. |  [optional] |
